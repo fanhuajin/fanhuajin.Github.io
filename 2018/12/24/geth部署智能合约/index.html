@@ -6,41 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>科学上网 | Hexo</title>
+  <title>geth部署智能合约 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="科学上网 1.0在微信下进入网址注册https://dotunnel005.com/auth/reg2018（注册是必需要有老用户的邀请码675246）  2.0注册完成后打开网页http://www.dotunnel005.com进行登入  3.0在win下开始进行配置操作。 第一步：  第二步：  4.0打开第一步下载后解压的文件运行ShadowsocksR-dotnet2.0.exe。">
-<meta name="keywords" content="科学上网">
+  <meta name="description" content="安装solc1、我们使用npm 先全局安装 solc  npm install -g solc 2、我们试试solc有没有安装上 solcjs  --version 编译合约1、window下进行操作将我们的合约代码保存到一个名为demo.sol的文件中，在此路径中打开命令行窗口，输入solcjs --bin demo.sol命令编译demo.sol 文件，会生成一个 demo_sol_hello">
+<meta name="keywords" content="solidit">
 <meta property="og:type" content="article">
-<meta property="og:title" content="科学上网">
-<meta property="og:url" content="http://yoursite.com/2018/12/18/科学上网/index.html">
+<meta property="og:title" content="geth部署智能合约">
+<meta property="og:url" content="http://yoursite.com/2018/12/24/geth部署智能合约/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="科学上网 1.0在微信下进入网址注册https://dotunnel005.com/auth/reg2018（注册是必需要有老用户的邀请码675246）  2.0注册完成后打开网页http://www.dotunnel005.com进行登入  3.0在win下开始进行配置操作。 第一步：  第二步：  4.0打开第一步下载后解压的文件运行ShadowsocksR-dotnet2.0.exe。">
+<meta property="og:description" content="安装solc1、我们使用npm 先全局安装 solc  npm install -g solc 2、我们试试solc有没有安装上 solcjs  --version 编译合约1、window下进行操作将我们的合约代码保存到一个名为demo.sol的文件中，在此路径中打开命令行窗口，输入solcjs --bin demo.sol命令编译demo.sol 文件，会生成一个 demo_sol_hello">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-dfb576cec905d38b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-23bc71fcd0c8a07c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-d6fdd9dc35b4d08b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-0b1f91d06eaefe75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-6f31b789f4315e78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-80a44497b4a45036.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-ffc1d39c18a11292.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-d007c3af26a9a2c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-1ff28a352131fcf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-386b16cdbd77dd9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-4483c0f12164a4c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-8331cf1e2bf86f5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-1d589057feebf616.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-864373f817e736b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-3576ffb4b6f4e0e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-d46a853491e1c741.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-e06cde603280f676.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-3d8cb854571a3642.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-f843fb259029f91b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-d9c775391a9d3f44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-12-19T14:15:35.944Z">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-769ed28caba69667.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/15475941-091e7e6e74bad59d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2018-12-24T12:24:41.556Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="科学上网">
-<meta name="twitter:description" content="科学上网 1.0在微信下进入网址注册https://dotunnel005.com/auth/reg2018（注册是必需要有老用户的邀请码675246）  2.0注册完成后打开网页http://www.dotunnel005.com进行登入  3.0在win下开始进行配置操作。 第一步：  第二步：  4.0打开第一步下载后解压的文件运行ShadowsocksR-dotnet2.0.exe。">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15475941-dfb576cec905d38b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="geth部署智能合约">
+<meta name="twitter:description" content="安装solc1、我们使用npm 先全局安装 solc  npm install -g solc 2、我们试试solc有没有安装上 solcjs  --version 编译合约1、window下进行操作将我们的合约代码保存到一个名为demo.sol的文件中，在此路径中打开命令行窗口，输入solcjs --bin demo.sol命令编译demo.sol 文件，会生成一个 demo_sol_hello">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/15475941-769ed28caba69667.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -176,94 +158,43 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-科学上网" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-geth部署智能合约" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      科学上网
+      geth部署智能合约
     </h1>
   
 
         
-        <a href="/2018/12/18/科学上网/" class="archive-article-date">
-  	<time datetime="2018-12-18T14:10:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-18</time>
+        <a href="/2018/12/24/geth部署智能合约/" class="archive-article-date">
+  	<time datetime="2018-12-24T14:15:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>科学上网</strong></p>
-<p>1.0在微信下进入网址注册<a href="https://dotunnel005.com/auth/reg2018（注册是必需要有老用户的邀请码675246）" target="_blank" rel="noopener">https://dotunnel005.com/auth/reg2018（注册是必需要有老用户的邀请码675246）</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-dfb576cec905d38b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片2.png"></p>
-<p>2.0注册完成后打开网页<a href="http://www.dotunnel005.com进行登入" target="_blank" rel="noopener">http://www.dotunnel005.com进行登入</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-23bc71fcd0c8a07c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片3.png"></p>
-<p>3.0在win下开始进行配置操作。</p>
-<p>第一步：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-d6fdd9dc35b4d08b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片4.png"></p>
-<p>第二步：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-0b1f91d06eaefe75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片5.png"></p>
-<p>4.0打开第一步下载后解压的文件运行ShadowsocksR-dotnet2.0.exe。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-6f31b789f4315e78.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片6.png"></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-80a44497b4a45036.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片7.png"></p>
-<p>5.0右键右下角运行的小飞机图标：服务器—–&gt;从文件导入服务器</p>
-<p>导入第二步下载的文件gui-config.json。</p>
-<p>6.0右键小飞机图标：服务器—–&gt;DoTunnel 选择你想要的节点。</p>
-<p>7.0右键小飞机图标：PAC—–&gt;更新PAC为绕过大陆常见域名列表。</p>
-<p>8.0右键小飞机图标：系统代理模式—–&gt;PAC模式。</p>
-<p>9.0配置完成你就可以上网了试试youtube</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-ffc1d39c18a11292.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片8.png"></p>
-<p><strong>手机翻墙</strong></p>
-<p>1.0手机浏览器打开网页<a href="http://www.dotunnel005.com/index.html" target="_blank" rel="noopener">http://www.dotunnel005.com/index.html</a> 登入然后找到点击下载并进行安装，打开软件。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-d007c3af26a9a2c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片9.png"></p>
-<p>2.0返回浏览器点击这个</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-1ff28a352131fcf6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片10.png"></p>
-<p>3.0弹出页面选择：允许—–&gt;确认 然后选择对应节点</p>
-<p>4.0它会跳转到运行的软件选择确定。然后就可以上网了</p>
-<p>运行youtube试试</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-386b16cdbd77dd9e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片11.png"></p>
-<p><strong>在乌班图（linux）下安装</strong></p>
-<p><strong>1.0在HOME文件夹下创建SOFT文件夹</strong></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-4483c0f12164a4c1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片12.png"></p>
-<p>2.0将ssr_ecl.deb文件从win下粘贴到<strong>linux下</strong></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-8331cf1e2bf86f5c.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片13.png"></p>
-<p>3.0在SOFT文件夹下打开终端 sudo dpkg -i ssr_ecl.deb命令如果出现错误运行sudo apt-get install -f  在运行sudo dpkg -i ssr_ecl.deb</p>
-<p>4.0找到解压的软件</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-1d589057feebf616.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片14.png"></p>
-<p>5.0右上角右键点击小飞机图标</p>
-<p>5.01</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-864373f817e736b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片15.png"></p>
-<p>5.02</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-3576ffb4b6f4e0e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片16.png"></p>
-<p>5.03</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-d46a853491e1c741.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片17.png"></p>
-<p>5.04打开网页<a href="https://www.dotunnel005.com/user" target="_blank" rel="noopener">https://www.dotunnel005.com/user</a></p>
-<p>复制<a href="https://www.plmb001.com/link/lInFnd2N2woNVgmw?mu=0" target="_blank" rel="noopener">https://www.plmb001.com/link/lInFnd2N2woNVgmw?mu=0</a></p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-e06cde603280f676.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片18.png"></p>
-<p>5.05</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-3d8cb854571a3642.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片19.png"></p>
-<p>5.06最后选择你想要的节点就可以上网了。</p>
-<p>命令行上网</p>
-<p>1.0打开终端</p>
-<p>2.0安装Privoxy命令行界面输入sudo apt-get install privoxy</p>
-<p>3.0安装好后进行配置，Privoxy的配置文件在输入:sudo /etc/privoxy/config 。</p>
-<p>4.0找到4.2. listen-address这一节，确认监听的端口号。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-f843fb259029f91b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片20.png"></p>
-<p>5.0找到5.3.，加上如下配置 forward-socks5 / 127.0.0.1:1080 . ，注意最后的点号。</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/15475941-d9c775391a9d3f44.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="图片21.png"></p>
-<p>6.0配置完成按下Esc 输入 ： :wq 退出</p>
-<p>7.0输入：sudo /etc/init.d/privoxy restart</p>
-<p>8.0输入：export http_proxy=”127.0.0.1:8118”</p>
-<p>9.0输入:export https_proxy=”127.0.0.1:8118”</p>
-<p>10.0到这里配置就结束了可以测试一下输入 wget <a href="http://www.google.com" target="_blank" rel="noopener">http://www.google.com</a></p>
-<p>总结：以后每次命令行翻墙都需要</p>
-<p>输入：</p>
-<p>export http_proxy=”127.0.0.1:8118” </p>
-<p>export https_proxy=”127.0.0.1:8118”</p>
-<p>这两行就可以命令行翻墙了。</p>
+        <h3 id="安装solc"><a href="#安装solc" class="headerlink" title="安装solc"></a>安装solc</h3><p>1、我们使用npm 先全局安装 solc  <code>npm install -g solc</code></p>
+<p>2、我们试试solc有没有安装上 <code>solcjs  --version</code></p>
+<h3 id="编译合约"><a href="#编译合约" class="headerlink" title="编译合约"></a>编译合约</h3><p>1、window下进行操作将我们的合约代码保存到一个名为demo.sol的文件中，在此路径中打开命令行窗口，输入<code>solcjs --bin demo.sol</code>命令编译demo.sol 文件，会生成一个 demo_sol_hello.bin 文件，此文件就是我们编译后的合约二进制文件，然后继续输入<code>solcjs --abi demo.sol</code> 命令，生成此合约的ABI文件。此ABI文件demo_sol_hello.abi </p>
+<p>2、Ubuntu下进行操作打开私链节点，进入控制台 （进入Go&gt;privatechain&gt;右键进入终端）输入：<code>geth --datadir data0 --networkid 110 console</code>输入命令 <code>var  code = &quot;0x二进制文件内容&quot;</code> 二进制太长，如何一次性获取？我们可以将demo_sol_hello.bin 文件后缀先改为.txt后缀，然后打开再复制，然后黏贴进那个命令中</p>
+<p>3、我们可以看看这么长的二进制内容写入到链上，我们至少需要耗费多少Gas <code>web3.eth.estimateGas({data: code})</code>   我得到的是1375684,意味着部署这个合约至少要 1375684 wei 的Gas，只能多不能少。</p>
+<p>4、我们用一个变量 abi 保存此 合约的abi，和 保存二进制内容一样过程输入命令<code>var abi=JSON.parse(&#39;abi文件的内容&#39;)</code>因为abi是json格式的所以这里需要用单引号包裹并且需用JSON.parse转成json格式，否则后面会报错！</p>
+<p>5、当我们拿到一个合约的abi 和 二进制的文件内容后就可以部署这个合约了</p>
+<p>6、部署合约的账号需要消耗Gas，所以必须要有余额，我们先查看我们的第二个账户余额<code>eth.getBalance(eth.accounts[1])</code> 第一个或者第二个无所谓，只要有余额即可部署合约</p>
+<p>7、解锁账号<code>personal.unlockAccount(eth.accounts[1])</code>，然后输入账号密码，返回为true则解锁成功</p>
+<p>8、使用abi生成一个合约对象<code>var contract = web3.eth.contract(abi)</code>;这个对象下面有一些方法，我们使用new 方法生成一个新的合约对象</p>
+<p>9、使用以下命令</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">contractInstance = contract.<span class="built_in">new</span>(&#123;data: code, gas: <span class="number">2000000</span>, from: eth.accounts[<span class="number">0</span>]&#125;, function(e, contract)&#123;</span><br><span class="line">   <span class="keyword">if</span>(!e)&#123;</span><br><span class="line">         <span class="keyword">if</span>(!contract.address)&#123;</span><br><span class="line">              console.log(<span class="string">"Contract transaction send: Transaction Hash:"</span>+contract.transactionHash+<span class="string">" waiting to be mined..."</span>);</span><br><span class="line">         &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              console.log(<span class="string">"Contract mined! Address: "</span>+contract.address);</span><br><span class="line">              console.log(contract);</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         console.log(e)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>若此合约的构造函数有参数<br>abi.new([constructorParam1][, constructorParam2], {data: ‘0x12345…’, from: myAccount, gas: 1000000},callback);</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">contractInstance = contract.<span class="built_in">new</span>([<span class="string">"张三"</span>,<span class="string">"李四"</span>,<span class="string">"王五"</span>],&#123;data: code, gas: <span class="number">2000000</span>, from: eth.accounts[<span class="number">1</span>]&#125;, function(e, contract)&#123;</span><br><span class="line">   <span class="keyword">if</span>(!e)&#123;</span><br><span class="line">         <span class="keyword">if</span>(!contract.address)&#123;</span><br><span class="line">              console.log(<span class="string">"Contract transaction send: Transaction Hash:"</span>+contract.transactionHash+<span class="string">" waiting to be mined..."</span>);</span><br><span class="line">         &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              console.log(<span class="string">"Contract mined! Address: "</span>+contract.address);</span><br><span class="line">              console.log(contract);</span><br><span class="line">         &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">         console.log(e)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>10、 <code>上述得到的合约是没有地址的，只有挖矿成功才会有地址出现。所以现在我们的先挖矿， miner.start()</code> 挖矿成功后会显示出来合约地址，然后我们通过合约地址就能调用合约方法了<br><img src="https://upload-images.jianshu.io/upload_images/15475941-769ed28caba69667.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<p>11、通过<code>web3.eth.getCode(&quot;0x...合约地址&quot;)</code> 命令会返回此合约的二进制数据，说明合约部署成功</p>
+<p>12、contractInstance就是这个合约实列，我们通过这个实列来调用合约里面的函数<code>contractInstance.giveRightToVote.call(&quot;0x....&quot;)</code>调用我们写的方法，我们也可以直接输入contractInstance 看到我们这个合约对象有多少方法。<br><img src="https://upload-images.jianshu.io/upload_images/15475941-091e7e6e74bad59d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
 
       
 
@@ -298,7 +229,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">科学上网</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">solidit</a>
         		</li>
       		
 		</ul>
@@ -354,7 +285,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/18/科学上网/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/24/geth部署智能合约/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -368,18 +299,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/12/19/go语言Server与client/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          go语言Server与client
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/12/17/Blog搭建/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Blog搭建</div>
+    <a href="/2018/12/24/以太坊私链搭建/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">以太坊私链搭建</div>
       <i class="icon-circle-right"></i>
     </a>
   
