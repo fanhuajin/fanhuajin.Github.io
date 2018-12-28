@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>MetaMask与solidity交互(竞猜小程序) | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="bet.sol代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384pragma solidity ^0.4.23;contract">
+<meta name="keywords" content="MetaMask与solidity交互">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MetaMask与solidity交互(竞猜小程序)">
+<meta property="og:url" content="http://yoursite.com/2018/12/28/MetaMask与solidity交互-竞猜小程序/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="bet.sol代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384pragma solidity ^0.4.23;contract">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-12-28T13:29:08.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="MetaMask与solidity交互(竞猜小程序)">
+<meta name="twitter:description" content="bet.sol代码123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384pragma solidity ^0.4.23;contract">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -150,36 +155,57 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-MetaMask与solidity交互-竞猜小程序" class="article article-type-post " itemscope="" itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/28/MetaMask与solidity交互-竞猜小程序/" class="archive-article-date">
-  	<time datetime="2018-12-28T13:23:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/28/MetaMask与solidity交互-竞猜小程序/">MetaMask与solidity交互(竞猜小程序)</a>
+    <h1 class="article-title" itemprop="name">
+      MetaMask与solidity交互(竞猜小程序)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/12/28/MetaMask与solidity交互-竞猜小程序/" class="archive-article-date">
+  	<time datetime="2018-12-28T13:23:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="bet-sol代码"><a href="#bet-sol代码" class="headerlink" title="bet.sol代码"></a>bet.sol代码</h2><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity ^<span class="number">0.4</span><span class="number">.23</span>;</span><br><span class="line"></span><br><span class="line">contract Mortal&#123;</span><br><span class="line">    address owner;<span class="comment">// 合约拥有者</span></span><br><span class="line">    <span class="keyword">uint</span> minBet; <span class="comment">// 赌博最小值</span></span><br><span class="line">    <span class="keyword">uint</span> maxBet; <span class="comment">// 赌博最大值</span></span><br><span class="line">    <span class="keyword">uint</span> public balance; <span class="comment">//合约余额</span></span><br><span class="line">    event getContractBalance(<span class="keyword">uint</span> _amount); <span class="comment">//前端监听事件 获取余额</span></span><br><span class="line">    event Win(<span class="keyword">bool</span> _wind,<span class="keyword">uint</span> _winCount,<span class="keyword">uint</span> _winNumber);<span class="comment">//前端监听事件 获取胜负 胜利奖励金额 随机数字</span></span><br><span class="line">    constructor(<span class="keyword">uint</span> min,<span class="keyword">uint</span> max)public payable&#123;<span class="comment">//初始化合约 传入赌博数字取值范围</span></span><br><span class="line">        owner = msg.sender;</span><br><span class="line">        require(min&gt;=<span class="number">0</span>);</span><br><span class="line">        require(max&lt;<span class="number">100</span>);</span><br><span class="line">        <span class="comment">//设置赌博最小值</span></span><br><span class="line">        minBet = min;</span><br><span class="line">        <span class="comment">//设置赌博最大值</span></span><br><span class="line">        maxBet = max;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function showBalance()public&#123;</span><br><span class="line">        <span class="comment">//获取合约余额</span></span><br><span class="line">        balance = address(this).balance;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    function checkContractBalance()public view returns(<span class="keyword">uint</span>)&#123;</span><br><span class="line">        <span class="comment">// 监听返回值 返回余额</span></span><br><span class="line">        emit getContractBalance(address(this).balance);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> address(this).balance;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//赌博</span></span><br><span class="line">    function bet(<span class="keyword">uint</span> _number)public payable&#123;</span><br><span class="line">        <span class="comment">// 判断赌博选择的数是否大于1小于10</span></span><br><span class="line">        require(_number &gt;= <span class="number">1</span> &amp;&amp; _number &lt;=<span class="number">10</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//判断输入的数是否大于要求的最小值  </span></span><br><span class="line">        require(msg.value&gt;=minBet);    <span class="comment">//msg.value</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建一个1到10的随机数</span></span><br><span class="line">        <span class="keyword">uint</span> winNumber = block.number % <span class="number">10</span> +<span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(_number == winNumber)&#123;<span class="comment">//判断输入的数是否和随机数相同</span></span><br><span class="line">            <span class="comment">// win 如果赢了的话 合约给地址双倍的钱</span></span><br><span class="line">            <span class="keyword">uint</span> count = msg.value *<span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">            <span class="comment">// 判断合约余额是否小于奖励金额</span></span><br><span class="line">            <span class="keyword">if</span>(address(this).balance &lt; count)&#123;</span><br><span class="line">                <span class="comment">// 如果合约余额小于奖励金额则将合约所有的钱都给赌博胜利地址</span></span><br><span class="line">               count = address(this).balance;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//合约给地址发送金额  如果失败则回滚</span></span><br><span class="line">            <span class="keyword">if</span>(!msg.sender.send(count))&#123;</span><br><span class="line">                revert();</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="comment">//监听返回值</span></span><br><span class="line">            emit Win(<span class="literal">true</span>, count,winNumber);</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="comment">// false</span></span><br><span class="line">            emit Win(<span class="literal">false</span>,<span class="number">0</span>,winNumber);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//从合约中提取值</span></span><br><span class="line">    function takeMoney(<span class="keyword">uint</span> number)public&#123;</span><br><span class="line">        <span class="comment">//判断是否为合约拥有者</span></span><br><span class="line">        require(msg.sender == owner);</span><br><span class="line">        <span class="comment">//判断提取金额是否小于合约余额</span></span><br><span class="line">        require(number &lt;= address(this).balance);</span><br><span class="line">        <span class="comment">//向合约拥有着账号发送提取金额</span></span><br><span class="line">        owner.transfer(number);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//销毁合约</span></span><br><span class="line">    function kill()public&#123;</span><br><span class="line">        <span class="comment">//前端监听事件 获取余额</span></span><br><span class="line">        require(msg.sender == owner);</span><br><span class="line">        <span class="comment">// 销毁合约函数</span></span><br><span class="line">        selfdestruct(owner);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="index-html代码"><a href="#index-html代码" class="headerlink" title="index.html代码"></a>index.html代码</h2><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;meta name=<span class="string">"viewport"</span> content=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span><br><span class="line">    &lt;meta http-equiv=<span class="string">"X-UA-Compatible"</span> content=<span class="string">"ie=edge"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        * &#123;</span><br><span class="line">            padding: <span class="number">0</span>px;</span><br><span class="line">            margin: <span class="number">0</span>px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .title01,</span><br><span class="line">        .title02,</span><br><span class="line">        .title03 &#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .title01 &#123;</span><br><span class="line">            margin-top: <span class="number">20</span>px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .fontred &#123;</span><br><span class="line">            font-size: <span class="number">12</span>px;</span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        .title &#123;</span><br><span class="line">            width: <span class="number">500</span>px;</span><br><span class="line">            margin: <span class="number">0</span> auto;</span><br><span class="line">        &#125;</span><br><span class="line">        .count&#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .btn&#123;</span><br><span class="line">            width: <span class="number">50</span>%;</span><br><span class="line">            margin: <span class="number">0</span> auto;</span><br><span class="line">            margin-top: <span class="number">10</span>px;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .btn input&#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">            height: <span class="number">25</span>px;</span><br><span class="line">            width: <span class="number">70</span>px;</span><br><span class="line">        &#125;</span><br><span class="line">        .centent-button&#123;</span><br><span class="line">            text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        .Mask&#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            top: <span class="number">0</span>;</span><br><span class="line">            left: <span class="number">0</span>;</span><br><span class="line">            right: <span class="number">0</span>;</span><br><span class="line">            bottom: <span class="number">0</span>;</span><br><span class="line">            background-color: rgba(<span class="number">0</span>, <span class="number">0</span>, <span class="number">0</span>, <span class="number">0.7</span>);</span><br><span class="line">            display: none;</span><br><span class="line">        &#125;</span><br><span class="line">        .spinner &#123;</span><br><span class="line">        margin: <span class="number">200</span>px auto <span class="number">0</span>;</span><br><span class="line">        width: <span class="number">150</span>px;</span><br><span class="line">        text-align: center;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .spinner &gt; div &#123;</span><br><span class="line">        width: <span class="number">30</span>px;</span><br><span class="line">        height: <span class="number">30</span>px;</span><br><span class="line">        background-color: #<span class="number">67</span>CF22;</span><br><span class="line">        </span><br><span class="line">        border-radius: <span class="number">100</span>%;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        -webkit-animation: bouncedelay <span class="number">1.4s</span> infinite ease-in-out;</span><br><span class="line">        animation: bouncedelay <span class="number">1.4s</span> infinite ease-in-out;</span><br><span class="line">        <span class="comment">/* Prevent first frame from flickering when animation starts */</span></span><br><span class="line">        -webkit-animation-fill-mode: both;</span><br><span class="line">        animation-fill-mode: both;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .spinner .bounce1 &#123;</span><br><span class="line">        -webkit-animation-delay: <span class="number">-0.32s</span>;</span><br><span class="line">        animation-delay: <span class="number">-0.32s</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        .spinner .bounce2 &#123;</span><br><span class="line">        -webkit-animation-delay: <span class="number">-0.16s</span>;</span><br><span class="line">        animation-delay: <span class="number">-0.16s</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        @-webkit-keyframes bouncedelay &#123;</span><br><span class="line">        <span class="number">0</span>%, <span class="number">80</span>%, <span class="number">100</span>% &#123; -webkit-transform: scale(<span class="number">0.0</span>) &#125;</span><br><span class="line">        <span class="number">40</span>% &#123; -webkit-transform: scale(<span class="number">1.0</span>) &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        @keyframes bouncedelay &#123;</span><br><span class="line">        <span class="number">0</span>%, <span class="number">80</span>%, <span class="number">100</span>% &#123;</span><br><span class="line">            transform: scale(<span class="number">0.0</span>);</span><br><span class="line">            -webkit-transform: scale(<span class="number">0.0</span>);</span><br><span class="line">        &#125; <span class="number">40</span>% &#123;</span><br><span class="line">            transform: scale(<span class="number">1.0</span>);</span><br><span class="line">            -webkit-transform: scale(<span class="number">1.0</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class=<span class="string">"main"</span>&gt;</span><br><span class="line">        &lt;div class=<span class="string">"title"</span>&gt;</span><br><span class="line">            &lt;div class=<span class="string">"title01"</span>&gt;</span><br><span class="line">                &lt;span&gt;Network:&lt;/span&gt;</span><br><span class="line">                &lt;span class="fontred network"&gt;Kovan test network&lt;/span&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=<span class="string">"title02"</span>&gt;</span><br><span class="line">                &lt;span&gt;Account: &lt;/span&gt;</span><br><span class="line">                &lt;span class="fontred account"&gt;0xc1ce4f401951cd996f2628935acc858647489eef&lt;/span&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=<span class="string">"title03"</span>&gt;</span><br><span class="line">                &lt;span&gt;Balance: &lt;/span&gt;</span><br><span class="line">                &lt;span class="fontred balance"&gt;2891728500000000000&lt;/span&gt;</span><br><span class="line">                &lt;span&gt;Wei <span class="comment">//&lt;/span&gt;</span></span><br><span class="line">                &lt;span class="fontred balanceETH"&gt;2.8917285 &lt;/span&gt;</span><br><span class="line">                &lt;span&gt;eth &lt;/span&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div class=<span class="string">"centent"</span>&gt;</span><br><span class="line">            &lt;div class=<span class="string">"count"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"number"</span> placeholder=<span class="string">"ether"</span>  class=<span class="string">"betcount"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=<span class="string">"btn"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"1"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"2"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"3"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"4"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"5"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"6"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"7"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"8"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"9"</span>&gt;</span><br><span class="line">                &lt;input <span class="keyword">type</span>=<span class="string">"button"</span> value=<span class="string">"10"</span>&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=<span class="string">"centent-button"</span>&gt;</span><br><span class="line">                &lt;span&gt;当前合约余额为:&lt;/span&gt;</span><br><span class="line">                &lt;span class="yue"&gt;&lt;/span&gt;</span><br><span class="line">                &lt;p class="result"&gt;&lt;/p&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=<span class="string">"Mask"</span>&gt;</span><br><span class="line">            &lt;div class=<span class="string">"spinner"</span>&gt;</span><br><span class="line">                &lt;div class="bounce1"&gt;&lt;/div&gt;</span><br><span class="line">                &lt;div class="bounce2"&gt;&lt;/div&gt;</span><br><span class="line">                &lt;div class="bounce3"&gt;&lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script&gt;</span><br><span class="line">        <span class="comment">// 判断web3是否存在</span></span><br><span class="line">        <span class="keyword">if</span> (typeof web3 !== <span class="string">"undefined"</span>) &#123;</span><br><span class="line">            web3 = <span class="built_in">new</span> Web3(web3.currentProvider)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            alert(<span class="string">"你需要安装一个metamask网页钱包"</span>)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> accounts = &#123;&#125;</span><br><span class="line">        function getWeb3() &#123;</span><br><span class="line">            <span class="built_in">new</span> Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">                <span class="comment">//异步获取网络账号</span></span><br><span class="line">                web3.eth.getAccounts((err, result) =&gt; &#123;</span><br><span class="line">                    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                        <span class="comment">//如果出错返回错误</span></span><br><span class="line">                        reject(err)</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="comment">//返回账号数组</span></span><br><span class="line">                        resolve(result)</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;).then((res) =&gt; &#123;<span class="comment">//传递数组 如果错误返回err 如果正确返回result</span></span><br><span class="line">                <span class="comment">//获取第一个账号</span></span><br><span class="line">                accounts.account = res[<span class="number">0</span>]</span><br><span class="line">                <span class="keyword">return</span> <span class="built_in">new</span> Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">                    web3.eth.getBalance(res[<span class="number">0</span>], (err, result) =&gt; &#123;</span><br><span class="line">                        <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                            <span class="comment">//如果出错返回错误</span></span><br><span class="line">                            reject(err)</span><br><span class="line">                        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                            <span class="comment">//返回账号数组</span></span><br><span class="line">                            resolve(result)</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;).then((res) =&gt; &#123;<span class="comment">//传递余额</span></span><br><span class="line">                <span class="comment">//赋值余额方法</span></span><br><span class="line">                accounts.balance = res.toString()</span><br><span class="line">                <span class="comment">//html设置账号</span></span><br><span class="line">                $(<span class="string">".account"</span>).html(accounts.account)</span><br><span class="line">                <span class="comment">//html设置余额</span></span><br><span class="line">                $(<span class="string">".balance"</span>).html(accounts.balance)</span><br><span class="line">                <span class="comment">//html设置余额eth</span></span><br><span class="line">                <span class="keyword">var</span> ether = <span class="number">0</span>;</span><br><span class="line">                ether = web3.fromWei(accounts.balance, <span class="string">"ether"</span>)</span><br><span class="line">                $(<span class="string">".balanceETH"</span>).html(ether)</span><br><span class="line"></span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//异步获取网络ID</span></span><br><span class="line">        web3.version.getNetwork((err, result) =&gt; &#123;</span><br><span class="line">            <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                console.log(err)</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">switch</span> (result) &#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"1"</span>:</span><br><span class="line">                        accounts.network = <span class="string">"Main NetWork"</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"3"</span>:</span><br><span class="line">                        accounts.network = <span class="string">"Ropsten Test NetWork"</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"4"</span>:</span><br><span class="line">                        accounts.network = <span class="string">"Rinkeby Test NetWork"</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">"42"</span>:</span><br><span class="line">                        accounts.network = <span class="string">"Koven Test NetWork"</span>;</span><br><span class="line">                        <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                $(<span class="string">".network"</span>).html(accounts.network)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">// 循环调用函数</span></span><br><span class="line">        setInterval(getWeb3, <span class="number">500</span>)</span><br><span class="line">        <span class="comment">// 获取合约ABI </span></span><br><span class="line">        <span class="keyword">var</span> abi = [</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"constant"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"inputs"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"_number"</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"uint256"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"bet"</span>,</span><br><span class="line">                <span class="string">"outputs"</span>: [],</span><br><span class="line">                <span class="string">"payable"</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="string">"stateMutability"</span>: <span class="string">"payable"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"function"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"constant"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"inputs"</span>: [],</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"kill"</span>,</span><br><span class="line">                <span class="string">"outputs"</span>: [],</span><br><span class="line">                <span class="string">"payable"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"stateMutability"</span>: <span class="string">"nonpayable"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"function"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"constant"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"inputs"</span>: [],</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"showBalance"</span>,</span><br><span class="line">                <span class="string">"outputs"</span>: [],</span><br><span class="line">                <span class="string">"payable"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"stateMutability"</span>: <span class="string">"nonpayable"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"function"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"constant"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"inputs"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"number"</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"uint256"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"takeMoney"</span>,</span><br><span class="line">                <span class="string">"outputs"</span>: [],</span><br><span class="line">                <span class="string">"payable"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"stateMutability"</span>: <span class="string">"nonpayable"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"function"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"inputs"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"min"</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"uint256"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"max"</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"uint256"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"payable"</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="string">"stateMutability"</span>: <span class="string">"payable"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"constructor"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"anonymous"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"inputs"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"indexed"</span>: <span class="literal">false</span>,</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"_amount"</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"uint256"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"getContractBalance"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"event"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"anonymous"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"inputs"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"indexed"</span>: <span class="literal">false</span>,</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"_wind"</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"bool"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"indexed"</span>: <span class="literal">false</span>,</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"_winCount"</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"uint256"</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"indexed"</span>: <span class="literal">false</span>,</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">"_winNumber"</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"uint256"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"Win"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"event"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"constant"</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="string">"inputs"</span>: [],</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"balance"</span>,</span><br><span class="line">                <span class="string">"outputs"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">""</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"uint256"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"payable"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"stateMutability"</span>: <span class="string">"view"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"function"</span></span><br><span class="line">            &#125;,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="string">"constant"</span>: <span class="literal">true</span>,</span><br><span class="line">                <span class="string">"inputs"</span>: [],</span><br><span class="line">                <span class="string">"name"</span>: <span class="string">"checkContractBalance"</span>,</span><br><span class="line">                <span class="string">"outputs"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                        <span class="string">"name"</span>: <span class="string">""</span>,</span><br><span class="line">                        <span class="string">"type"</span>: <span class="string">"uint256"</span></span><br><span class="line">                    &#125;</span><br><span class="line">                ],</span><br><span class="line">                <span class="string">"payable"</span>: <span class="literal">false</span>,</span><br><span class="line">                <span class="string">"stateMutability"</span>: <span class="string">"view"</span>,</span><br><span class="line">                <span class="string">"type"</span>: <span class="string">"function"</span></span><br><span class="line">            &#125;</span><br><span class="line">        ]</span><br><span class="line">        <span class="comment">// 创建合约</span></span><br><span class="line">        <span class="keyword">var</span> mycontract = web3.eth.contract(abi)</span><br><span class="line">        <span class="comment">//合约地址</span></span><br><span class="line">        <span class="keyword">var</span> address = <span class="string">"0x792754dd2d57a1b6d2c7396453500af74d2c804b"</span></span><br><span class="line">        <span class="comment">// 创建合约实例</span></span><br><span class="line">        <span class="keyword">var</span> contractinstance = mycontract.at(address)</span><br><span class="line">        <span class="comment">// console.log(contractinstance)</span></span><br><span class="line">        <span class="comment">// 获取合约余额</span></span><br><span class="line">        function getcontractbalance() &#123;</span><br><span class="line">            <span class="comment">//调用合约实例下的checkContractBalance方法 成功返回余额</span></span><br><span class="line">            contractinstance.checkContractBalance(function (err, result) &#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    <span class="comment">//打印错误</span></span><br><span class="line">                    console.log(err)</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">// 将余额以ether单位显示</span></span><br><span class="line">                    <span class="keyword">var</span> balance = web3.fromWei(result.toString(), <span class="string">"ether"</span>)</span><br><span class="line">                    console.log( balance)</span><br><span class="line">                    <span class="comment">//让网页显示合约余额</span></span><br><span class="line">                    $(<span class="string">".yue"</span>).html(balance + <span class="string">"ETH"</span>)</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//实时获取合约余额</span></span><br><span class="line">        setInterval(getcontractbalance, <span class="number">500</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//创建点击事件</span></span><br><span class="line">        $(<span class="string">".btn input"</span>).on(<span class="string">"click"</span>,function()&#123;</span><br><span class="line">            <span class="comment">// 获取点击按钮的val值选择你要赌博的数字</span></span><br><span class="line">            <span class="keyword">var</span> number =$(this).val()</span><br><span class="line">            <span class="comment">//获取赌博金额</span></span><br><span class="line">            <span class="keyword">var</span> count=$(<span class="string">".betcount"</span>).val();</span><br><span class="line">            <span class="comment">//判断是否是否输入赌博金额 赌博金额是否为0</span></span><br><span class="line">            <span class="keyword">if</span>(count &amp;&amp; count !== <span class="string">"0"</span>)&#123;<span class="comment">//真确进行操作</span></span><br><span class="line">                <span class="comment">//赌博开始在这过程中让遮罩层出现</span></span><br><span class="line">                $(<span class="string">".Mask"</span>).css(<span class="string">"display"</span>,<span class="string">"block"</span>)</span><br><span class="line">                <span class="comment">//调用赌博合约函数</span></span><br><span class="line">                contractinstance.bet(number,&#123;</span><br><span class="line">                    <span class="comment">//开始赌博将count ether转化为wei</span></span><br><span class="line">                    value:web3.toWei(count,<span class="string">"ether"</span>),</span><br><span class="line">                    <span class="comment">// 需要的小费</span></span><br><span class="line">                    gas:<span class="number">3000000</span>,</span><br><span class="line">                    <span class="comment">//向合约发送金额的地址为accounts.account</span></span><br><span class="line">                    from:accounts.account</span><br><span class="line"></span><br><span class="line">                    <span class="comment">//判断赌博输赢</span></span><br><span class="line">                &#125;,function(err,result)&#123;</span><br><span class="line">                    <span class="comment">//判断赌博输赢</span></span><br><span class="line">                    contractinstance.Win(function(err,result)&#123;</span><br><span class="line">                        <span class="comment">// 赌博函数触发后无论输赢让遮罩层消失</span></span><br><span class="line">                        $(<span class="string">".Mask"</span>).css(<span class="string">"display"</span>,<span class="string">"none"</span>)</span><br><span class="line">                        <span class="keyword">if</span>(err)&#123;</span><br><span class="line">                            console.log(err)</span><br><span class="line">                        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                            <span class="comment">//赌博赢了</span></span><br><span class="line">                            <span class="keyword">if</span>(result.args[<span class="string">"_wind"</span>])&#123;</span><br><span class="line">                                <span class="comment">// 赌博胜利奖励的金额</span></span><br><span class="line">                                <span class="keyword">var</span> wins=result.args[<span class="string">"_winCount"</span>].toString();</span><br><span class="line">                                <span class="comment">//将金额转换为ether单位</span></span><br><span class="line">                                wins=web3.fromWei(wins,<span class="string">"ether"</span>);</span><br><span class="line">                                <span class="comment">//页面提示输赢</span></span><br><span class="line">                                $(<span class="string">".result"</span>).html(<span class="string">"恭喜你赢了 "</span>+wins+<span class="string">" 个ETH"</span>)</span><br><span class="line">                            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                                <span class="comment">//输了</span></span><br><span class="line">                                $(<span class="string">".result"</span>).html(<span class="string">"很抱歉你输了！正确数字应该是 "</span>+result.args[<span class="string">"_winNumber"</span>].toString())</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;</span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="comment">//输入的金额超出范围</span></span><br><span class="line">                alert(<span class="string">"输入金额错误！"</span>)</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;)</span><br><span class="line"></span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line"></span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -191,209 +217,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/12/28/MetaMask与solidity交互-竞猜小程序/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/24/geth部署智能合约/" class="archive-article-date">
-  	<time datetime="2018-12-24T14:15:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-24</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/12/24/geth部署智能合约/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">geth部署智能合约</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/24/geth部署智能合约/">geth部署智能合约</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">solidit</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/24/以太坊私链搭建/" class="archive-article-date">
-  	<time datetime="2018-12-24T14:10:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-24</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/24/以太坊私链搭建/">以太坊私链搭建</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">solidit</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/19/go语言Server与client/" class="archive-article-date">
-  	<time datetime="2018-12-19T13:54:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/19/go语言Server与client/">go语言Server与client</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">go语言服务器向客户端传送文件</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/18/科学上网/" class="archive-article-date">
-  	<time datetime="2018-12-18T14:10:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/18/科学上网/">科学上网</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">科学上网</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/12/17/Blog搭建/" class="archive-article-date">
-  	<time datetime="2018-12-16T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/12/17/Blog搭建/">Blog搭建</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Blog搭建</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -416,8 +339,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
