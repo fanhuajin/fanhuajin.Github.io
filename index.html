@@ -152,6 +152,221 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-联盟链" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/01/07/联盟链/">联盟链</a>
+    </h1>
+  
+
+        
+        <a href="/2019/01/07/联盟链/" class="archive-article-date">
+  	<time datetime="2019-01-07T12:09:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="环境安装"><a href="#环境安装" class="headerlink" title="环境安装"></a>环境安装</h1><h4 id="快速入门"><a href="#快速入门" class="headerlink" title="快速入门"></a>快速入门</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">https:<span class="comment">//hyperledger-fabric.readthedocs.io/en/release-1.1/getting_started.html</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装GIT"><a href="#安装GIT" class="headerlink" title="安装GIT"></a>安装GIT</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt install git</span><br></pre></td></tr></table></figure>
+<h3 id="安装CURL"><a href="#安装CURL" class="headerlink" title="安装CURL"></a>安装CURL</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install curl</span><br></pre></td></tr></table></figure>
+<h3 id="安装VIM"><a href="#安装VIM" class="headerlink" title="安装VIM"></a>安装VIM</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install vim</span><br></pre></td></tr></table></figure>
+<h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">uname -r <span class="comment">//查看Docker需要64的操作系统。此外你的kernel内核至少要在3.10版本之上</span></span><br><span class="line">sudo apt install docker.io</span><br><span class="line">sudo apt install docker-compose</span><br></pre></td></tr></table></figure>
+<h3 id="安装Node-（可选）"><a href="#安装Node-（可选）" class="headerlink" title="安装Node （可选）"></a>安装Node （可选）</h3><h4 id="安装nvm（可选"><a href="#安装nvm（可选" class="headerlink" title="安装nvm（可选)"></a>安装nvm（可选)</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">curl -o- https:<span class="comment">//raw.githubusercontent.com/creationix/nvm/v0.33.10/install.sh | bash</span></span><br><span class="line">export NVM_DIR=<span class="string">"$HOME/.nvm"</span></span><br><span class="line">[ -s <span class="string">"$NVM_DIR/nvm.sh"</span> ] &amp;&amp; \. <span class="string">"$NVM_DIR/nvm.sh"</span></span><br></pre></td></tr></table></figure>
+<h4 id="1，更新软件源"><a href="#1，更新软件源" class="headerlink" title="1，更新软件源"></a>1，更新软件源</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install -y python-software-properties software-properties-common</span><br><span class="line">sudo add-apt-repository ppa:chris-lea/node.js</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<h4 id="2，安装nodejs"><a href="#2，安装nodejs" class="headerlink" title="2，安装nodejs"></a>2，安装nodejs</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install nodejs</span><br><span class="line">sudo apt install nodejs-legacy</span><br><span class="line">sudo apt install npm</span><br></pre></td></tr></table></figure>
+<h4 id="3，更新npm的包镜像源，方便快速下载"><a href="#3，更新npm的包镜像源，方便快速下载" class="headerlink" title="3，更新npm的包镜像源，方便快速下载"></a>3，更新npm的包镜像源，方便快速下载</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo npm config set registry https:<span class="comment">//registry.npm.taobao.org</span></span><br><span class="line">sudo npm config list</span><br></pre></td></tr></table></figure>
+<h4 id="4，全局安装n管理器-用于管理nodejs版本"><a href="#4，全局安装n管理器-用于管理nodejs版本" class="headerlink" title="4，全局安装n管理器(用于管理nodejs版本)"></a>4，全局安装n管理器(用于管理nodejs版本)</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo npm install n -g</span><br></pre></td></tr></table></figure>
+<h4 id="5，安装最新的nodejs（stable版本）"><a href="#5，安装最新的nodejs（stable版本）" class="headerlink" title="5，安装最新的nodejs（stable版本）"></a>5，安装最新的nodejs（stable版本）</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo n stable <span class="comment">// sudo n v8.11.1</span></span><br><span class="line">sudo node -v</span><br><span class="line">npm install npm@<span class="number">5.6</span><span class="number">.0</span> -g</span><br></pre></td></tr></table></figure>
+<h3 id="安装Golang"><a href="#安装Golang" class="headerlink" title="安装Golang"></a>安装Golang</h3><blockquote>
+<p>Fabric1.1.0版本要求Go1.9+</p>
+</blockquote>
+<blockquote>
+<p>Fabric1.0.0版本要求Go1.7+</p>
+<h4 id="上传go1-10-1-linux-amd64-tar-gz"><a href="#上传go1-10-1-linux-amd64-tar-gz" class="headerlink" title="上传go1.10.1.linux-amd64.tar.gz"></a>上传go1.10.1.linux-amd64.tar.gz</h4></blockquote>
+<h4 id="解压文件"><a href="#解压文件" class="headerlink" title="解压文件"></a>解压文件</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf go1<span class="number">.10</span><span class="number">.1</span>.linux-amd64.tar.gz -C /usr/local/</span><br></pre></td></tr></table></figure>
+<h4 id="编辑环境变量文件"><a href="#编辑环境变量文件" class="headerlink" title="编辑环境变量文件"></a>编辑环境变量文件</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/profile</span><br></pre></td></tr></table></figure>
+<h4 id="添加如下内容"><a href="#添加如下内容" class="headerlink" title="添加如下内容:"></a>添加如下内容:</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">export GOPATH=$HOME/<span class="keyword">go</span> </span><br><span class="line">export GOROOT=/usr/local/<span class="keyword">go</span></span><br><span class="line">export PATH=$GOROOT/bin:$PATH</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>source /etc/profile<br>go version</p>
+</blockquote>
+<p>输出:<code>go version go1.10.1 linux/amd64</code></p>
+<blockquote>
+<p>如果系统中有旧版本的golang,则使用如下命令卸载旧版本的golang,然后再重新安装</p>
+</blockquote>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">su -# apt-get remove golang-<span class="keyword">go</span> --purge &amp;&amp; apt-get autoremove --purge &amp;&amp; apt-get clean</span><br></pre></td></tr></table></figure>
+<h3 id="安装Hyperledger-Fabric-Samples-下载安装"><a href="#安装Hyperledger-Fabric-Samples-下载安装" class="headerlink" title="安装Hyperledger Fabric Samples 下载安装"></a>安装Hyperledger Fabric Samples 下载安装</h3><h4 id="1，创建一个空目录"><a href="#1，创建一个空目录" class="headerlink" title="1，创建一个空目录"></a>1，创建一个空目录</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir fabric</span><br></pre></td></tr></table></figure>
+<h4 id="2，进入该目录"><a href="#2，进入该目录" class="headerlink" title="2，进入该目录"></a>2，进入该目录</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd fabric</span><br></pre></td></tr></table></figure>
+<h4 id="下载方式一"><a href="#下载方式一" class="headerlink" title="下载方式一:"></a>下载方式一:</h4><h5 id="新建文件bootstrap-sh"><a href="#新建文件bootstrap-sh" class="headerlink" title="新建文件bootstrap.sh"></a>新建文件bootstrap.sh</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim bootstrap.sh</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>将    <a href="https://github.com/hyperledger/fabric/blob/release-1.2/scripts/bootstrap.sh中的内容拷贝保存退出" target="_blank" rel="noopener">https://github.com/hyperledger/fabric/blob/release-1.2/scripts/bootstrap.sh中的内容拷贝保存退出</a></p>
+<h5 id="赋予bootstrap-sh可执行权限并运行"><a href="#赋予bootstrap-sh可执行权限并运行" class="headerlink" title="赋予bootstrap.sh可执行权限并运行"></a>赋予bootstrap.sh可执行权限并运行</h5><p>chmod +x bootstrap.sh</p>
+</blockquote>
+<h5 id="配置docker加速器的目的是为了在下载docker镜像文件时加速"><a href="#配置docker加速器的目的是为了在下载docker镜像文件时加速" class="headerlink" title="配置docker加速器的目的是为了在下载docker镜像文件时加速"></a>配置docker加速器的目的是为了在下载docker镜像文件时加速</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https:<span class="comment">//get.daocloud.io/daotools/set_mirror.sh | sh -s http://f1361db2.m.daocloud.io</span></span><br></pre></td></tr></table></figure>
+<h5 id="重启docker服务"><a href="#重启docker服务" class="headerlink" title="重启docker服务"></a>重启docker服务</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker.service</span><br></pre></td></tr></table></figure>
+<h5 id="执行-bootstrap-sh"><a href="#执行-bootstrap-sh" class="headerlink" title="执行 bootstrap.sh"></a>执行 bootstrap.sh</h5><blockquote>
+<p>确定网络稳定,否则会导致各种问题，例如下载到一半时网络超时，下载失败等等<br>sudo ./bootstrap.sh 1.2.1</p>
+<h5 id="下载完成后-查看相关输出内容-如果下载有失败的镜像-可再次执行sudo-bootstrap-sh-1-2-1命令"><a href="#下载完成后-查看相关输出内容-如果下载有失败的镜像-可再次执行sudo-bootstrap-sh-1-2-1命令" class="headerlink" title="下载完成后, 查看相关输出内容, 如果下载有失败的镜像, 可再次执行sudo ./bootstrap.sh 1.2.1命令"></a>下载完成后, 查看相关输出内容, 如果下载有失败的镜像, 可再次执行<code>sudo ./bootstrap.sh 1.2.1</code>命令</h5></blockquote>
+<h4 id="下载方式二"><a href="#下载方式二" class="headerlink" title="下载方式二:"></a>下载方式二:</h4><h5 id="1，配置docker加速器"><a href="#1，配置docker加速器" class="headerlink" title="1，配置docker加速器"></a>1，配置docker加速器</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl https:<span class="comment">//github.com/hyperledger/fabric/blob/master/scripts/bootstrap.sh | bash -s 1.2.1</span></span><br></pre></td></tr></table></figure>
+<h5 id="2，重启docker服务"><a href="#2，重启docker服务" class="headerlink" title="2，重启docker服务"></a>2，重启docker服务</h5><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart docker.service</span><br><span class="line">curl https:<span class="comment">//github.com/hyperledger/fabric/blob/master/scripts/bootstrap.sh | bash -s 1.2.1</span></span><br></pre></td></tr></table></figure>
+<h6 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[vim](https://jingyan.baidu.com/article/046a7b3efd165bf9c27fa915.html)</span><br><span class="line">node：https://blog.csdn.net/u014361775/article/details/78865582</span><br><span class="line">docker：http://www.cnblogs.com/lighten/p/6034984.html</span><br></pre></td></tr></table></figure>
+<h1 id="自动启动网络"><a href="#自动启动网络" class="headerlink" title="自动启动网络"></a>自动启动网络</h1><h3 id="建立第一个网络"><a href="#建立第一个网络" class="headerlink" title="建立第一个网络"></a>建立第一个网络</h3><h4 id="进入对应目录"><a href="#进入对应目录" class="headerlink" title="进入对应目录"></a>进入对应目录</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd fabric-samples/first-network</span><br></pre></td></tr></table></figure>
+<p>在 <code>first-network</code>目录下有两个自动化脚本<code>byfn.sh</code>和 <code>eyfn.sh</code>, 这两个脚本的启<br>动顺序是先执行byfn.sh再执行eyfn.sh（eyfn.sh不是必须的，eyfn.sh的作用稍后<br>介绍）</p>
+<p>查看帮助信息:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ./byfn.sh --help</span><br></pre></td></tr></table></figure>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">up：启动</span><br><span class="line">down：清除网络</span><br><span class="line">restart：重新启动</span><br><span class="line">generate：生成证书及创世块</span><br><span class="line">upgrade：将网络从<span class="number">1.0</span>升级到<span class="number">1.1</span></span><br><span class="line">-c：用于指定channelName，默认值<span class="string">"mychannel"</span></span><br><span class="line">-t：CLI timeout时间，默认值<span class="number">10</span></span><br><span class="line">-d：延迟启动，默认值<span class="number">3</span></span><br><span class="line">-f：使用指定的网络拓扑结构文件，默认使用docker-compose-cli.yaml</span><br><span class="line">-s：指定使用的数据库，可选 goleveldb或couchdb</span><br><span class="line">-l：指定chaincode使用的语言，可选golang 或node</span><br><span class="line">-i：指定镜像tag，默认 <span class="string">"latest"</span></span><br><span class="line">详细参数可通过./byfn.sh help查看</span><br></pre></td></tr></table></figure>
+<h4 id="生成证书和密钥"><a href="#生成证书和密钥" class="headerlink" title="生成证书和密钥"></a>生成证书和密钥</h4><p>为各种网络实体生成所有证书和密钥，用于引导订购服务以及配置通道所需的一系<br>列配置事务</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ./byfn.sh -m generate</span><br></pre></td></tr></table></figure>
+<h4 id="启动网络"><a href="#启动网络" class="headerlink" title="启动网络"></a>启动网络</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ./byfn.sh -m up</span><br></pre></td></tr></table></figure>
+<h4 id="关闭网络"><a href="#关闭网络" class="headerlink" title="关闭网络"></a>关闭网络</h4><p>关闭网络之后, 可以一步一步地探索网络设置. 将杀死容器, 删除加密文件, 并从<br>Docker Registry中删除链码图像<br>若在启动网络时遇到如下错误</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">OCI runtime exec failed: exec failed: container_linux.<span class="keyword">go</span>:<span class="number">348</span>:</span><br><span class="line">starting container process caused <span class="string">"exec: \"scripts/script.sh\": stat</span></span><br><span class="line"><span class="string">scripts/script.sh: no such file or directory"</span>: unknown</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ERROR: Encountered errors while bringing up the project.</span><br><span class="line">ERROR !!!! Unable to start network</span><br></pre></td></tr></table></figure>
+<p>则执行<code>./byfn.sh down</code> 清除网络后再启动</p>
+<h1 id="手动启动网络"><a href="#手动启动网络" class="headerlink" title="手动启动网络"></a>手动启动网络</h1><h4 id="生成组织关系和身份证书"><a href="#生成组织关系和身份证书" class="headerlink" title="生成组织关系和身份证书"></a><strong>生成组织关系和身份证书</strong></h4><p>确定是在 fabric-samples/first-network 路</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cd hyfa/fabric-samples/first-network/</span><br></pre></td></tr></table></figure>
+<p>为fabric网络生成指定拓扑结构的组织关系和身份证书</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ../bin/cryptogen generate --config=./crypto-config.yaml</span><br></pre></td></tr></table></figure>
+<p><code>此命令依赖 crypto-config.yaml 配置文件</code></p>
+<p>会有如下输出:</p>
+<p>org1.example.com<br>org2.example.com</p>
+<p>证书和密钥（即MSP材料）将被输出到目录 first-network/crypto-config 的目录<br>中<br>ordererOrganizations子目录下包括构成Orderer组织(1个Orderer节点)的身份信<br>息</p>
+<p>crypto-config文件目录结构</p>
+<p>Cryptogen 按照配置文件中指定的结构生成了对应的组织和密钥、证书文件</p>
+<p>其中最关键的是各个资源下的msp 目录内容，存储了生成的代表MSP 身份的各种<br>证书文件，一般包括：<br>admincerts ：管理员的身份证书文件<br>cacerts ：信任的根证书文件<br>key store ：节点的签名私钥文件<br>signcerts ：节点的签名身份证书文件<br>tlscacerts: TLS 连接用的证书<br>intermediatecerts （可选）：信任的中间证书<br>crls （可选）：证书撤销列表<br>config.yaml （可选）：记录OrganizationalUnitldentifiers 信息，包括根证书<br>位置和ID信息<br>这些身份文件随后可以分发到对应的Orderer 节点和Peer 节点上，并放到对应的<br>MSP路径下，用于签名使用</p>
+<h4 id="配置环境变量"><a href="#配置环境变量" class="headerlink" title="配置环境变量"></a><strong>配置环境变量</strong></h4><p>告诉configtxgen工具在哪里寻找configtx.yaml 文件</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export FABRIC_CFG_PATH=$PWD</span><br></pre></td></tr></table></figure>
+<h4 id="创建Ordering服务启动初始区块"><a href="#创建Ordering服务启动初始区块" class="headerlink" title="创建Ordering服务启动初始区块"></a><strong>创建Ordering服务启动初始区块</strong></h4><p>指定使用<code>configtx.yaml</code>文件中定义的 <code>TwoOrgsOrdererGenesis</code>模板, 生成<br>Ordering服务系统通道的初始区块文件</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ../bin/configtxgen -profile TwoOrgsOrdererGenesis -outputBlock ./channel-artifacts/genesis.block</span><br></pre></td></tr></table></figure>
+<h4 id="创建一个应用通道的配置交易"><a href="#创建一个应用通道的配置交易" class="headerlink" title="创建一个应用通道的配置交易"></a><strong>创建一个应用通道的配置交易</strong></h4><p>务必替换$CHANNEL_NAME或设置CHANNEL_NAME为可在整个说明中使用的环<br>境变量</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ export CHANNEL_NAME=mychannel</span><br></pre></td></tr></table></figure>
+<p>指定使用<code>configtx.yaml</code>配置文件中的 <code>TwoOrgsChannel</code>模板, 来生成新建通道的<br>配置交易文件,<code>TwoOrgsChannel</code> 模板指定了Org1和Org2都属于后面新建的应用通<br>道</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ../bin/configtxgen -profile TwoOrgsChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID$CHANNEL_NAME</span><br></pre></td></tr></table></figure>
+<h4 id="生成锚节点配置更新文件"><a href="#生成锚节点配置更新文件" class="headerlink" title="生成锚节点配置更新文件"></a><strong>生成锚节点配置更新文件</strong></h4><p>锚节点配置更新文件用来对组织的锚节点进行配置<br>同样基于 <code>configtx.yaml</code> 配置文件生成新建通道文件, 每个组织都需要分别生成且<br>注意指定对应的组织名称</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ sudo ../bin/configtxgen -profile TwoOrgsChannel -</span><br><span class="line">outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -</span><br><span class="line">channelID $CHANNEL_NAME -asOrg Org1MSP</span><br><span class="line"></span><br><span class="line">$ sudo ../bin/configtxgen -profile TwoOrgsChannel -</span><br><span class="line">outputAnchorPeersUpdate ./channel-artifacts/Org2MSPanchors.tx -</span><br><span class="line">channelID $CHANNEL_NAME -asOrg Org2MSP</span><br></pre></td></tr></table></figure>
+<h4 id="启动网络-1"><a href="#启动网络-1" class="headerlink" title="启动网络"></a><strong>启动网络</strong></h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker-compose -f docker-compose-cli.yaml up -d</span><br></pre></td></tr></table></figure>
+<p><code>-f: 指定docker-compose文件</code></p>
+<p>开了一定要记得关闭</p>
+<p><code>$ sudo docker-compose -f docker-compose-cli.yaml down</code></p>
+<h4 id="注"><a href="#注" class="headerlink" title="注:"></a><strong>注:</strong></h4><p><code>如果想查看网络的实时日志，则不需要提供 -d 参数</code></p>
+<p><code>CLI容器将闲置1000秒。如果在需要时它消失了，可以用一个简单的命令重新启动它：</code></p>
+<p><code>$ sudo docker start c</code></p>
+<p>网络启动顺序: 首先启动Orderer节点, 然后启动Peer节点, 日志输出如下:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Creating network <span class="string">"net_byfn"</span> with the <span class="keyword">default</span> driver</span><br><span class="line">Creating volume <span class="string">"net_peer0.org2.example.com"</span> with <span class="keyword">default</span> driver</span><br><span class="line">Creating volume <span class="string">"net_peer1.org2.example.com"</span> with <span class="keyword">default</span> driver</span><br><span class="line">Creating volume <span class="string">"net_peer1.org1.example.com"</span> with <span class="keyword">default</span> driver</span><br><span class="line">Creating volume <span class="string">"net_peer0.org1.example.com"</span> with <span class="keyword">default</span> driver</span><br><span class="line">Creating volume <span class="string">"net_orderer.example.com"</span> with <span class="keyword">default</span> driver</span><br><span class="line">Creating peer0.org2.example.com</span><br><span class="line">Creating peer1.org1.example.com</span><br><span class="line">Creating orderer.example.com</span><br><span class="line">Creating peer0.org1.example.com</span><br><span class="line">Creating peer1.org2.example.com</span><br><span class="line">Creating cli</span><br></pre></td></tr></table></figure>
+<p>Peer节点启动后, 默认情况下没有加入网络中的任何应用通道, 也不会与Orderer服<br>务建立连接.需要通过客户端对其进行操作, 让它加入网络和指定的应用通道中</p>
+<h4 id="进入Docker容器"><a href="#进入Docker容器" class="headerlink" title="进入Docker容器"></a><strong>进入Docker容器</strong></h4><p>执行如下命令进入到CLI容器中(后继操作都在容器中执</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker exec -it cli ba</span><br></pre></td></tr></table></figure>
+<p>如果成功, 命令提示符会变为如下内容:</p>
+<p><code>root@1f8b4d593e6e:/opt/gopath/src/github.com/hyperledger/fabric/peer#</code></p>
+<h4 id="创建通道"><a href="#创建通道" class="headerlink" title="创建通道"></a><strong>创建通道</strong></h4><p>检查环境变量是否正确</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $CHANNELNA</span><br></pre></td></tr></table></figure>
+<p>设置环境变量</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export CHANNEL_NAME=mychann</span><br></pre></td></tr></table></figure>
+<p>创建通道</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">peer channel create -o orderer.example.com:<span class="number">7050</span> -c $CHANNEL_NAME -f ./channel-artifacts/channel.tx --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem</span><br></pre></td></tr></table></figure>
+<p>该命令自动在本地生成与该应用通道同名的初始区块 mychannel.block, 只有<br>拥有该文件才可以加入创建的应用通道中</p>
+<p>参数说明:<br><code>-o: 指定orderer节点的地址</code><br><code>-c: 指定要创建的应用通道的名称(必须与在创建应用通道交易配置文件时的通道名称一致)</code><br><code>-f: 指定创建应用通道时所使用的应用通道交易配置文件</code><br><code>--tls: 开启TLS验证</code><br><code>--cafile: 指定TLS_CA证书路径</code><br>查看:</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">root@<span class="number">1f</span>8b4d593e6e:/opt/gopath/src/github.com/hyperledger/fabric/peer# ll</span><br><span class="line">total <span class="number">36</span></span><br><span class="line">drwxr-xr-x <span class="number">5</span> root root  <span class="number">4096</span> Jan  <span class="number">7</span> <span class="number">04</span>:<span class="number">04</span> ./</span><br><span class="line">drwxr-xr-x <span class="number">3</span> root root  <span class="number">4096</span> Jan  <span class="number">7</span> <span class="number">03</span>:<span class="number">58</span> ../</span><br><span class="line">drwxr-xr-x <span class="number">2</span> root root  <span class="number">4096</span> Jan  <span class="number">7</span> <span class="number">03</span>:<span class="number">01</span> channel-artifacts/</span><br><span class="line">drwxr-xr-x <span class="number">4</span> root root  <span class="number">4096</span> Jan  <span class="number">7</span> <span class="number">02</span>:<span class="number">56</span> crypto/</span><br><span class="line">-rw-r--r-- <span class="number">1</span> root root <span class="number">15689</span> Jan  <span class="number">7</span> <span class="number">04</span>:<span class="number">04</span> mychannel.block</span><br><span class="line">drwxr-xr-x <span class="number">2</span> root root  <span class="number">4096</span> Jan  <span class="number">3</span> <span class="number">08</span>:<span class="number">47</span> scripts/</span><br></pre></td></tr></table></figure>
+<h4 id="peer0加入通道"><a href="#peer0加入通道" class="headerlink" title="peer0加入通道"></a><strong>peer0加入通道</strong></h4><p>应用通道所包含组织的成员节点可以加入通道中</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">peer channel join -b mychannel.block</span><br></pre></td></tr></table></figure>
+<p><code>join命令: 将本Peer节点加入到应用通道中</code><br><code>参数说明:</code><br><code>-b: 指定当前节点要加入/联接至应用通道</code></p>
+<h4 id="更新锚点"><a href="#更新锚点" class="headerlink" title="更新锚点"></a><strong>更新锚点</strong></h4><p>使用Org1的管理员身份更新锚节点配置</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">peer channel update -o orderer.example.com:<span class="number">7050</span> -c $CHANNEL_NAME -f ./channel-artifacts/Org1MSPanchors.tx --tls --cafile /opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrganizations/example.com/orderers/orderer.example.com/msp/tlscacerts/tlsca.example.com-cert.pem</span><br></pre></td></tr></table></figure>
+<p>使用Org2的管理员身份更新锚节点配置</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">CORE_PEER_LOCALMSPID=<span class="string">"Org2MSP"</span></span><br><span class="line"></span><br><span class="line">CORE_PEER_ADDRESS=peer0.org2.example.com:<span class="number">7051</span></span><br><span class="line"></span><br><span class="line">CORE_PEER_MSPCONFIGPATH=/opt/gopath/src/github.com/hyperledger/fabri</span><br><span class="line">c/peer/crypto/peerOrganizations/org2.example.com/users/Admin@org2.ex</span><br><span class="line">ample.com/msp</span><br><span class="line"></span><br><span class="line">CORE_PEER_TLS_ROOTCERT_FILE=/opt/gopath/src/github.com/hyperledger/f</span><br><span class="line">abric/peer/crypto/peerOrganizations/org2.example.com/peers/peer0.org</span><br><span class="line"><span class="number">2.</span>example.com/tls/ca.crt</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">peer channel update -o orderer.example.com:<span class="number">7050</span> -c $CHANNEL_NAME -f</span><br><span class="line">./channel-artifacts/Org2MSPanchors.tx --tls --cafile</span><br><span class="line">/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrg</span><br><span class="line">anizations/example.com/orderers/orderer.example.com/msp/tlscacerts/t</span><br><span class="line">lsca.example.com-cert.pem</span><br><span class="line"></span><br><span class="line">peer channel join -b mychannel.block</span><br></pre></td></tr></table></figure>
+<h4 id="Perr1加入通道"><a href="#Perr1加入通道" class="headerlink" title="Perr1加入通道"></a><strong>Perr1加入通道</strong></h4><p>应用通道所包含组织的成员节点可以加入通道中</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">peer channel join -b mychannel.block</span><br></pre></td></tr></table></figure>
+<p><code>join命令: 将本Peer节点加入到应用通道中</code><br><code>参数说明:</code><br><code>-b: 指定当前节点要加入/联接至应用通道</code></p>
+<p>手动配置网络完成</p>
+<h1 id="测试链码"><a href="#测试链码" class="headerlink" title="测试链码"></a>测试链码</h1><p>确定进入CLI容器中</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo docker exec -it cli ba</span><br></pre></td></tr></table></figure>
+<p>Peer加入应用通道后, 可以执行链码相关操作,进行测试链码在调用之前, 必须先经过安装和实例化两个步骤, 部署到Peer节点上.检查环境变量是否正确</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $CHANNEL_NAME</span><br></pre></td></tr></table></figure>
+<p>设置环境变量</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">export CHANNEL_NAME=mychannel</span><br></pre></td></tr></table></figure>
+<p>链码使用之前必须:</p>
+<ol>
+<li>将其安装在指定的节点上</li>
+<li>安装完成后要对其进行实例化</li>
+<li>调用链码(查询, 执行事务)</li>
+</ol>
+<h4 id="安装并实例化Chaincode"><a href="#安装并实例化Chaincode" class="headerlink" title="安装并实例化Chaincode"></a>安装并实例化Chaincode</h4><p>安装：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">peer chaincode install -n mycc -v <span class="number">1.0</span> -p</span><br><span class="line">github.com/chaincode/chaincode_example02/<span class="keyword">go</span>/</span><br></pre></td></tr></table></figure>
+<p>参数说明:<br>-n: 指定要安装的链码的名称<br>-v: 指定链码的版本<br>-p: 指定要安装的链码的所在路径<br>实例化：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">peer chaincode instantiate -o orderer.example.com:<span class="number">7050</span> --tls --</span><br><span class="line">cafile</span><br><span class="line">/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrg</span><br><span class="line">anizations/example.com/orderers/orderer.example.com/msp/tlscacerts/t</span><br><span class="line">lsca.example.com-cert.pem -C $CHANNEL_NAME -n mycc -v <span class="number">1.0</span> -c</span><br><span class="line"><span class="string">'&#123;"Args":["init","a", "100", "b","200"]&#125;'</span> -P <span class="string">"OR</span></span><br><span class="line"><span class="string">('Org1MSP.peer','Org2MSP.peer')"</span></span><br></pre></td></tr></table></figure>
+<p>实例化完成后, 用户即可向网络中发起交易<br>参数说明:<br>-o: 指定Oderer节点地址</p>
+<p>–tls: 开启TLS验证</p>
+<p>–cafile: 指定TLS_CA证书路径</p>
+<p>-n: 指定要实例化的链码名称</p>
+<p>-v:指定要实例化的链码的版本号</p>
+<p>-C: 指定通道名称</p>
+<p>-c: 实例化链码时指定的参数</p>
+<p>-P: 指定背书</p>
+<h4 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">peer chaincode query -C $CHANNEL_NAME -n mycc -c <span class="string">'&#123;"Args":["query","a"]</span></span><br></pre></td></tr></table></figure>
+<p>输出结果: Query Result: 100<br>参数说明:<br>-n: 指定要调用的链码名称<br>-C: 指定通道名称<br>-c: 指定调用链码时所需要的参数<br>func query(account string){<br>}<br>账本保存数据以 key-value方式保存</p>
+<h4 id="调用-转账"><a href="#调用-转账" class="headerlink" title="调用/转账"></a>调用/转账</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">peer chaincode invoke -o orderer.example.com:<span class="number">7050</span> --tls --cafile</span><br><span class="line">/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrg</span><br><span class="line">anizations/example.com/orderers/orderer.example.com/msp/tlscacerts/t</span><br><span class="line">lsca.example.com-cert.pem -C $CHANNEL_NAME -n mycc -c <span class="string">'&#123;"Args":</span></span><br><span class="line"><span class="string">["invoke","a","b","10"]&#125;'</span></span><br></pre></td></tr></table></figure>
+<p>参数说明:</p>
+<p>-o: 指定orderer节点地址<br>peer chaincode query -C $CHANNEL_NAME -n mycc -c ‘{“Args”:<br>[“query”,”a”]}’<br>peer chaincode invoke -o orderer.example.com:7050 –tls –cafile<br>/opt/gopath/src/github.com/hyperledger/fabric/peer/crypto/ordererOrg<br>anizations/example.com/orderers/orderer.example.com/msp/tlscacerts/t<br>lsca.example.com-cert.pem -C $CHANNEL_NAME -n mycc -c ‘{“Args”:<br>[“invoke”,”a”,”b”,”10”]}’<br>–tls: 开启TLS验证<br>–cafile: 指定TLS_CA证书路径<br>-n: 指定链码名称<br>-C: 指定通道名称<br>-c: 指定调用链码的所需参数<br>func invoke(accoutF string, accountT stirng, amount string)</p>
+<h4 id="查询a账户的金额"><a href="#查询a账户的金额" class="headerlink" title="查询a账户的金额"></a>查询a账户的金额</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">peer chaincode query -C $CHANNEL_NAME -n mycc -c <span class="string">'&#123;"Args":["query","a"]&#125;'</span></span><br></pre></td></tr></table></figure>
+<p>输出结果: Query Result: 90</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">联盟链</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/01/07/联盟链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-MetaMask与solidity交互-竞猜小程序" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -879,7 +1094,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Fan Hua Jin
+    		&copy; 2019 Fan Hua Jin
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -962,10 +1177,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">go语言服务器向客户端传送文件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">solidit</a>
               </li>
              
@@ -974,11 +1185,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">go语言服务器向客户端传送文件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Blog搭建</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">MetaMask与solidity交互</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">联盟链</a>
               </li>
             
             <div class="clearfix"></div>
