@@ -1,2 +1,0 @@
-# fanhuajin.Github.io
-blogs
