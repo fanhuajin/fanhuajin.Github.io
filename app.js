@@ -62,16 +62,16 @@ function shell() {
   $('#app').innerHTML = `<div class="app-shell">
     <a class="skip-link" href="#main-content">跳转到资源</a>
     <header class="sticky left-0 right-0 top-0 z-50 flex h-16 w-full items-center justify-between bg-background p-4 shadow">
-      <a class="brand-slot" href="${route('home')}" aria-label="Fieldnotes 首页" title="返回首页"><span class="brand-mark" aria-hidden="true">${$('#brand-source').innerHTML}</span><span class="brand-name">Fieldnotes</span></a>
+      <a class="brand-slot" href="${route('home')}" aria-label="Petalnotes 首页" title="返回首页"><span class="brand-mark" aria-hidden="true">${$('#brand-source').innerHTML}</span><span class="brand-name">Petalnotes</span></a>
       <div class="header-search"><label class="search-field bg-muted rounded-md">${icon('search',16)}<input id="global-search" type="search" placeholder="搜索标题、内容、网址和标签…" aria-label="搜索资源" autocomplete="off"><kbd>/</kbd></label>
         <button id="view-trigger" class="${btn} header-button" data-menu="view" aria-label="显示设置" title="显示设置" aria-haspopup="menu" aria-expanded="false">${icon('settings')}</button>
         <button id="sort-trigger" class="${btn} header-button" data-menu="sort" aria-label="资源排序" title="排序" aria-haspopup="menu" aria-expanded="false">${icon('arrow-down-wide-narrow')}</button>
       </div>
-      <button class="${btn} profile-button" data-menu="profile" aria-label="Fieldnotes 偏好设置" title="偏好设置" aria-haspopup="menu" aria-expanded="false">F</button>
+      <button class="${btn} profile-button" data-menu="profile" aria-label="Petalnotes 偏好设置" title="偏好设置" aria-haspopup="menu" aria-expanded="false">P</button>
     </header>
     <div class="workspace">
-      <aside class="desktop-sidebar"><nav aria-label="主导航"><ul id="primary-nav" class="space-y-2 text-sm"></ul></nav><div class="shrink-0 bg-border h-[1px] w-full"></div><nav class="collections-nav" aria-label="分类"><p class="pl-2 text-xs uppercase tracking-wider text-muted-foreground collections-label">列表</p><ul id="list-nav" class="text-sm"></ul></nav><div class="sidebar-footer"><span>Fieldnotes</span><button id="theme-quick" class="theme-quick" data-action="theme" aria-label="切换主题" title="切换主题">${icon('sun-moon',14)}</button></div></aside>
-      <main id="main-content" class="main-panel bg-muted" tabindex="-1"><nav class="mobile-navigation" aria-label="移动导航"><ul id="mobile-nav" class="flex justify-between space-x-2 px-5 py-2 pt-5"></ul></nav><div id="content" class="content-area p-4" aria-live="polite"></div></main>
+      <aside class="desktop-sidebar"><nav aria-label="主导航"><ul id="primary-nav" class="space-y-2 text-sm"></ul></nav><div class="shrink-0 bg-border h-[1px] w-full"></div><nav class="collections-nav" aria-label="分类"><p class="pl-2 text-xs uppercase tracking-wider text-muted-foreground collections-label">列表</p><ul id="list-nav" class="text-sm"></ul></nav><div class="sidebar-footer"><span>Petalnotes</span><button id="theme-quick" class="theme-quick" data-action="theme" aria-label="切换主题" title="切换主题">${icon('sun-moon',14)}</button></div></aside>
+      <main id="main-content" class="main-panel bg-muted" tabindex="-1"><nav class="mobile-navigation" aria-label="移动导航"><ul id="mobile-nav" class="flex justify-between space-x-2 px-5 py-2 pt-5"></ul></nav><p class="site-tagline">Notes, finds, and everyday life.</p><div id="content" class="content-area p-4" aria-live="polite"></div></main>
     </div>
     <div id="menu-layer"></div><dialog id="shortcut-dialog" class="small-dialog" aria-labelledby="shortcut-title"><div class="dialog-toolbar"><h2 id="shortcut-title">快捷键</h2><button class="${btn} header-button" data-close="shortcut-dialog" aria-label="关闭快捷键说明" title="关闭快捷键说明（Esc）">${icon('x')}</button></div><dl class="shortcut-list"><dt>搜索</dt><dd><kbd>/</kbd></dd><dt>关闭菜单或快捷键说明</dt><dd><kbd>Esc</kbd></dd><dt>清空搜索</dt><dd><kbd>Esc</kbd></dd><dt>切换焦点</dt><dd><kbd>Tab</kbd></dd></dl></dialog>
   </div>`;
@@ -169,7 +169,7 @@ function openMenu(trigger, type) {
     content += '<div class="menu-divider"></div><p class="menu-label">图片选项</p>' + menuRow('fit','填充封面','image',state.fit==='cover','data-value="cover"') + menuRow('fit','完整显示','image',state.fit==='contain','data-value="contain"');
   } else if (type === 'sort') content = menuRow('sort','最新在前','arrow-down-wide-narrow',state.sort==='newest','data-value="newest"') + menuRow('sort','最早在前','arrow-up-narrow-wide',state.sort==='oldest','data-value="oldest"');
   else if (type === 'profile') {
-    content = '<div class="profile-summary"><span class="profile-avatar">F</span><div><p>Fieldnotes</p><p class="text-sm text-muted-foreground">我的个人博客</p></div></div><div class="menu-divider"></div><p class="menu-label">主题</p>' + [['light','浅色模式','sun'],['dark','深色模式','moon'],['system','跟随系统','monitor']].map(([value,label,mark])=>menuRow('set-theme',label,mark,state.theme===value,`data-value="${value}"`)).join('');
+    content = '<div class="profile-summary"><span class="profile-avatar">P</span><div><p>Petalnotes</p><p class="text-sm text-muted-foreground">Notes, finds, and everyday life.</p></div></div><div class="menu-divider"></div><p class="menu-label">主题</p>' + [['light','浅色模式','sun'],['dark','深色模式','moon'],['system','跟随系统','monitor']].map(([value,label,mark])=>menuRow('set-theme',label,mark,state.theme===value,`data-value="${value}"`)).join('');
     content += '<div class="menu-divider"></div>' + menuRow('shortcuts','快捷键','keyboard') + `<a role="menuitem" class="menu-row text-sm rounded-sm hover:bg-accent" href="https://github.com/fanhuajin/fieldnotes#软件与使用方式" target="_blank" rel="noopener noreferrer">${icon('book-open',16)}<span>使用说明</span></a><a role="menuitem" class="menu-row text-sm rounded-sm hover:bg-accent" href="https://github.com/fanhuajin/fieldnotes" target="_blank" rel="noopener noreferrer">${icon('code',16)}<span>源代码</span></a>`;
 
   }
@@ -228,6 +228,6 @@ async function init() {
   document.addEventListener('error',event=>{if(event.target.closest?.('.card-banner')){event.target.closest('.card-banner').hidden=true;}},true);
 }
 init().catch(error=>{
-  $('#app').innerHTML=`<main class="load-error rounded-lg border bg-card p-6"><h1 class="text-2xl">无法加载 Fieldnotes</h1><p>${esc(error.message)}</p><p class="text-sm text-muted-foreground">请检查 assets/resources.json，并通过 HTTP 访问本站。</p><button class="primary-action bg-primary text-primary-foreground" id="reload-app">重新加载</button></main>`;
+  $('#app').innerHTML=`<main class="load-error rounded-lg border bg-card p-6"><h1 class="text-2xl">无法加载 Petalnotes</h1><p>${esc(error.message)}</p><p class="text-sm text-muted-foreground">请检查 assets/resources.json，并通过 HTTP 访问本站。</p><button class="primary-action bg-primary text-primary-foreground" id="reload-app">重新加载</button></main>`;
   $('#reload-app').addEventListener('click',()=>location.reload());
 });

@@ -1,4 +1,6 @@
-# Fieldnotes
+# Petalnotes
+
+Notes, finds, and everyday life.
 
 网站源码、内容及部署统一在本仓库维护：[访问网站](https://fanhuajin.github.io/)。
 
