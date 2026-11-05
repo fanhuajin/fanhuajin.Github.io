@@ -1,7 +1,5 @@
 # Petalnotes
 
-Notes, finds, and everyday life.
-
 网站源码、内容及部署统一在本仓库维护：[访问网站](https://fanhuajin.github.io/)。
 
 修改本仓库并推送到 `master` 后，由 GitHub Pages 自动发布。跨仓库自动同步已移除，无需维护两份网站代码。
