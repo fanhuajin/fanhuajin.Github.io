@@ -77,7 +77,7 @@
         "接口测试",
         "性能压测"
       ],
-      "platform": "Windows x64",
+      "platform": "Windows",
       "localSize": "145.7 MB",
       "usage": "解密后运行",
       "fileName": "JMeter.zip",
@@ -138,7 +138,7 @@
         "账号管理",
         "配额查看"
       ],
-      "platform": "Windows x64",
+      "platform": "Windows",
       "localSize": "33.7 MB",
       "usage": "解密后安装",
       "fileName": "Cockpit-Tools.zip",
@@ -168,7 +168,7 @@
         "代理管理",
         "规则配置"
       ],
-      "platform": "Windows x64",
+      "platform": "Windows",
       "localSize": "60.9 MB",
       "usage": "解密后安装",
       "fileName": "Clash-Verge-Rev.zip",
