@@ -1,0 +1,399 @@
+{
+  "title": "SoftShelf",
+  "description": "软件与网页收藏，集中整理。",
+  "collections": [
+    {
+      "id": "bookmarks",
+      "name": "网页收藏",
+      "icon": "globe",
+      "description": "官方网站与实用链接。"
+    },
+    {
+      "id": "software",
+      "name": "软件下载",
+      "icon": "download",
+      "description": "软件安装包与使用说明。"
+    }
+  ],
+  "items": [
+    {
+      "type": "bookmark",
+      "id": "site-westdata",
+      "name": "西部数据 VPN 节点",
+      "url": "https://wd-gold.net/clientarea.php",
+      "description": "西部数据 VPN 节点的用户中心入口。",
+      "tags": [
+        "VPN",
+        "用户中心"
+      ],
+      "image": "assets/sites/westdata.png",
+      "cover": "assets/sites/westdata-cover.jpg",
+      "lists": [
+        "bookmarks"
+      ],
+      "highlights": []
+    },
+    {
+      "type": "bookmark",
+      "id": "site-image-playground",
+      "name": "图片中转站",
+      "url": "https://img.yeelo.fun/admin/image-playground",
+      "description": "图片中转站的图片工作台入口。",
+      "tags": [
+        "图片",
+        "工作台"
+      ],
+      "image": "assets/sites/yeemagine.svg",
+      "cover": "assets/sites/image-playground-cover.jpg",
+      "lists": [
+        "bookmarks"
+      ],
+      "highlights": []
+    },
+    {
+      "type": "bookmark",
+      "id": "site-linux-do",
+      "name": "Linux 站",
+      "url": "https://linux.do/new",
+      "description": "查看 Linux 站的新主题。",
+      "tags": [
+        "社区",
+        "新主题"
+      ],
+      "image": "assets/sites/linux-do.svg",
+      "lists": [
+        "bookmarks"
+      ],
+      "highlights": [],
+      "cover": "assets/sites/linux-do-cover.jpg"
+    },
+    {
+      "id": "jmeter",
+      "name": "Apache JMeter",
+      "subtitle": "把性能，交给数据说话。",
+      "category": "开发",
+      "description": "Apache 开源性能测试工具。组织接口请求、模拟并发负载，观察服务在压力下的响应表现。",
+      "tags": [
+        "接口测试",
+        "性能压测"
+      ],
+      "platform": "Windows x64",
+      "localSize": "145.7 MB",
+      "usage": "解密后运行",
+      "fileName": "JMeter.zip",
+      "website": "https://jmeter.apache.org/download_jmeter.cgi",
+      "note": "加密 ZIP 内含 JMeter 5.6.3 和 Temurin Java 17，无需另装 Java；解压密码不公开。",
+      "tips": "输入自有密码完整解压后运行 Start-JMeter.cmd；保留 runtime、bin 和 lib 目录。",
+      "logo": "./assets/jmeter.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/JMeter.zip",
+      "target": "_self",
+      "tag": "接口测试",
+      "keywords": "开发 接口测试 性能压测 Apache 开源性能测试工具。组织接口请求、模拟并发负载，观察服务在压力下的响应表现。 解密后运行",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/jmeter.png",
+      "highlights": [],
+      "cover": "assets/covers/jmeter.jpg"
+    },
+    {
+      "id": "webstorm",
+      "name": "WebStorm",
+      "subtitle": "让开发，更加顺手。",
+      "category": "开发",
+      "description": "面向 JavaScript 和 TypeScript 的集成开发环境，提供代码编辑、调试与项目管理能力。",
+      "tags": [
+        "JavaScript",
+        "TypeScript",
+        "前端开发"
+      ],
+      "platform": "Windows",
+      "localSize": "783.6 MB",
+      "usage": "解密后安装",
+      "fileName": "WebStorm.zip",
+      "website": "https://www.jetbrains.com/webstorm/",
+      "note": "加密 ZIP 内含 WebStorm 2025.3.2 安装程序和原始「WebStorm安装」文件夹；解压密码不公开。",
+      "tips": "输入自有密码完整解压后运行 WebStorm-2025.3.2.exe，相关文档位于「WebStorm安装」文件夹。",
+      "logo": "./assets/webstorm.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/WebStorm.zip",
+      "target": "_self",
+      "tag": "JavaScript",
+      "keywords": "开发 JavaScript TypeScript 前端开发 面向 JavaScript 和 TypeScript 的集成开发环境，提供代码编辑、调试与项目管理能力。 解密后安装",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/webstorm.png",
+      "highlights": [],
+      "cover": "assets/covers/webstorm.jpg"
+    },
+    {
+      "id": "cockpit-tools",
+      "name": "Cockpit Tools",
+      "subtitle": "把工具，放在手边。",
+      "category": "开发",
+      "description": "AI 编程工具账号管理应用，支持多账号切换与配额查看。本站保存版本为 1.3.56 x64。",
+      "tags": [
+        "账号管理",
+        "配额查看"
+      ],
+      "platform": "Windows x64",
+      "localSize": "33.7 MB",
+      "usage": "解密后安装",
+      "fileName": "Cockpit-Tools.zip",
+      "website": "https://github.com/jlcodes99/cockpit-tools",
+      "note": "加密 ZIP 内含 Cockpit Tools 1.3.56 x64 安装程序；解压密码不公开。",
+      "tips": "输入自有密码解压后，运行 Cockpit-Tools.exe，按安装向导完成安装。",
+      "logo": "./assets/cockpit-tools.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/Cockpit-Tools.zip",
+      "target": "_self",
+      "tag": "账号管理",
+      "keywords": "开发 账号管理 配额查看 AI 编程工具账号管理应用，支持多账号切换与配额查看。本站保存版本为 1.3.56 x64。 解密后安装",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/cockpit-tools.png",
+      "highlights": [],
+      "cover": "assets/covers/cockpit-tools.jpg"
+    },
+    {
+      "id": "clash-verge",
+      "name": "Clash Verge Rev",
+      "subtitle": "让网络配置，有条有理。",
+      "category": "网络",
+      "description": "Clash Verge 的社区后续维护版本。通过图形界面管理代理配置、连接与规则。",
+      "tags": [
+        "代理管理",
+        "规则配置"
+      ],
+      "platform": "Windows x64",
+      "localSize": "60.9 MB",
+      "usage": "解密后安装",
+      "fileName": "Clash-Verge-Rev.zip",
+      "website": "https://github.com/clash-verge-rev/clash-verge-rev",
+      "note": "加密 ZIP 内含 Clash Verge Rev 2.5.5 x64 安装包和《配置clash.docx》使用说明；解压密码不公开。",
+      "tips": "输入自有密码解压后运行 EXE 安装，再参照《配置clash.docx》完成配置。",
+      "logo": "./assets/clash-verge.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/Clash-Verge-Rev.zip",
+      "target": "_self",
+      "tag": "代理管理",
+      "keywords": "网络 代理管理 规则配置 Clash Verge 的社区后续维护版本。通过图形界面管理代理配置、连接与规则。 解密后安装",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/clash-verge.png",
+      "highlights": [],
+      "cover": "assets/covers/clash-verge.jpg"
+    },
+    {
+      "id": "deepseek-dsh",
+      "name": "DeepSeek DSH",
+      "subtitle": "让浏览器，接上助手。",
+      "category": "浏览器",
+      "description": "DSH 浏览器助手扩展与本地配套服务，提供浏览器内容读取和操作能力。",
+      "tags": [
+        "浏览器扩展",
+        "DSH助手"
+      ],
+      "platform": "Windows · 浏览器扩展",
+      "localSize": "43.6 MB",
+      "usage": "解密后配置",
+      "fileName": "DeepSeek-DSH.zip",
+      "note": "加密 ZIP 保留 DSH-Edge-Kit 的扩展、运行环境及配套文件；解压密码不公开。",
+      "tips": "输入自有密码完整解压，参照包内 README 配置浏览器扩展并启动配套服务。",
+      "logo": "./assets/deepseek-dsh.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/DeepSeek-DSH.zip",
+      "target": "_self",
+      "tag": "浏览器扩展",
+      "keywords": "浏览器 浏览器扩展 DSH助手 DSH 浏览器助手扩展与本地配套服务，提供浏览器内容读取和操作能力。 解密后配置",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/deepseek-dsh.png",
+      "highlights": [],
+      "cover": "assets/covers/deepseek-dsh-workspace.jpg"
+    },
+    {
+      "id": "typora",
+      "name": "Typora",
+      "subtitle": "让文字回归文字。",
+      "category": "写作",
+      "description": "专注写作的 Markdown 编辑器。所见即所得，让笔记、文档与灵感自然成形。",
+      "tags": [
+        "Markdown",
+        "专注写作"
+      ],
+      "platform": "Windows",
+      "localSize": "86.3 MB",
+      "usage": "解密后安装",
+      "fileName": "Typora.zip",
+      "website": "https://typora.io/",
+      "note": "提供加密 ZIP，解压密码不公开；请使用支持 AES-256 ZIP 的解压工具。",
+      "tips": "输入自有密码解压后，按包内说明安装。本包不属于便携版。",
+      "logo": "./assets/typora.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/Typora.zip",
+      "target": "_self",
+      "tag": "Markdown",
+      "keywords": "写作 Markdown 专注写作 专注写作的 Markdown 编辑器。所见即所得，让笔记、文档与灵感自然成形。 解密后安装",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/typora.png",
+      "highlights": [],
+      "cover": "assets/covers/typora.jpg"
+    },
+    {
+      "id": "snipaste",
+      "name": "Snipaste",
+      "subtitle": "截下灵感，贴在眼前。",
+      "category": "截图",
+      "description": "截图，也不止截图。快速标注、取色，把参考内容贴在桌面，让思路保持连贯。",
+      "tags": [
+        "截图贴图",
+        "标注取色"
+      ],
+      "platform": "Windows",
+      "localSize": "19.5 MB",
+      "usage": "解密后运行",
+      "fileName": "Snipaste.zip",
+      "website": "https://www.snipaste.com/",
+      "note": "提供加密 ZIP，内含 Snipaste 2.11.3 x64；解压密码不公开。",
+      "tips": "输入自有密码完整解压后运行 Snipaste.exe，无需安装。F1 开始截图，F3 将截图贴到屏幕。",
+      "logo": "./assets/snipaste.svg",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/Snipaste.zip",
+      "target": "_self",
+      "tag": "截图贴图",
+      "keywords": "截图 截图贴图 标注取色 截图，也不止截图。快速标注、取色，把参考内容贴在桌面，让思路保持连贯。 解密后运行",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/snipaste.svg",
+      "highlights": [],
+      "cover": "assets/covers/snipaste.jpg"
+    },
+    {
+      "id": "uu-remote",
+      "name": "UU 远程",
+      "subtitle": "不在身边，也能随手连接。",
+      "category": "远程",
+      "description": "网易出品的远程控制工具。远程连接电脑，在不同设备间处理工作、传递文件和协助操作。",
+      "tags": [
+        "远程桌面",
+        "文件传输"
+      ],
+      "platform": "Windows",
+      "localSize": "88.3 MB",
+      "usage": "解密后安装",
+      "fileName": "UU-Remote.zip",
+      "website": "https://uuyc.163.com/download/",
+      "note": "加密 ZIP 内含 UU 远程 4.45.0 Windows 安装包，来源为网易官网；解压密码不公开。",
+      "tips": "输入自有密码解压后运行 EXE 安装，按照官方指引完成登录和连接授权。",
+      "logo": "./assets/uu-remote.ico",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/UU-Remote.zip",
+      "target": "_self",
+      "tag": "远程桌面",
+      "keywords": "远程 远程桌面 文件传输 网易出品的远程控制工具。远程连接电脑，在不同设备间处理工作、传递文件和协助操作。 解密后安装",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/uu-remote.ico",
+      "highlights": [],
+      "cover": "assets/covers/uu-remote.jpg"
+    },
+    {
+      "id": "ev-capture",
+      "name": "EV 录屏",
+      "subtitle": "把屏幕里的精彩，留下来。",
+      "category": "录屏",
+      "description": "集屏幕录制与直播于一体的工具。录制教程、操作演示和屏幕内容，记录每一个值得分享的过程。",
+      "tags": [
+        "屏幕录制",
+        "音频采集"
+      ],
+      "platform": "Windows",
+      "localSize": "37.9 MB",
+      "usage": "解密后安装",
+      "fileName": "EV-Capture.zip",
+      "website": "https://www.ieway.cn/evcapture.html",
+      "note": "加密 ZIP 内含一唯科技 EV 录屏官网的 5.5.9 Windows 安装包；解压密码不公开。",
+      "tips": "输入自有密码解压后运行 EXE 安装。录制前检查麦克风与系统声音设置。",
+      "logo": "./assets/ev-capture.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/EV-Capture.zip",
+      "target": "_self",
+      "tag": "屏幕录制",
+      "keywords": "录屏 屏幕录制 音频采集 集屏幕录制与直播于一体的工具。录制教程、操作演示和屏幕内容，记录每一个值得分享的过程。 解密后安装",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/ev-capture.png",
+      "highlights": [],
+      "cover": "assets/covers/ev-capture.jpg"
+    },
+    {
+      "id": "topaz-video-ai",
+      "name": "Topaz Video AI",
+      "subtitle": "让画面，更加清晰。",
+      "category": "视频",
+      "description": "视频增强与画质处理工具。本地保存版本为 4.2.2，提供原始便携汉化压缩包。",
+      "tags": [
+        "视频增强",
+        "AI处理"
+      ],
+      "platform": "Windows",
+      "localSize": "1047.3 MB",
+      "usage": "解密后解压",
+      "fileName": "Topaz-Video-AI.zip",
+      "note": "加密 ZIP 内含原始 RAR，已统一命名为 Topaz-Video-AI.rar；解压密码不公开。",
+      "tips": "输入自有密码解压 ZIP，再解压内层 RAR，按原包说明使用。",
+      "logo": "./assets/topaz-video-ai.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/Topaz-Video-AI.zip",
+      "target": "_self",
+      "tag": "视频增强",
+      "keywords": "视频 视频增强 AI处理 视频增强与画质处理工具。本地保存版本为 4.2.2，提供原始便携汉化压缩包。 解密后解压",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/topaz-video-ai.png",
+      "highlights": [],
+      "cover": "assets/covers/topaz-video-ai.jpg"
+    },
+    {
+      "id": "jianying",
+      "name": "剪映",
+      "subtitle": "把片段，剪成故事。",
+      "category": "视频",
+      "description": "视频剪辑与内容制作工具。提供本地保存的剪映便携压缩包，保留原包内容。",
+      "tags": [
+        "视频剪辑",
+        "内容制作"
+      ],
+      "platform": "Windows",
+      "localSize": "743.4 MB",
+      "usage": "解密后解压",
+      "fileName": "Jianying.zip",
+      "note": "加密 ZIP 内含原始 RAR，已统一命名为 Jianying.rar；解压密码不公开。",
+      "tips": "输入自有密码解压 ZIP，再解压内层 RAR，按原包说明使用。",
+      "logo": "./assets/jianying.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/v2.0.0/Jianying.zip",
+      "target": "_self",
+      "tag": "视频剪辑",
+      "keywords": "视频 视频剪辑 内容制作 视频剪辑与内容制作工具。提供本地保存的剪映便携压缩包，保留原包内容。 解密后解压",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/jianying.png",
+      "highlights": [],
+      "cover": "assets/covers/jianying.jpg"
+    }
+  ]
+}
