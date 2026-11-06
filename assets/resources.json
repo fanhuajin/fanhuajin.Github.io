@@ -398,6 +398,7 @@
     {
       "id": "bing-daily-wallpaper",
       "name": "必应每日壁纸",
+      "image": "assets/bing-daily-wallpaper.ico",
       "description": "自动更新必应高清壁纸。解密 RAR 后双击 Install.cmd 安装，每天 09:00 和登录时后台更新，无需 Python。",
       "tags": [
         "桌面壁纸",
