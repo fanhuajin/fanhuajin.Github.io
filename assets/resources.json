@@ -27,7 +27,7 @@
         "用户中心"
       ],
       "image": "assets/sites/westdata.png",
-      "cover": "assets/sites/westdata-cover.jpg",
+      "cover": "assets/covers/site-westdata-official.jpg",
       "lists": [
         "bookmarks"
       ],
@@ -44,7 +44,7 @@
         "工作台"
       ],
       "image": "assets/sites/yeemagine.svg",
-      "cover": "assets/sites/image-playground-cover.jpg",
+      "cover": "assets/covers/site-image-playground-official.jpg",
       "lists": [
         "bookmarks"
       ],
@@ -65,7 +65,7 @@
         "bookmarks"
       ],
       "highlights": [],
-      "cover": "assets/sites/linux-do-cover.jpg"
+      "cover": "assets/covers/linux-do-brand.svg"
     },
     {
       "id": "jmeter",
@@ -95,7 +95,7 @@
       ],
       "image": "./assets/jmeter.png",
       "highlights": [],
-      "cover": "assets/covers/jmeter.jpg"
+      "cover": "assets/covers/jmeter-official.png"
     },
     {
       "id": "webstorm",
@@ -126,7 +126,7 @@
       ],
       "image": "./assets/webstorm.png",
       "highlights": [],
-      "cover": "assets/covers/webstorm.jpg"
+      "cover": "assets/covers/webstorm-official.png"
     },
     {
       "id": "cockpit-tools",
@@ -156,7 +156,7 @@
       ],
       "image": "./assets/cockpit-tools.png",
       "highlights": [],
-      "cover": "assets/covers/cockpit-tools.jpg"
+      "cover": "assets/covers/cockpit-tools-official.png"
     },
     {
       "id": "clash-verge",
@@ -186,7 +186,7 @@
       ],
       "image": "./assets/clash-verge.png",
       "highlights": [],
-      "cover": "assets/covers/clash-verge.jpg"
+      "cover": "assets/covers/clash-verge-official.png"
     },
     {
       "id": "deepseek-dsh",
@@ -215,7 +215,7 @@
       ],
       "image": "./assets/deepseek-dsh.png",
       "highlights": [],
-      "cover": "assets/covers/deepseek-dsh-workspace.jpg"
+      "cover": "assets/covers/deepseek-dsh-official.jpg"
     },
     {
       "id": "typora",
@@ -245,7 +245,7 @@
       ],
       "image": "./assets/typora.png",
       "highlights": [],
-      "cover": "assets/covers/typora.jpg"
+      "cover": "assets/covers/typora-official.png"
     },
     {
       "id": "snipaste",
@@ -275,7 +275,7 @@
       ],
       "image": "./assets/snipaste.svg",
       "highlights": [],
-      "cover": "assets/covers/snipaste.jpg"
+      "cover": "assets/covers/snipaste-official.png"
     },
     {
       "id": "uu-remote",
@@ -305,7 +305,7 @@
       ],
       "image": "./assets/uu-remote.ico",
       "highlights": [],
-      "cover": "assets/covers/uu-remote.jpg"
+      "cover": "assets/covers/uu-remote-official.png"
     },
     {
       "id": "ev-capture",
@@ -335,7 +335,7 @@
       ],
       "image": "./assets/ev-capture.png",
       "highlights": [],
-      "cover": "assets/covers/ev-capture.jpg"
+      "cover": "assets/covers/ev-capture-official.png"
     },
     {
       "id": "topaz-video-ai",
@@ -364,7 +364,7 @@
       ],
       "image": "./assets/topaz-video-ai.png",
       "highlights": [],
-      "cover": "assets/covers/topaz-video-ai.jpg"
+      "cover": "assets/covers/topaz-video-ai-official.png"
     },
     {
       "id": "jianying",
@@ -393,7 +393,7 @@
       ],
       "image": "./assets/jianying.png",
       "highlights": [],
-      "cover": "assets/covers/jianying.jpg"
+      "cover": "assets/covers/jianying-official.png"
     },
     {
       "id": "bing-daily-wallpaper",
@@ -416,7 +416,7 @@
         "software"
       ],
       "highlights": [],
-      "cover": "assets/covers/jmeter.jpg"
+      "cover": "assets/covers/bing-daily-wallpaper-official.jpg"
     }
   ]
 }
