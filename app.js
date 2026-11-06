@@ -102,7 +102,7 @@ function card(item, index) {
       ${state.tags ? `<div class="card-tags flex shrink-0 flex-wrap gap-1 overflow-hidden">${tagPills(item.tags)}</div>` : ''}
     </div><div class="card-bottom flex w-full shrink-0 justify-between text-gray-500"><div class="card-meta flex items-center gap-2 overflow-hidden text-nowrap font-light"><span class="card-platform line-clamp-1">${esc(isSoftware ? item.platform : domain)}</span>${isSoftware ? `<span aria-hidden="true">·</span><span>${esc(meta)}</span>` : ''}</div>
       <div class="card-actions flex text-gray-500">
-      <a class="${btn} resource-action border border-border bg-background" href="${esc(href(item))}" target="_blank" rel="noopener noreferrer" title="${isSoftware ? '下载软件（ZIP 压缩包）' : '前往网站（新标签页）'}" aria-label="${esc((isSoftware ? '下载软件：' : '前往网站：') + item.name)}" ${isSoftware ? `download="${esc(item.fileName)}"` : ''}>${icon(isSoftware ? 'download' : 'external-link',18)}</a></div>
+      <a class="${btn} resource-action border border-border bg-background" href="${esc(href(item))}" target="_blank" rel="noopener noreferrer" title="${isSoftware ? '下载软件（压缩包）' : '前往网站（新标签页）'}" aria-label="${esc((isSoftware ? '下载软件：' : '前往网站：') + item.name)}" ${isSoftware ? `download="${esc(item.fileName)}"` : ''}>${icon(isSoftware ? 'download' : 'external-link',18)}</a></div>
     </div></div></article>`;
 }
 function emptyState(title = '未找到资源', message = '请尝试其他关键词、标签或分类。') {

@@ -394,6 +394,28 @@
       "image": "./assets/jianying.png",
       "highlights": [],
       "cover": "assets/covers/jianying.jpg"
+    },
+    {
+      "id": "bing-daily-wallpaper",
+      "name": "必应每日壁纸",
+      "description": "自动更新必应高清壁纸。解密 RAR 后双击 Install.cmd 安装，每天 09:00 和登录时后台更新，无需 Python。",
+      "tags": [
+        "桌面壁纸",
+        "自动更新"
+      ],
+      "platform": "Windows 10 / 11",
+      "localSize": "4.8 KB",
+      "usage": "解密后安装",
+      "fileName": "BingDailyWallpaper-Portable-Encrypted.rar",
+      "note": "加密 RAR 内含安装和更新脚本及中文说明；解压密码不公开。",
+      "tips": "使用支持 RAR 的工具输入自有密码完整解压，双击 Install.cmd 安装。需要联网访问 Bing；后续后台运行。尚未在其他电脑实测。",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/bing-wallpaper-portable-2026-11-06/BingDailyWallpaper-Portable-Encrypted.rar",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "highlights": [],
+      "cover": "assets/covers/jmeter.jpg"
     }
   ]
 }
