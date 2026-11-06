@@ -417,6 +417,30 @@
       ],
       "highlights": [],
       "cover": "assets/covers/bing-daily-wallpaper-official.jpg"
+    },
+    {
+      "id": "office-tool-plus",
+      "name": "Office Tool Plus",
+      "image": "assets/office-tool-plus.png",
+      "cover": "assets/covers/office-tool-plus-official.webp",
+      "description": "Office 下载、部署与管理工具。提供 11.8.50.0 含运行时的官方原始压缩包，并附 office.docx 文档。",
+      "tags": [
+        "办公工具",
+        "Office 部署"
+      ],
+      "platform": "Windows",
+      "localSize": "79.7 MB",
+      "usage": "解密后解压",
+      "fileName": "Office-Tool-Plus-v11.8.50.0-with-doc-Encrypted.rar",
+      "website": "https://otp.landian.vip/",
+      "note": "加密 RAR 内含官方 Office_Tool_with_runtime_v11.8.50.0_x64.zip 和原样保存的 office.docx；解压密码不公开。",
+      "tips": "输入自有密码完整解压 RAR，再解压官方 ZIP，运行 Office Tool Plus.exe。未运行安装程序，未验证文档内操作。",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/office-tool-plus-v11.8.50.0-2026-11-06/Office-Tool-Plus-v11.8.50.0-with-doc-Encrypted.rar",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "highlights": []
     }
   ]
 }

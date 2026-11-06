@@ -1,5 +1,7 @@
 # 当前封面来源（2026-11-06）
 
+- Office Tool Plus：使用[项目官网](https://otp.landian.vip/)的[官方部署宣传图](https://otp.landian.vip/assets/images/en-us/hero-deploy.webp)，保存为 `assets/covers/office-tool-plus-official.webp`；小图标 `assets/office-tool-plus.png` 从 [v11.8.50.0 官方原始包](https://github.com/YerongAI/Office-Tool/releases/tag/v11.8.50.0)中的 `Office Tool Plus.exe` 资源提取，未执行程序。
+
 按用户最新要求，优先使用品牌官网和项目维护者发布的图片。下列素材版权归对应权利人，记录来源不表示获得额外再授权；仅用于对应资源的辨识和介绍。官方现行页面的界面与下载包版本可能不同，不作为版本或功能承诺。DeepSeek 图片仅为品牌标识，不表示第三方 DSH 配套包由 DeepSeek 官方发布；必应图片来自微软壁纸页，不表示本站脚本是微软官方应用。
 
 - Apache JMeter：[https://jmeter.apache.org/usermanual/generating-dashboard.html](https://jmeter.apache.org/usermanual/generating-dashboard.html)；[原图](https://jmeter.apache.org/images/screenshots/dashboard/report_apdex_and_summary.png)；本地：`assets/covers/jmeter-official.png`。
