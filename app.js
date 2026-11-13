@@ -13,7 +13,6 @@ const saved = store.read('view-v6', { ...store.read('view-v5', { ...store.read('
 const state = {
   page: 'home', query: '', tag: '',
   layout: ['masonry', 'grid', 'list', 'compact'].includes(saved.layout) ? saved.layout : 'grid',
-  columns: [2, 3, 4, 5].includes(saved.columns) ? saved.columns : 3,
   notes: saved.notes !== false, tags: saved.tags !== false, title: saved.title !== false,
   fit: saved.fit === 'contain' ? 'contain' : 'cover',
   sort: saved.sort === 'oldest' ? 'oldest' : 'newest',
@@ -32,7 +31,7 @@ function icon(name, size = 18) {
   return svg.replace(/width="[^"]*"/, `width="${size}"`).replace(/height="[^"]*"/, `height="${size}"`).replace(/class="[^"]*"/, '').replace('<svg', '<svg class="resource-icon"');
 }
 function route(page, tag = '') { return basePath + page + (tag ? '?tag=' + encodeURIComponent(tag) : ''); }
-function saveView() { store.write('view-v6', Object.fromEntries(['layout', 'columns', 'notes', 'tags', 'title', 'fit', 'sort'].map(key => [key, state[key]]))); }
+function saveView() { store.write('view-v6', Object.fromEntries(['layout', 'notes', 'tags', 'title', 'fit', 'sort'].map(key => [key, state[key]]))); }
 function applyTheme() {
   const dark = state.theme === 'dark' || (state.theme === 'system' && media.matches);
   document.documentElement.classList.toggle('dark', dark);
@@ -109,17 +108,21 @@ function emptyState(title = '未找到资源', message = '请尝试其他关键�
   return `<div class="empty-state"><span class="text-muted-foreground">${icon('search-x',40)}</span><h2 class="text-lg font-medium">${esc(title)}</h2><p class="text-sm text-muted-foreground">${esc(message)}</p><a class="${btn} empty-home" href="${route('home')}">查看全部资源</a></div>`;
 }
 function renderResources() {
+  const content = $('#content');
   const items = visible();
   const heading = state.tag ? `<div class="active-filter"><span class="text-sm text-muted-foreground">${esc(state.tag)}</span><a class="${btn}" href="${route(state.page)}" aria-label="清除标签筛选">${icon('x',16)} 清除标签</a></div>` : '';
   const nodes = items.map(card);
   let body;
   if (state.layout === 'masonry') {
-    // Distribute in reading order just like the source's responsive masonry columns.
-    const columns = innerWidth < 640 ? 1 : Math.min(state.columns, innerWidth < 1000 ? 2 : state.columns);
-    body = `<div class="resource-grid masonry-grid" style="--resource-columns:${columns}">${Array.from({length:columns},(_,index)=>`<div class="masonry-column">${nodes.filter((_,position)=>position % columns === index).join('')}</div>`).join('')}</div>`;
-  } else body = `<div class="resource-grid ${state.layout}-grid" style="--resource-columns:${state.columns}">${nodes.join('')}</div>`;
-  $('#content').innerHTML = heading + (items.length ? body : emptyState(state.page === 'list/bookmarks' ? '暂无网页收藏' : undefined, state.page === 'list/bookmarks' ? '添加你提供的网址后，将在这里显示。' : undefined));
-  $('#content').dataset.layout = state.layout;
+    const styles = getComputedStyle(content);
+    const width = content.clientWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
+    const minWidth = parseFloat(styles.getPropertyValue('--resource-card-width'));
+    const gap = parseFloat(styles.getPropertyValue('--resource-gap'));
+    const columns = Math.max(1, Math.floor((width + gap) / (minWidth + gap)));
+    body = `<div class="resource-grid masonry-grid">${Array.from({length:columns},(_,index)=>`<div class="masonry-column">${nodes.filter((_,position)=>position % columns === index).join('')}</div>`).join('')}</div>`;
+  } else body = `<div class="resource-grid ${state.layout}-grid">${nodes.join('')}</div>`;
+  content.innerHTML = heading + (items.length ? body : emptyState(state.page === 'list/bookmarks' ? '暂无网页收藏' : undefined, state.page === 'list/bookmarks' ? '添加你提供的网址后，将在这里显示。' : undefined));
+  content.dataset.layout = state.layout;
 }
 function renderTags() {
   const tags = collectTags(catalog.items).filter(tag=>tag.name.toLocaleLowerCase().includes(state.query.trim().toLocaleLowerCase()));
@@ -164,7 +167,7 @@ function openMenu(trigger, type) {
   let content = '';
   if (type === 'view') {
     content = '<p class="menu-label">布局</p>' + [['masonry','瀑布流','layout-dashboard'],['grid','网格','layout-grid'],['list','列表','layout-list'],['compact','紧凑','list']].map(([value,label,mark])=>menuRow('layout',label,mark,state.layout===value,`data-value="${value}"`)).join('');
-    content += `<div class="menu-divider"></div><label class="columns-control text-xs text-muted-foreground">列数 <output id="column-output">${state.columns}</output><input type="range" aria-label="列数" min="2" max="5" value="${state.columns}"></label><div class="menu-divider"></div><p class="menu-label">显示选项</p>`;
+    content += `<div class="menu-divider"></div><p class="menu-label">显示选项</p>`;
     content += [['notes','显示说明','notepad-text'],['tags','显示标签','tag'],['title','显示标题','heading']].map(([key,label,mark])=>`<button role="switch" class="menu-row text-sm rounded-sm hover:bg-accent" aria-checked="${state[key]}" data-action="display" data-value="${key}">${icon(mark,16)}<span>${label}</span><span class="switch-track ${state[key] ? 'checked' : ''}"><span></span></span></button>`).join('');
     content += '<div class="menu-divider"></div><p class="menu-label">图片选项</p>' + menuRow('fit','填充封面','image',state.fit==='cover','data-value="cover"') + menuRow('fit','完整显示','image',state.fit==='contain','data-value="contain"');
   } else if (type === 'sort') content = menuRow('sort','最新在前','arrow-down-wide-narrow',state.sort==='newest','data-value="newest"') + menuRow('sort','最早在前','arrow-up-narrow-wide',state.sort==='oldest','data-value="oldest"');
@@ -178,7 +181,6 @@ function openMenu(trigger, type) {
   menu.style.left = Math.max(8,Math.min(innerWidth-menu.offsetWidth-8,box.right-menu.offsetWidth))+'px';
   menu.style.top = Math.min(box.bottom+4,Math.max(8,innerHeight-menu.offsetHeight-8))+'px';
   menu.querySelector('button,a,input')?.focus();
-  menu.querySelector('input[type=range]')?.addEventListener('input', event=>{state.columns=Number(event.target.value);$('#column-output').textContent=state.columns;saveView();renderResources();});
 }
 function action(button) {
   const value = button.dataset.value;
@@ -200,7 +202,7 @@ async function init() {
   window.addEventListener('popstate',readLocation);
   window.addEventListener('hashchange',readLocation);
   media.addEventListener('change',applyTheme);
-  window.addEventListener('resize',()=>{clearTimeout(redrawTimer);redrawTimer=setTimeout(()=>{closeMenu(false);if(!['tags','lists'].includes(state.page))renderResources();},100);});
+  window.addEventListener('resize',()=>{clearTimeout(redrawTimer);redrawTimer=setTimeout(()=>{closeMenu(false);if(state.layout==='masonry' && !['tags','lists'].includes(state.page))renderResources();},100);});
   document.addEventListener('click',event=>{
     const button=event.target.closest('button,a');
     if (!button) {if(!event.target.closest('[role=menu]'))closeMenu(false);return;}
