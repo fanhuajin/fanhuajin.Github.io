@@ -36,3 +36,5 @@
 ## ChatGPT 官方封面
 
 页面：https://chatgpt.com/overview/ ，原图：https://cdn.openai.com/chatgpt/share-og.png ，本地 assets/sites/chatgpt-cover.png。
+
+- SakuraCat 小图标：[登录页](https://114514-sakuracat.com/login)使用的[官方 favicon](https://114514-sakuracat.com/favicon.ico)，本地为 "assets/sites/sakuracat.ico"。

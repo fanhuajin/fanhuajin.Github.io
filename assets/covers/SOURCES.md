@@ -73,3 +73,4 @@ Clash Verge 与 Cockpit Tools 使用维护者仓库的预览图。2026-11-06 Git
   - 页面：https://unsplash.com/ja/写真/黒のフラットスクリーンコンピューターモニター-O2-EZNGZIyk
   - 原图：https://images.unsplash.com/photo-1618329027137-a520b57c6606
   - 本地：assets/covers/jianying.jpg
+- SakuraCat：使用[品牌官网](https://sakuracat.com/)的[官方标识](https://sakuracat.com/cat.png)，由本站排版为横版封面，本地为 `assets/covers/sakuracat-brand.png`。

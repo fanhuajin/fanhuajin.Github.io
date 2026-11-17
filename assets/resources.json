@@ -68,6 +68,23 @@
       "cover": "assets/covers/linux-do-brand.svg"
     },
     {
+      "type": "bookmark",
+      "id": "site-sakuracat",
+      "name": "SakuraCat（樱花猫）",
+      "url": "https://114514-sakuracat.com/login",
+      "description": "SakuraCat 网络加速服务的用户登录入口。",
+      "tags": [
+        "网络加速",
+        "用户中心"
+      ],
+      "image": "assets/sites/sakuracat.ico",
+      "cover": "assets/covers/sakuracat-brand.png",
+      "lists": [
+        "bookmarks"
+      ],
+      "highlights": []
+    },
+    {
       "id": "jmeter",
       "name": "Apache JMeter",
       "subtitle": "把性能，交给数据说话。",
