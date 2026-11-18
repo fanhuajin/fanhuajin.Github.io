@@ -74,3 +74,4 @@ Clash Verge 与 Cockpit Tools 使用维护者仓库的预览图。2026-11-06 Git
   - 原图：https://images.unsplash.com/photo-1618329027137-a520b57c6606
   - 本地：assets/covers/jianying.jpg
 - SakuraCat：使用[品牌官网](https://sakuracat.com/)的[官方标识](https://sakuracat.com/cat.png)，由本站排版为横版封面，本地为 `assets/covers/sakuracat-brand.png`。
+- 自由循环 · 配置归档：[原站](https://www.freecycle.top/)的标识与页头背景，来自[本站归档](https://fanhuajin.github.io/freecycle/)。本地图标 `assets/sites/freecycle-logo.png`，封面 `assets/covers/freecycle-banner.jpg`。

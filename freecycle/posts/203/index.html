@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>症状灾厄 38k 标灌+普通食物&amp;扳手（2026年5月11日更新优化了下循环）</title><style>
+:root{--blue:#2469dc;--border:#dfe5ee;--muted:#58677e;color:#182230;background:#f0f3f7;font:15px/1.65 "Microsoft YaHei UI","PingFang SC",sans-serif}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{width:min(100% - 2rem,1292px);margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:2;background:white;border-bottom:1px solid var(--border)}
+.site-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem 1rem;min-height:62px;padding-block:.45rem}
+.site-header a{color:inherit;text-decoration:none}
+.site-header a:hover{color:var(--blue)}
+.site-header .brand{display:flex;align-items:center;margin-right:.7rem}
+.brand img{width:108px;height:34px;object-fit:contain}
+.site-header [aria-current]{padding:.35rem .65rem;border-radius:8px;background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu{position:relative}
+.career-menu summary{display:flex;align-items:center;gap:.35rem;cursor:pointer;padding:.35rem .6rem;border-radius:8px;list-style:none;white-space:nowrap}
+.career-menu summary::after{content:"";width:.4rem;height:.4rem;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-.12rem) rotate(45deg)}
+.career-menu summary::-webkit-details-marker{display:none}
+.career-menu[open] summary,.career-menu summary:hover,body:has(.listing-content) .career-menu:has([aria-current]) summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.career-links{position:absolute;top:calc(100% + 8px);left:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(318px,calc(100vw - 2rem));padding:8px;gap:2px;background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px #18223026}
+.career-links::before{content:"";position:absolute;inset:-9px 0 auto;height:9px}
+.career-links a,.site-header .career-links [aria-current]{padding:.35rem .7rem;border-radius:8px;font-size:14px}
+.career-links a:hover{background:#f1f5fb}
+.career-links a::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--tag-color,#586477);vertical-align:middle}
+@media(max-width:520px){.career-links{position:fixed;top:62px;inset-inline:1rem;width:auto}.site-header nav{column-gap:.35rem}}
+@media(hover:hover) and (pointer:fine) and (min-width:521px){
+  .career-menu:hover summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+  .career-menu:hover::details-content{content-visibility:visible}
+}
+main{overflow-wrap:anywhere}
+.post-content{padding-block:1.15rem 3rem}
+.breadcrumbs,.post-card,.comments-card{background:white;border:1px solid var(--border);border-radius:14px}
+.breadcrumbs{margin-bottom:1rem;padding:.55rem .9rem;color:var(--muted);font-size:13px}
+.breadcrumbs a{margin-inline:.3rem;text-decoration:none}
+.post-card{margin-bottom:1rem;padding:clamp(1rem,4vw,3.3rem)}
+.post-card h1{font-size:clamp(1.4rem,3vw,1.75rem)}
+.post-card .byline{padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.post-card .avatar{width:32px;height:32px}
+.comments-card{padding:clamp(.8rem,2vw,1.5rem)}
+.comments-card h2{margin:0;padding:.65rem clamp(.25rem,2vw,1.25rem) 1.2rem;font-size:15px}
+.comments-empty{display:grid;justify-items:center;gap:.65rem;margin:0;padding:1.5rem 1rem 2rem;color:var(--muted);font-size:14px}
+.comments-empty-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#f0f3f7}
+.comments-empty-icon::before{width:18px;height:16px;border:1.5px solid currentColor;border-radius:6px 6px 6px 2px;content:''}
+h1,h2{line-height:1.3;text-wrap:balance}
+h1{margin:.35em 0;font-size:clamp(1.65rem,4vw,2.25rem)}
+h2{margin-top:2rem}
+a{color:var(--blue);text-underline-offset:.2em}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.meta,small{color:var(--muted)}
+.categories,.pager{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.categories a,.pager a{border:1px solid var(--border);border-radius:999px;padding:.3rem .7rem;background:white;text-decoration:none;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0 0 1.5rem}
+.post-list a{font-size:16.5px;font-weight:700;color:#182230;text-decoration:none}
+.post-list a:hover,.categories a:hover,.pager a:hover{text-decoration:underline}
+article{margin-top:1.5rem}
+img{max-width:100%;height:auto}
+pre{overflow:auto;padding:1rem;border-radius:8px;background:#f3f6fa}
+table{display:block;overflow:auto}
+.comment-thread{--comment-avatar:40px;--comment-gap:clamp(.65rem,2vw,1.65rem);border-top:1px solid var(--border);padding:1rem clamp(.25rem,2vw,1.25rem)}
+.comment{display:grid;grid-template-columns:var(--comment-avatar) minmax(0,1fr);align-items:start;gap:var(--comment-gap)}
+.comment .avatar{display:block;width:var(--comment-avatar);height:var(--comment-avatar);margin:0}
+.comment strong{display:block;margin-bottom:.65rem;color:#182230}
+.comment-date{display:block;margin-top:.55rem;color:var(--muted);font-size:.87rem;font-variant-numeric:tabular-nums}
+.comment-body>:first-child{margin-top:0}
+.comment-body>:last-child{margin-bottom:0}
+.replies{margin:.75rem 0 0 calc(var(--comment-avatar) + var(--comment-gap))}
+.reply{--comment-avatar:32px;--comment-gap:10px;padding:.7rem 0 0;border-top:1px solid var(--border)}
+.reply strong{margin-bottom:.25rem}
+.reply+.reply{margin-top:.6rem}
+.comment:target{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
+.listing-header{background:#0d1929 linear-gradient(110deg,#122747,#0d1929);color:white}
+.listing-header .wrap{display:flex;min-height:clamp(180px,25vw,284px);flex-direction:column;justify-content:center;padding:clamp(1.75rem,5vw,3.5rem) clamp(0rem,1.5vw,2rem)}
+.listing-header h1,.listing-header h2{margin:0 0 .35rem;font-size:clamp(1.65rem,4vw,2.25rem)}
+.listing-header em{font-style:normal;background:linear-gradient(90deg,#7db6ff,#6ee7a8);background-clip:text;color:transparent}
+.listing-header p{margin:0;color:#c9d4e3}
+.post-search{display:flex;gap:.4rem;width:min(100%,400px);margin-top:1.65rem;padding:6px;border-radius:12px;background:#f7f8fa}
+.post-search input{flex:1;min-width:0;padding:.35rem 0;border:0;background:transparent;color:#182230;font:inherit}
+.post-search input:focus{outline:none}
+.post-search button{padding:.45rem 1rem;border:0;border-radius:8px;background:var(--blue);color:white;font:inherit;font-weight:600;cursor:pointer}
+.search-icon{position:relative;align-self:center;flex:none;width:.72em;height:.72em;margin:0 .2rem 2px .6rem;border:1.5px solid currentColor;border-radius:50%;color:#66758c}
+.search-icon::after{position:absolute;top:calc(100% - 1px);left:calc(100% - 1px);width:.34em;height:1.5px;background:currentColor;transform:rotate(45deg);transform-origin:left center;content:''}
+.search-status:not(:empty){display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.25rem 0 .25rem;color:var(--muted);font-size:13px}
+.search-status:not(:empty)::before,.search-status:not(:empty)::after{width:2rem;height:1px;background:var(--border);content:''}
+.post-list[hidden],.post-list [hidden]{display:none}
+.listing-content{padding-block:1.25rem 2rem}
+.categories{margin-bottom:.75rem;padding:.7rem;border:1px solid var(--border);border-radius:12px;background:white;box-shadow:0 2px 5px #18223008;font-size:13px}
+.categories [aria-current]{border-color:#2f7cf6;background:#eff5ff;color:var(--blue);font-weight:700}
+.post-list{display:grid;gap:.65rem}
+.post-list li{padding:1rem clamp(.8rem,2vw,1.25rem);background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 2px #18223006}
+.post-list li:hover{border-color:#b4cdf5}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .65rem;margin:.55rem 0 0;color:var(--muted);font-size:13px}
+.avatar{width:26px;height:26px;flex:none;border-radius:50%;object-fit:cover;background:#eef1f5}
+.post-list .tag{display:inline-block;margin-right:.5rem;padding:0 .45rem;border:1px solid var(--tag-border,#e4e8ee);border-radius:5px;background:var(--tag-bg,#f2f4f7);color:var(--tag-color,#586477);font-size:12px;font-weight:600}
+.tag-1{--tag-color:#a03b36;--tag-bg:#fdf2f1;--tag-border:#f3d9d6}
+.tag-2{--tag-color:#2e639e;--tag-bg:#eff5fd;--tag-border:#d6e5f8}
+.tag-3{--tag-color:#865b12;--tag-bg:#fdf7e9;--tag-border:#f2e3bf}
+.tag-4{--tag-color:#486f29;--tag-bg:#f2f9ec;--tag-border:#dceccb}
+.tag-5{--tag-color:#93501f;--tag-bg:#fdf3ec;--tag-border:#f2dcc9}
+.tag-6{--tag-color:#356747;--tag-bg:#eef8f2;--tag-border:#d3ead9}
+.tag-7,.tag-11{--tag-color:#774285;--tag-bg:#f9f1fb;--tag-border:#e9d6ef}
+.tag-8{--tag-color:#a73138;--tag-bg:#fdf1f1;--tag-border:#f4d7d7}
+.tag-10{--tag-color:#2469dc;--tag-bg:#eef4ff;--tag-border:#d6e4fd}
+</style>
+<body><header class="site-header"><nav class="wrap" aria-label="站点导航">
+<a class="brand" href="../../index.html"><img src="../../assets/freecycle-logo.png" alt="自由循环"></a>
+<a href="../../index.html">首页</a>
+<details class="career-menu"><summary>职业攻略</summary><div class="career-links">
+<a class="tag-1" href="../../categories/d24e2768f227febf/index.html">魂武者</a>
+<a class="tag-2" href="../../categories/cda6e4547c5e87f2/index.html">守护者</a>
+<a class="tag-3" href="../../categories/4736daeffadb3732/index.html">战士</a>
+<a class="tag-4" href="../../categories/00d3d3cefc50ea30/index.html">游侠</a>
+<a class="tag-5" href="../../categories/bc2f82f27d245369/index.html">工程师</a>
+<a class="tag-6" href="../../categories/1f41388aa7959a35/index.html" aria-current="location">唤灵师</a>
+<a class="tag-7" href="../../categories/863d15a6b8e74bc9/index.html">幻术师</a>
+<a class="tag-8" href="../../categories/d88d6d9a710a0ec6/index.html">元素使</a>
+<a class="tag-9" href="../../categories/3eae6ef4ec9fd742/index.html">潜行者</a>
+</div></details>
+<a href="../../categories/2536d8680f694555/index.html">问题解答</a>
+</nav></header><main><header class="listing-header" style="background:linear-gradient(110deg,#122747dd,#0d1929dd),url('../../assets/freecycle-banner.jpg') center/cover"><div class="wrap"><h2>唤灵师</h2><p>浏览该分类下的归档帖子</p>
+<form class="post-search" role="search" autocomplete="off" action="../../search.html" onsubmit="location.href=this.action+'?'+new URLSearchParams(new FormData(this));return false">
+<span class="search-icon" aria-hidden="true"></span><input type="search" name="q" aria-label="搜索帖子" placeholder="搜帖子标题、职业或作者…"><button type="submit">搜索</button>
+</form></div></header>
+<div class="wrap post-content">
+<nav class="breadcrumbs" aria-label="当前位置">当前位置 <a href="../../index.html">首页</a> › <a href="../../categories/1f41388aa7959a35/index.html">唤灵师</a></nav>
+<section class="post-card"><h1>症状灾厄 38k 标灌+普通食物&amp;扳手（2026年5月11日更新优化了下循环）</h1><p class="byline"><img class="avatar" src="../../assets/0e1c6e58fe28d6e17700b275d84f60d0.jpg" alt="" width="26" height="26" loading="lazy"><strong>奶嘴family</strong><span>06-16</span><a href="../../categories/1f41388aa7959a35/index.html">唤灵师</a><a href="https://www.freecycle.top/?id=203">原帖</a></p>
+<article>
+												<p>瘟疫化身|职业2=瘟疫化身，职业2，职业5=鲜血力量，手枪3，火炬4，火炬5，手枪2，节杖3，节杖2，武器4黑=武器2黑=武器3黑=切武器，怨恨纹章，巨蛇虹吸，职业1||蔑视，冲锋陷阵，火炬5，手枪3<br>瘟疫化身,v,880|职业2,F2,1|职业5,F5,1|鲜血力量,r,800,F5,1|手枪3,3,520|火炬4,4,460|火炬5,5,600|手枪2,2,836|节杖3,3,600|节杖2,2,650|武器4黑|武器2黑|武器3黑|切武器,`,120,3,550|怨恨纹章,x,881|巨蛇虹吸,x,450|职业1,F1,450,,,,,,,,,,,,,,,,,,1,5000,0|蔑视|冲锋陷阵,v,600<br>[&amp;DQgnNjI1PCp+FqIAdQEAAG8BAACAAAAAkgAAAAAAAAAAAAAAAAAAAAAAAAADNgBmAFYAAA==]<br></p><p>&nbsp;</p><p>装备：全身毒蛇【陷阱符文】+ 节杖【折磨】+ 火炬【渴求】副武器手枪【渴求】+ 碎层古物<br></p><p>&nbsp;<span>全局 0.98</span> ,&nbsp;已经是参考sc的实际打桩延迟，别调太快会吞技能反而dps更低</p><p>食物：+15%折磨时间&nbsp;</p><p>扳手：剧毒调谐水晶（有能力吃令状能+1k到2k输出）</p><p>2026年6月13日更新，删了 循环里的普攻，新版本自由宏有问题，循环里的普攻会导致一直放普攻&nbsp;切不了武器&nbsp;放不了技能</p>				</article></section>
+<section class="comments-card" aria-labelledby="comments"><h2 id="comments">评论列表（43）</h2>
+<div class="comment-thread"><div class="comment" id="AjaxComment3368"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>18905599908</strong><div class="comment-body"><p>鲜血力量就放一次就不放了</p></div><time class="comment-date">2026-10-04 22:02:29</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3367"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>18905599908</strong><div class="comment-body"><p>你这个黑2黑3以后不切武器  我还是在枪2后面加了切武器的按键</p></div><time class="comment-date">2026-10-04 21:59:41</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3366"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>18905599908</strong><div class="comment-body"><p>武器2黑3黑 是什么武器</p></div><time class="comment-date">2026-10-04 21:54:41</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3371"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@18905599908</span> 技能图标，黑色的位置，相当于是冷却中的判断。</p></div><time class="comment-date">2026-10-04 22:59:05</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2332"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>煎饼果子</strong><div class="comment-body"><p>不切武器时怎么个情况啊？？</p></div><time class="comment-date">2026-07-20 21:41:37</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1871"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1121</strong><div class="comment-body"><p>大佬,还需要重新取色么</p></div><time class="comment-date">2026-06-15 18:34:39</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1872"><img class="avatar" src="../../assets/0e1c6e58fe28d6e17700b275d84f60d0.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>奶嘴family</strong><div class="comment-body"><p><span>@1121</span> 需要啊 屏幕不一样  屏幕分辨率 和 颜色 不一样的</p></div><time class="comment-date">2026-06-16 00:37:13</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1870"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>老老的小子</strong><div class="comment-body"><p>大佬 一直有个疑问 为什么副手不在带一个匕首呢 弥补切武器火炬CD的空缺</p></div><time class="comment-date">2026-06-15 17:35:59</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1866"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>顶顶顶</strong><div class="comment-body"><p>感谢分享</p></div><time class="comment-date">2026-06-14 23:12:28</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1863"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1121</strong><div class="comment-body"><p>这个511那个有什么区别</p></div><time class="comment-date">2026-06-14 12:26:48</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1862"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1121</strong><div class="comment-body"><p>这个511那个有什么区别</p></div><time class="comment-date">2026-06-14 12:26:43</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1855"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>11</strong><div class="comment-body"><p>打着打着就没能量条了怎么办dps猛掉</p></div><time class="comment-date">2026-06-13 20:36:40</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1858"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>女乃口觜family</strong><div class="comment-body"><p>打桩带那个生命纹章</p></div><time class="comment-date">2026-06-13 23:22:44</time></div></div>
+<div class="comment reply" id="AjaxComment1859"><img class="avatar" src="../../assets/0e1c6e58fe28d6e17700b275d84f60d0.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>奶嘴family</strong><div class="comment-body"><p><span>@11</span> 打桩带生命纹章，把循环里的 普攻删了， 我发现不同版本， 有些版本普攻会吃掉技能，导致不切武器，不放技能</p></div><time class="comment-date">2026-06-13 23:24:54</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1747"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>amy</strong><div class="comment-body"><p>|职业1,F1,450,,,,,,,,,,,,,,,,,,1,5000,0|   这一条是什么意思呀要怎么设置 有大佬教一下吗</p></div><time class="comment-date">2026-06-07 01:10:53</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1748"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>amy</strong><div class="comment-body"><p><span>@amy</span> ,,和后面的1 5000,0是什么意思</p></div><time class="comment-date">2026-06-07 01:12:49</time></div></div>
+<div class="comment reply" id="AjaxComment1754"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@amy</span> 内置cd 5秒</p></div><time class="comment-date">2026-06-07 11:00:47</time></div></div>
+<div class="comment reply" id="AjaxComment1803"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>amy</strong><div class="comment-body"><p><span>@melis</span> 谢谢  ,,,,,,,,,,,,,,,,,,1和,,,,,,,,,,b呢 是要设置什么呀</p></div><time class="comment-date">2026-06-10 07:13:43</time></div></div>
+<div class="comment reply" id="AjaxComment1807"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@amy</span> 不是可以一键导入么</p></div><time class="comment-date">2026-06-10 10:49:25</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1373"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>红烧牛欢喜</strong><div class="comment-body"><p>无灌注打28k正常吗？</p></div><time class="comment-date">2026-05-16 20:27:18</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1377"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>红烧牛欢喜</strong><div class="comment-body"><p><span>@红烧牛欢喜</span> 鲜血力量为啥有时不放，正常放能打34k</p></div><time class="comment-date">2026-05-16 20:37:32</time></div></div>
+<div class="comment reply" id="AjaxComment1648"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abba</strong><div class="comment-body"><p><span>@红烧牛欢喜</span> 我也有同样的问题，你解决吗</p></div><time class="comment-date">2026-05-29 20:06:43</time></div></div>
+<div class="comment reply" id="AjaxComment1610"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>萌旧</strong><div class="comment-body"><p><span>@红烧牛欢喜</span> 灾厄实战被吟游清症太快了，大大丢伤害</p></div><time class="comment-date">2026-05-26 14:44:09</time></div></div>
+<div class="comment reply" id="AjaxComment1627"><img class="avatar" src="../../assets/0e1c6e58fe28d6e17700b275d84f60d0.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>奶嘴family</strong><div class="comment-body"><p><span>@红烧牛欢喜</span> 不正常</p></div><time class="comment-date">2026-05-27 20:43:43</time></div></div>
+<div class="comment reply" id="AjaxComment3369"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>18905599908</strong><div class="comment-body"><p><span>@奶嘴family</span> 鲜血力量为什么不放呢</p></div><time class="comment-date">2026-10-04 22:09:53</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1320"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>2234</strong><div class="comment-body"><p>切武器判定改成，手枪3打两次切，节仗2打两次切高些该是到cd直接切</p></div><time class="comment-date">2026-05-11 19:37:51</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1317"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>111</strong><div class="comment-body"><p>武器2 3 黑取色哪个武器的？</p></div><time class="comment-date">2026-05-11 13:07:34</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1318"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>张怀仙</strong><div class="comment-body"><p><span>@111</span> 哪个武器都行，只要是武器2,3黑色十二点钟方向就可以</p></div><time class="comment-date">2026-05-11 15:48:25</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1273"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>如初</strong><div class="comment-body"><p>武器4黑=武器2黑=武器3黑=切武器   这三个=是全部取色且武器吗</p></div><time class="comment-date">2026-05-08 01:01:51</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1296"><img class="avatar" src="../../assets/0e1c6e58fe28d6e17700b275d84f60d0.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>奶嘴family</strong><div class="comment-body"><p>武器4黑取色武器技能4在cd中 黑色的时候， 切武器取色切武器图标。这句宏意思是 武器234技能cd的时候，按切武器。</p></div><time class="comment-date">2026-05-09 15:03:26</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1180"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>胖杰</strong><div class="comment-body"><p>大佬食物吃的啥？芦笋还是粉食物</p></div><time class="comment-date">2026-05-02 18:39:18</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1186"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>胖杰</strong><div class="comment-body"><p>全身+13，芦笋+令状38k</p></div><time class="comment-date">2026-05-03 00:52:26</time></div></div>
+<div class="comment reply" id="AjaxComment1368"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>kkk</strong><div class="comment-body"><p><span>@胖杰</span> +1 令状和灌注才能到18，有点拉了</p></div><time class="comment-date">2026-05-16 17:09:32</time></div></div>
+<div class="comment reply" id="AjaxComment1470"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>胖杰</strong><div class="comment-body"><p><span>@kkk</span> 唉，毕竟宏是死板，只适合这种没有严苛循环，好了就按的职业，以前还有个灵刃兜底，这版本都不知道玩啥，只能玩玩灾厄</p></div><time class="comment-date">2026-05-20 09:48:53</time></div></div>
+<div class="comment reply" id="AjaxComment1294"><img class="avatar" src="../../assets/0e1c6e58fe28d6e17700b275d84f60d0.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>奶嘴family</strong><div class="comment-body"><p>吃+15%折磨时间的</p></div><time class="comment-date">2026-05-09 15:01:19</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1101"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>xjs906224748</strong><div class="comment-body"><p>这个蔑视是取色什么呀？</p></div><time class="comment-date">2026-04-27 15:41:37</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1102"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>xjs906224748</strong><div class="comment-body"><p>还有瘟疫化身是怎么和冲锋陷阵在一个循环里的？</p></div><time class="comment-date">2026-04-27 15:43:23</time></div></div>
+<div class="comment reply" id="AjaxComment1185"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>t</strong><div class="comment-body"><p>团队缺cc精英就换血肉魔像啊，提前招好，取了色cc条出来就自动按</p></div><time class="comment-date">2026-05-03 00:50:42</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1083"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>萌新</strong><div class="comment-body"><p>大佬切武器取色哪里啊怎么不切武器</p></div><time class="comment-date">2026-04-25 20:41:12</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1100"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>女乃口觜family</strong><div class="comment-body"><p>取色切武器那个图标啊， 注意武器432黑 取色黑的 就是在cd中的</p></div><time class="comment-date">2026-04-27 13:43:53</time></div></div>
+<div class="comment reply" id="AjaxComment1168"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>1121</strong><div class="comment-body"><p>循环里面没切武器</p></div><time class="comment-date">2026-05-01 05:09:42</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment1072"><img class="avatar" src="../../assets/f16b9e9f2df3dde5a7cca441337c7771.jpg" alt="" loading="lazy" width="40" height="40"><div><strong>时钟森林</strong><div class="comment-body"><p>全局延迟设置多少</p></div><time class="comment-date">2026-04-24 10:42:57</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment1081"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>小火车呜呜呜</strong><div class="comment-body"><p>0.9</p></div><time class="comment-date">2026-04-25 12:48:30</time></div></div></div></div></section></div></main></body></html>

@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>野外圣辉，极具威胁，神谕套，buff全满，19K，站撸布奇 13号优化</title><style>
+:root{--blue:#2469dc;--border:#dfe5ee;--muted:#58677e;color:#182230;background:#f0f3f7;font:15px/1.65 "Microsoft YaHei UI","PingFang SC",sans-serif}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{width:min(100% - 2rem,1292px);margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:2;background:white;border-bottom:1px solid var(--border)}
+.site-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem 1rem;min-height:62px;padding-block:.45rem}
+.site-header a{color:inherit;text-decoration:none}
+.site-header a:hover{color:var(--blue)}
+.site-header .brand{display:flex;align-items:center;margin-right:.7rem}
+.brand img{width:108px;height:34px;object-fit:contain}
+.site-header [aria-current]{padding:.35rem .65rem;border-radius:8px;background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu{position:relative}
+.career-menu summary{display:flex;align-items:center;gap:.35rem;cursor:pointer;padding:.35rem .6rem;border-radius:8px;list-style:none;white-space:nowrap}
+.career-menu summary::after{content:"";width:.4rem;height:.4rem;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-.12rem) rotate(45deg)}
+.career-menu summary::-webkit-details-marker{display:none}
+.career-menu[open] summary,.career-menu summary:hover,body:has(.listing-content) .career-menu:has([aria-current]) summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.career-links{position:absolute;top:calc(100% + 8px);left:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(318px,calc(100vw - 2rem));padding:8px;gap:2px;background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px #18223026}
+.career-links::before{content:"";position:absolute;inset:-9px 0 auto;height:9px}
+.career-links a,.site-header .career-links [aria-current]{padding:.35rem .7rem;border-radius:8px;font-size:14px}
+.career-links a:hover{background:#f1f5fb}
+.career-links a::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--tag-color,#586477);vertical-align:middle}
+@media(max-width:520px){.career-links{position:fixed;top:62px;inset-inline:1rem;width:auto}.site-header nav{column-gap:.35rem}}
+@media(hover:hover) and (pointer:fine) and (min-width:521px){
+  .career-menu:hover summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+  .career-menu:hover::details-content{content-visibility:visible}
+}
+main{overflow-wrap:anywhere}
+.post-content{padding-block:1.15rem 3rem}
+.breadcrumbs,.post-card,.comments-card{background:white;border:1px solid var(--border);border-radius:14px}
+.breadcrumbs{margin-bottom:1rem;padding:.55rem .9rem;color:var(--muted);font-size:13px}
+.breadcrumbs a{margin-inline:.3rem;text-decoration:none}
+.post-card{margin-bottom:1rem;padding:clamp(1rem,4vw,3.3rem)}
+.post-card h1{font-size:clamp(1.4rem,3vw,1.75rem)}
+.post-card .byline{padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.post-card .avatar{width:32px;height:32px}
+.comments-card{padding:clamp(.8rem,2vw,1.5rem)}
+.comments-card h2{margin:0;padding:.65rem clamp(.25rem,2vw,1.25rem) 1.2rem;font-size:15px}
+.comments-empty{display:grid;justify-items:center;gap:.65rem;margin:0;padding:1.5rem 1rem 2rem;color:var(--muted);font-size:14px}
+.comments-empty-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#f0f3f7}
+.comments-empty-icon::before{width:18px;height:16px;border:1.5px solid currentColor;border-radius:6px 6px 6px 2px;content:''}
+h1,h2{line-height:1.3;text-wrap:balance}
+h1{margin:.35em 0;font-size:clamp(1.65rem,4vw,2.25rem)}
+h2{margin-top:2rem}
+a{color:var(--blue);text-underline-offset:.2em}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.meta,small{color:var(--muted)}
+.categories,.pager{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.categories a,.pager a{border:1px solid var(--border);border-radius:999px;padding:.3rem .7rem;background:white;text-decoration:none;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0 0 1.5rem}
+.post-list a{font-size:16.5px;font-weight:700;color:#182230;text-decoration:none}
+.post-list a:hover,.categories a:hover,.pager a:hover{text-decoration:underline}
+article{margin-top:1.5rem}
+img{max-width:100%;height:auto}
+pre{overflow:auto;padding:1rem;border-radius:8px;background:#f3f6fa}
+table{display:block;overflow:auto}
+.comment-thread{--comment-avatar:40px;--comment-gap:clamp(.65rem,2vw,1.65rem);border-top:1px solid var(--border);padding:1rem clamp(.25rem,2vw,1.25rem)}
+.comment{display:grid;grid-template-columns:var(--comment-avatar) minmax(0,1fr);align-items:start;gap:var(--comment-gap)}
+.comment .avatar{display:block;width:var(--comment-avatar);height:var(--comment-avatar);margin:0}
+.comment strong{display:block;margin-bottom:.65rem;color:#182230}
+.comment-date{display:block;margin-top:.55rem;color:var(--muted);font-size:.87rem;font-variant-numeric:tabular-nums}
+.comment-body>:first-child{margin-top:0}
+.comment-body>:last-child{margin-bottom:0}
+.replies{margin:.75rem 0 0 calc(var(--comment-avatar) + var(--comment-gap))}
+.reply{--comment-avatar:32px;--comment-gap:10px;padding:.7rem 0 0;border-top:1px solid var(--border)}
+.reply strong{margin-bottom:.25rem}
+.reply+.reply{margin-top:.6rem}
+.comment:target{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
+.listing-header{background:#0d1929 linear-gradient(110deg,#122747,#0d1929);color:white}
+.listing-header .wrap{display:flex;min-height:clamp(180px,25vw,284px);flex-direction:column;justify-content:center;padding:clamp(1.75rem,5vw,3.5rem) clamp(0rem,1.5vw,2rem)}
+.listing-header h1,.listing-header h2{margin:0 0 .35rem;font-size:clamp(1.65rem,4vw,2.25rem)}
+.listing-header em{font-style:normal;background:linear-gradient(90deg,#7db6ff,#6ee7a8);background-clip:text;color:transparent}
+.listing-header p{margin:0;color:#c9d4e3}
+.post-search{display:flex;gap:.4rem;width:min(100%,400px);margin-top:1.65rem;padding:6px;border-radius:12px;background:#f7f8fa}
+.post-search input{flex:1;min-width:0;padding:.35rem 0;border:0;background:transparent;color:#182230;font:inherit}
+.post-search input:focus{outline:none}
+.post-search button{padding:.45rem 1rem;border:0;border-radius:8px;background:var(--blue);color:white;font:inherit;font-weight:600;cursor:pointer}
+.search-icon{position:relative;align-self:center;flex:none;width:.72em;height:.72em;margin:0 .2rem 2px .6rem;border:1.5px solid currentColor;border-radius:50%;color:#66758c}
+.search-icon::after{position:absolute;top:calc(100% - 1px);left:calc(100% - 1px);width:.34em;height:1.5px;background:currentColor;transform:rotate(45deg);transform-origin:left center;content:''}
+.search-status:not(:empty){display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.25rem 0 .25rem;color:var(--muted);font-size:13px}
+.search-status:not(:empty)::before,.search-status:not(:empty)::after{width:2rem;height:1px;background:var(--border);content:''}
+.post-list[hidden],.post-list [hidden]{display:none}
+.listing-content{padding-block:1.25rem 2rem}
+.categories{margin-bottom:.75rem;padding:.7rem;border:1px solid var(--border);border-radius:12px;background:white;box-shadow:0 2px 5px #18223008;font-size:13px}
+.categories [aria-current]{border-color:#2f7cf6;background:#eff5ff;color:var(--blue);font-weight:700}
+.post-list{display:grid;gap:.65rem}
+.post-list li{padding:1rem clamp(.8rem,2vw,1.25rem);background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 2px #18223006}
+.post-list li:hover{border-color:#b4cdf5}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .65rem;margin:.55rem 0 0;color:var(--muted);font-size:13px}
+.avatar{width:26px;height:26px;flex:none;border-radius:50%;object-fit:cover;background:#eef1f5}
+.post-list .tag{display:inline-block;margin-right:.5rem;padding:0 .45rem;border:1px solid var(--tag-border,#e4e8ee);border-radius:5px;background:var(--tag-bg,#f2f4f7);color:var(--tag-color,#586477);font-size:12px;font-weight:600}
+.tag-1{--tag-color:#a03b36;--tag-bg:#fdf2f1;--tag-border:#f3d9d6}
+.tag-2{--tag-color:#2e639e;--tag-bg:#eff5fd;--tag-border:#d6e5f8}
+.tag-3{--tag-color:#865b12;--tag-bg:#fdf7e9;--tag-border:#f2e3bf}
+.tag-4{--tag-color:#486f29;--tag-bg:#f2f9ec;--tag-border:#dceccb}
+.tag-5{--tag-color:#93501f;--tag-bg:#fdf3ec;--tag-border:#f2dcc9}
+.tag-6{--tag-color:#356747;--tag-bg:#eef8f2;--tag-border:#d3ead9}
+.tag-7,.tag-11{--tag-color:#774285;--tag-bg:#f9f1fb;--tag-border:#e9d6ef}
+.tag-8{--tag-color:#a73138;--tag-bg:#fdf1f1;--tag-border:#f4d7d7}
+.tag-10{--tag-color:#2469dc;--tag-bg:#eef4ff;--tag-border:#d6e4fd}
+</style>
+<body><header class="site-header"><nav class="wrap" aria-label="站点导航">
+<a class="brand" href="../../index.html"><img src="../../assets/freecycle-logo.png" alt="自由循环"></a>
+<a href="../../index.html">首页</a>
+<details class="career-menu"><summary>职业攻略</summary><div class="career-links">
+<a class="tag-1" href="../../categories/d24e2768f227febf/index.html">魂武者</a>
+<a class="tag-2" href="../../categories/cda6e4547c5e87f2/index.html" aria-current="location">守护者</a>
+<a class="tag-3" href="../../categories/4736daeffadb3732/index.html">战士</a>
+<a class="tag-4" href="../../categories/00d3d3cefc50ea30/index.html">游侠</a>
+<a class="tag-5" href="../../categories/bc2f82f27d245369/index.html">工程师</a>
+<a class="tag-6" href="../../categories/1f41388aa7959a35/index.html">唤灵师</a>
+<a class="tag-7" href="../../categories/863d15a6b8e74bc9/index.html">幻术师</a>
+<a class="tag-8" href="../../categories/d88d6d9a710a0ec6/index.html">元素使</a>
+<a class="tag-9" href="../../categories/3eae6ef4ec9fd742/index.html">潜行者</a>
+</div></details>
+<a href="../../categories/2536d8680f694555/index.html">问题解答</a>
+</nav></header><main><header class="listing-header" style="background:linear-gradient(110deg,#122747dd,#0d1929dd),url('../../assets/freecycle-banner.jpg') center/cover"><div class="wrap"><h2>守护者</h2><p>浏览该分类下的归档帖子</p>
+<form class="post-search" role="search" autocomplete="off" action="../../search.html" onsubmit="location.href=this.action+'?'+new URLSearchParams(new FormData(this));return false">
+<span class="search-icon" aria-hidden="true"></span><input type="search" name="q" aria-label="搜索帖子" placeholder="搜帖子标题、职业或作者…"><button type="submit">搜索</button>
+</form></div></header>
+<div class="wrap post-content">
+<nav class="breadcrumbs" aria-label="当前位置">当前位置 <a href="../../index.html">首页</a> › <a href="../../categories/cda6e4547c5e87f2/index.html">守护者</a></nav>
+<section class="post-card"><h1>野外圣辉，极具威胁，神谕套，buff全满，19K，站撸布奇 13号优化</h1><p class="byline"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" width="26" height="26" loading="lazy"><strong>melis</strong><span>08-12</span><a href="../../categories/cda6e4547c5e87f2/index.html">守护者</a><a href="https://www.freecycle.top/?id=393">原帖</a></p>
+<article>
+												<pre><code>勇敢突进，锐利姿态，光耀正义，辉耀姿态，光耀决心|锐利姿态，辉耀姿态，退出光辉熔炉反色=勇敢突进，光耀正义，光耀正义&gt;4000=光耀决心，光耀决心&gt;4000=光耀勇气，光照符印，日光奔袭，太阳风暴，闪耀圆转，决心符印，束缚之刃，愤怒回旋，信仰之跃，晕眩巨锤，闪耀旋转，进入光辉熔炉2，光耀勇气=1=进入光辉熔炉3，进入光辉熔炉，愤怒祷词，退出光辉熔炉，日光奔袭&gt;&gt;2000=矛切剑，愤怒回旋&gt;&gt;2000=剑切矛，普攻|冲着我来|
+勇敢突进,b,750|锐利姿态,z,350,,,,,,,,,,,0,,,,,,触发,1,8000,1|光耀正义,f1|辉耀姿态,c,1|光耀决心,f2|退出光辉熔炉反色,,,,,,,,,ifnot|光耀勇气,f3|光照符印,5,436|日光奔袭,2,320,,,,,,,,,,,,,,,,,触发,0,,0,,,6000|太阳风暴,4,561|闪耀圆转,3,550|决心符印,4,250,1,100,,,,,,,,,,,,,,,触发,0,,1|束缚之刃,5,484|愤怒回旋,2,1481,,,,,,,,,,,,,,,,,触发,0,,0,,,4600|信仰之跃,3,750|晕眩巨锤,2,1060,,,,,,,,,,,,,,,,,触发,0,,1|闪耀旋转,2,443|进入光辉熔炉2,f4,150,3,450,2,1060,,,,,,,0,,,,,,触发,1,15000,1|进入光辉熔炉3,f4,150,5,500,2,960,,,,,,,0,,,,,,触发,1,25000,1|进入光辉熔炉,f4,150,2,960,,,,,,,,,0,,,,,,触发,1,6800,1|愤怒祷词,6,350|退出光辉熔炉,f4,150,1,550,,,,,,,,,,,,,,,触发,0,,1|矛切剑,`,120,4,350|剑切矛,`,120,2,350|普攻,1|冲着我来,7,1
+[&amp;DQEqOxA+USUmDwAAigAAAFYdAABdHQAAZx0AAAAAAAAAAAAAAAAAAAAAAAACCQEyAAA=]
+天界套、神谕套、狂战+天界混搭，猎龙。大剑+长矛，超级武勇、精确。海盗女王。</code></pre>
+<p>这套循环跟之前直伤圣辉几乎一模一样，但是删减了部分技能，可手动把本地文件夹配置文件复制到野外，然后改名，只需要重新获取2个技能颜色就能直接用。</p>
+<p>之前技能错了，武器是长矛+大剑，没有手枪的技能</p>
+<p>优化了循环中，愤怒祷词的时间，增加了熔炉5的武器使用，利用职业3提供强化护盾后，才会使用熔炉5</p>
+<p>也可手动释放愤怒祷词，或者加入hp判断。</p>
+<p>&nbsp;</p>
+<p><img src="../../assets/ae6514512673a7357c370584cb11f2f6.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/08/20260812222815178654489530683.jpg" loading="lazy"></p>
+<p>在打布奇时候到buff，全程稳定，适当移动下就行。</p>
+<p>基本buff全部在90+</p>
+<hr>
+<p>特性方面</p>
+<p><img src="../../assets/e32134088f37295d41c5dac85a906a79.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/08/20260808184702178618602242922.jpg" loading="lazy"></p>
+<p>热诚，选择3加威能，否则不够</p>
+<p>圣辉选择敏捷，输出反而高于增伤</p>
+<p>&nbsp;</p>
+<p>依然选择海盗女王古物，这古物真好用，以前许多没急速的职业，直接毕业。</p>
+<p>&nbsp;</p>
+<p><img src="../../assets/59a483127a191bef9a8c34f29199ac16.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/08/20260812222841178654492135353.jpg" loading="lazy"></p>
+<p>考虑到神谕buff维持时间比较长，在热诚特性可以把1-3改成1-2，威能已经超出太多。</p>
+<p>圣辉特性里，因为敏捷能加快治疗技能cd，所以特性必须敏捷优先。</p>
+<hr>
+<p><img src="../../assets/c45b1f5737553c3edfe9f078ff29ee52.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/08/20260808184851178618613115891.jpg" loading="lazy"></p>
+<p>这个优先级放到切武器之前，在机场测试，基本全程满血，有敏捷加成，基本不会掉到半血以下。</p>
+<p>&nbsp;</p>
+<p><img src="../../assets/f5efb37145b385e1c2b2961bcc311a2b.png" data-original="https://www.freecycle.top/zb_users/upload/2026/08/20260808185039178618623983650.png" loading="lazy"></p>
+<p>具体可以自测，机场有易伤buff测试，实战可把精确换成易伤相关的法印</p>
+<hr>
+<p>&nbsp;</p>				</article></section>
+<section class="comments-card" aria-labelledby="comments"><h2 id="comments">评论列表（30）</h2>
+<div class="comment-thread"><div class="comment" id="AjaxComment3742"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>HuAfan</strong><div class="comment-body"><p>切到长矛就切不回大剑了咋搞？</p></div><time class="comment-date">2026-11-10 13:24:02</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3757"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@HuAfan</span> 大剑2，需要添加技能cd</p></div><time class="comment-date">2026-11-11 17:29:17</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3320"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>苏若卿</strong><div class="comment-body"><blockquote><p>符号和&gt;&gt;符号分别代表什么哦，我设置了技能CD但是执行到那里的时候还是不切武器</p></blockquote></div><time class="comment-date">2026-09-28 19:31:02</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3321"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@苏若卿</span> 技能1，技能1&gt;2000=技能2，表示技能1用后2秒，释放技能2。技能1&gt;&gt;1000=技能2，表示技能1游戏cd剩余时间大于1秒释放技能2，后者利用填入的游戏cd作为判断。</p></div><time class="comment-date">2026-09-28 22:05:05</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2919"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>大雕</strong><div class="comment-body"><p>日光奔袭&gt;&gt;2000=矛切剑，愤怒回旋&gt;&gt;2000=剑切矛   怎么我不切武器呢，我的切武器按键是~键位，可是我设置了按键循环没切啊。<br><img src="../../assets/078ed7c67e6a7a9194c22ec8b6ee11d5.png" alt="评论图片" loading="lazy"></p></div><time class="comment-date">2026-08-21 08:27:21</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment2920"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>大雕</strong><div class="comment-body"><p><span>@大雕</span> 取色是换武器的图标箭头</p></div><time class="comment-date">2026-08-21 09:46:42</time></div></div>
+<div class="comment reply" id="AjaxComment2921"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@大雕</span> 检查版本，&gt;&gt;条件是后来加的，表示 这2个技能剩余cd大于2秒才切武器，另外检查f9中，这2个技能的技能cd是否有设置过。</p></div><time class="comment-date">2026-08-21 10:40:36</time></div></div>
+<div class="comment reply" id="AjaxComment2923"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>大雕</strong><div class="comment-body"><p><span>@melis</span> 谢谢好哥哥，我试试，琢磨琢磨</p></div><time class="comment-date">2026-08-21 18:12:33</time></div></div>
+<div class="comment reply" id="AjaxComment2941"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>大雕</strong><div class="comment-body"><p><span>@melis</span> 还是不行，昨晚设置一会了。难搞啊，取色的是箭头，他不切武器的<br><img src="../../assets/38b93e9ae49c84d0958a459f5655cd23.png" alt="评论图片" loading="lazy"><br><img src="../../assets/393409a00bfc9dda53fc8b6a89333f7f.jpg" alt="评论图片" loading="lazy"></p></div><time class="comment-date">2026-08-22 08:11:15</time></div></div>
+<div class="comment reply" id="AjaxComment2942"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>大雕</strong><div class="comment-body"><p><span>@大雕</span> 还是不行啊<br><img src="../../assets/ab10abacbf3346b652ccec46875ec0ed.png" alt="评论图片" loading="lazy"></p></div><time class="comment-date">2026-08-22 08:46:26</time></div></div>
+<div class="comment reply" id="AjaxComment2944"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@大雕</span> 大剑2，长矛2，你拖动到最后，看这2个技能，下面 技能cd参数里有没有写，如果还是不行，可以把 日光奔袭&gt;&gt;2000=矛切剑，愤怒回旋&gt;&gt;2000=剑切矛，改成 日光奔袭=1=矛切剑，愤怒回旋=1=剑切矛，不过后面的方法，就无法根据技能剩余cd判断切武器了。<br><img src="../../assets/1cbd39d42f60d55c2ab9ff2d0657a58d.png" alt="评论图片" loading="lazy"></p></div><time class="comment-date">2026-08-22 13:45:20</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2876"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>zhliwei2022</strong><div class="comment-body"><p>---*闪耀旋转*--- *闪耀圆转* ---   这是一个技能还是两个，取色时没弄明白？？？</p></div><time class="comment-date">2026-08-17 18:05:59</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment2877"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@zhliwei2022</span> 这一看就是没玩过圣辉的 ，闪耀旋转是熔炉锤2的二段技能，闪耀圆转是长矛3</p></div><time class="comment-date">2026-08-17 18:50:39</time></div></div>
+<div class="comment reply" id="AjaxComment2882"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>zhliwei2022</strong><div class="comment-body"><p><span>@melis</span> 是啊，圣辉技能太多，都蒙圈了</p></div><time class="comment-date">2026-08-18 06:52:54</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2834"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>萌新</strong><div class="comment-body"><p>进入光辉熔炉2   光辉熔炉3  怎么取色</p></div><time class="comment-date">2026-08-13 19:30:54</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment2838"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@萌新</span> 全部f4</p></div><time class="comment-date">2026-08-13 21:26:10</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2832"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>不落地的枫叶</strong><div class="comment-body"><p>额，机场极具威胁站不住。。。古物得用萨斯洛奇才得。</p></div><time class="comment-date">2026-08-13 15:22:57</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment2833"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@不落地的枫叶</span> 你别说装备不对，极具威胁靠光环回血，辉耀姿态的屏障，还有治疗1的吸血，有敏捷的情况下是完全无限续航<br><img src="../../assets/7e4223ad43f50ffc45a2c42f052a7824.jpg" alt="评论图片" loading="lazy"></p></div><time class="comment-date">2026-08-13 16:55:59</time></div></div>
+<div class="comment reply" id="AjaxComment2836"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>残灯孤影忆潇湘</strong><div class="comment-body"><p><span>@melis</span> 大佬 请问一下 大剑循环不会自动切武器 哪里出问题了啊，取色几个地方都不行</p></div><time class="comment-date">2026-08-13 20:44:36</time></div></div>
+<div class="comment reply" id="AjaxComment2837"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@残灯孤影忆潇湘</span> 大剑2的，技能cd，要设置上</p></div><time class="comment-date">2026-08-13 21:26:03</time></div></div>
+<div class="comment reply" id="AjaxComment2857"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>残灯孤影忆潇湘</strong><div class="comment-body"><p><span>@melis</span> 大佬 设置大剑2CD的 还是不行啊。大剑起手 只会放大剑3. 大剑2和大剑4 大剑5 都不会自动释放。矛起手到大剑第一轮循环都正常，大剑CD后就开始出错了</p></div><time class="comment-date">2026-08-15 20:45:10</time></div></div>
+<div class="comment reply" id="AjaxComment2858"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@残灯孤影忆潇湘</span> 自己开调试模式检测，这明显是你有别的画质影响了，或者取色错</p></div><time class="comment-date">2026-08-15 20:56:21</time></div></div>
+<div class="comment reply" id="AjaxComment2861"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>残灯孤影忆潇湘</strong><div class="comment-body"><p><span>@melis</span> 谢谢 ，已经解决了</p></div><time class="comment-date">2026-08-15 21:43:29</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2796"><img class="avatar" src="../../assets/4e2e288e22559a594725acb736eabe80.png" alt="" loading="lazy" width="40" height="40"><div><strong>荔枝</strong><div class="comment-body"><p>M大这套换狂战士伤害更高，依旧极具威胁，法印还是武勇精确，通用技能没改，其他都照着星岬岛来的https://gw2.wishingstarmoye.com/admin/gw2build?url=https://snowcrows.com/builds/open-world/guardian/power-luminary-greatsword-spear<br><a href="https://www.freecycle.top/zb_users/upload/2026/08/20260809205723178628024395646.jpg">评论图片</a></p></div><time class="comment-date">2026-08-09 21:00:55</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment2797"><img class="avatar" src="../../assets/4e2e288e22559a594725acb736eabe80.png" alt="" loading="lazy" width="32" height="32"><div><strong>荔枝</strong><div class="comment-body"><p><span>@荔枝</span> 食物是100威能70爆击效果，其他没有</p></div><time class="comment-date">2026-08-09 21:02:23</time></div></div>
+<div class="comment reply" id="AjaxComment2798"><img class="avatar" src="../../assets/4e2e288e22559a594725acb736eabe80.png" alt="" loading="lazy" width="32" height="32"><div><strong>荔枝</strong><div class="comment-body"><p><span>@荔枝</span> 大佬这套太强了，矛起手最高干到20K<br><a href="https://www.freecycle.top/zb_users/upload/2026/08/20260809211720178628144072348.jpg">评论图片</a></p></div><time class="comment-date">2026-08-09 21:19:51</time></div></div>
+<div class="comment reply" id="AjaxComment2807"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@荔枝</span> 神谕可能好点，裸boss木桩，能19-20+<br><img src="../../assets/1c1cb51ba5ae6ec7601ccfe84b79ef3f.jpg" alt="评论图片" loading="lazy"></p></div><time class="comment-date">2026-08-10 11:47:33</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2777"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>北烈马</strong><div class="comment-body"><p>再有点稳固的话不得了，哈哈哈</p></div><time class="comment-date">2026-08-09 00:15:58</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2772"><img class="avatar" src="../../assets/4e2e288e22559a594725acb736eabe80.png" alt="" loading="lazy" width="40" height="40"><div><strong>荔枝</strong><div class="comment-body"><p>大佬，司法审判是哪个技能啊</p></div><time class="comment-date">2026-08-08 21:35:53</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment2774"><img class="avatar" src="../../assets/4e2e288e22559a594725acb736eabe80.png" alt="" loading="lazy" width="32" height="32"><div><strong>荔枝</strong><div class="comment-body"><p><span>@荔枝</span> 是手枪5</p></div><time class="comment-date">2026-08-08 21:46:54</time></div></div></div></div></section></div></main></body></html>

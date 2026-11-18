@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PVP大锤元晶</title><style>
+:root{--blue:#2469dc;--border:#dfe5ee;--muted:#58677e;color:#182230;background:#f0f3f7;font:15px/1.65 "Microsoft YaHei UI","PingFang SC",sans-serif}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{width:min(100% - 2rem,1292px);margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:2;background:white;border-bottom:1px solid var(--border)}
+.site-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem 1rem;min-height:62px;padding-block:.45rem}
+.site-header a{color:inherit;text-decoration:none}
+.site-header a:hover{color:var(--blue)}
+.site-header .brand{display:flex;align-items:center;margin-right:.7rem}
+.brand img{width:108px;height:34px;object-fit:contain}
+.site-header [aria-current]{padding:.35rem .65rem;border-radius:8px;background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu{position:relative}
+.career-menu summary{display:flex;align-items:center;gap:.35rem;cursor:pointer;padding:.35rem .6rem;border-radius:8px;list-style:none;white-space:nowrap}
+.career-menu summary::after{content:"";width:.4rem;height:.4rem;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-.12rem) rotate(45deg)}
+.career-menu summary::-webkit-details-marker{display:none}
+.career-menu[open] summary,.career-menu summary:hover,body:has(.listing-content) .career-menu:has([aria-current]) summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.career-links{position:absolute;top:calc(100% + 8px);left:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(318px,calc(100vw - 2rem));padding:8px;gap:2px;background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px #18223026}
+.career-links::before{content:"";position:absolute;inset:-9px 0 auto;height:9px}
+.career-links a,.site-header .career-links [aria-current]{padding:.35rem .7rem;border-radius:8px;font-size:14px}
+.career-links a:hover{background:#f1f5fb}
+.career-links a::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--tag-color,#586477);vertical-align:middle}
+@media(max-width:520px){.career-links{position:fixed;top:62px;inset-inline:1rem;width:auto}.site-header nav{column-gap:.35rem}}
+@media(hover:hover) and (pointer:fine) and (min-width:521px){
+  .career-menu:hover summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+  .career-menu:hover::details-content{content-visibility:visible}
+}
+main{overflow-wrap:anywhere}
+.post-content{padding-block:1.15rem 3rem}
+.breadcrumbs,.post-card,.comments-card{background:white;border:1px solid var(--border);border-radius:14px}
+.breadcrumbs{margin-bottom:1rem;padding:.55rem .9rem;color:var(--muted);font-size:13px}
+.breadcrumbs a{margin-inline:.3rem;text-decoration:none}
+.post-card{margin-bottom:1rem;padding:clamp(1rem,4vw,3.3rem)}
+.post-card h1{font-size:clamp(1.4rem,3vw,1.75rem)}
+.post-card .byline{padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.post-card .avatar{width:32px;height:32px}
+.comments-card{padding:clamp(.8rem,2vw,1.5rem)}
+.comments-card h2{margin:0;padding:.65rem clamp(.25rem,2vw,1.25rem) 1.2rem;font-size:15px}
+.comments-empty{display:grid;justify-items:center;gap:.65rem;margin:0;padding:1.5rem 1rem 2rem;color:var(--muted);font-size:14px}
+.comments-empty-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#f0f3f7}
+.comments-empty-icon::before{width:18px;height:16px;border:1.5px solid currentColor;border-radius:6px 6px 6px 2px;content:''}
+h1,h2{line-height:1.3;text-wrap:balance}
+h1{margin:.35em 0;font-size:clamp(1.65rem,4vw,2.25rem)}
+h2{margin-top:2rem}
+a{color:var(--blue);text-underline-offset:.2em}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.meta,small{color:var(--muted)}
+.categories,.pager{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.categories a,.pager a{border:1px solid var(--border);border-radius:999px;padding:.3rem .7rem;background:white;text-decoration:none;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0 0 1.5rem}
+.post-list a{font-size:16.5px;font-weight:700;color:#182230;text-decoration:none}
+.post-list a:hover,.categories a:hover,.pager a:hover{text-decoration:underline}
+article{margin-top:1.5rem}
+img{max-width:100%;height:auto}
+pre{overflow:auto;padding:1rem;border-radius:8px;background:#f3f6fa}
+table{display:block;overflow:auto}
+.comment-thread{--comment-avatar:40px;--comment-gap:clamp(.65rem,2vw,1.65rem);border-top:1px solid var(--border);padding:1rem clamp(.25rem,2vw,1.25rem)}
+.comment{display:grid;grid-template-columns:var(--comment-avatar) minmax(0,1fr);align-items:start;gap:var(--comment-gap)}
+.comment .avatar{display:block;width:var(--comment-avatar);height:var(--comment-avatar);margin:0}
+.comment strong{display:block;margin-bottom:.65rem;color:#182230}
+.comment-date{display:block;margin-top:.55rem;color:var(--muted);font-size:.87rem;font-variant-numeric:tabular-nums}
+.comment-body>:first-child{margin-top:0}
+.comment-body>:last-child{margin-bottom:0}
+.replies{margin:.75rem 0 0 calc(var(--comment-avatar) + var(--comment-gap))}
+.reply{--comment-avatar:32px;--comment-gap:10px;padding:.7rem 0 0;border-top:1px solid var(--border)}
+.reply strong{margin-bottom:.25rem}
+.reply+.reply{margin-top:.6rem}
+.comment:target{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
+.listing-header{background:#0d1929 linear-gradient(110deg,#122747,#0d1929);color:white}
+.listing-header .wrap{display:flex;min-height:clamp(180px,25vw,284px);flex-direction:column;justify-content:center;padding:clamp(1.75rem,5vw,3.5rem) clamp(0rem,1.5vw,2rem)}
+.listing-header h1,.listing-header h2{margin:0 0 .35rem;font-size:clamp(1.65rem,4vw,2.25rem)}
+.listing-header em{font-style:normal;background:linear-gradient(90deg,#7db6ff,#6ee7a8);background-clip:text;color:transparent}
+.listing-header p{margin:0;color:#c9d4e3}
+.post-search{display:flex;gap:.4rem;width:min(100%,400px);margin-top:1.65rem;padding:6px;border-radius:12px;background:#f7f8fa}
+.post-search input{flex:1;min-width:0;padding:.35rem 0;border:0;background:transparent;color:#182230;font:inherit}
+.post-search input:focus{outline:none}
+.post-search button{padding:.45rem 1rem;border:0;border-radius:8px;background:var(--blue);color:white;font:inherit;font-weight:600;cursor:pointer}
+.search-icon{position:relative;align-self:center;flex:none;width:.72em;height:.72em;margin:0 .2rem 2px .6rem;border:1.5px solid currentColor;border-radius:50%;color:#66758c}
+.search-icon::after{position:absolute;top:calc(100% - 1px);left:calc(100% - 1px);width:.34em;height:1.5px;background:currentColor;transform:rotate(45deg);transform-origin:left center;content:''}
+.search-status:not(:empty){display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.25rem 0 .25rem;color:var(--muted);font-size:13px}
+.search-status:not(:empty)::before,.search-status:not(:empty)::after{width:2rem;height:1px;background:var(--border);content:''}
+.post-list[hidden],.post-list [hidden]{display:none}
+.listing-content{padding-block:1.25rem 2rem}
+.categories{margin-bottom:.75rem;padding:.7rem;border:1px solid var(--border);border-radius:12px;background:white;box-shadow:0 2px 5px #18223008;font-size:13px}
+.categories [aria-current]{border-color:#2f7cf6;background:#eff5ff;color:var(--blue);font-weight:700}
+.post-list{display:grid;gap:.65rem}
+.post-list li{padding:1rem clamp(.8rem,2vw,1.25rem);background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 2px #18223006}
+.post-list li:hover{border-color:#b4cdf5}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .65rem;margin:.55rem 0 0;color:var(--muted);font-size:13px}
+.avatar{width:26px;height:26px;flex:none;border-radius:50%;object-fit:cover;background:#eef1f5}
+.post-list .tag{display:inline-block;margin-right:.5rem;padding:0 .45rem;border:1px solid var(--tag-border,#e4e8ee);border-radius:5px;background:var(--tag-bg,#f2f4f7);color:var(--tag-color,#586477);font-size:12px;font-weight:600}
+.tag-1{--tag-color:#a03b36;--tag-bg:#fdf2f1;--tag-border:#f3d9d6}
+.tag-2{--tag-color:#2e639e;--tag-bg:#eff5fd;--tag-border:#d6e5f8}
+.tag-3{--tag-color:#865b12;--tag-bg:#fdf7e9;--tag-border:#f2e3bf}
+.tag-4{--tag-color:#486f29;--tag-bg:#f2f9ec;--tag-border:#dceccb}
+.tag-5{--tag-color:#93501f;--tag-bg:#fdf3ec;--tag-border:#f2dcc9}
+.tag-6{--tag-color:#356747;--tag-bg:#eef8f2;--tag-border:#d3ead9}
+.tag-7,.tag-11{--tag-color:#774285;--tag-bg:#f9f1fb;--tag-border:#e9d6ef}
+.tag-8{--tag-color:#a73138;--tag-bg:#fdf1f1;--tag-border:#f4d7d7}
+.tag-10{--tag-color:#2469dc;--tag-bg:#eef4ff;--tag-border:#d6e4fd}
+</style>
+<body><header class="site-header"><nav class="wrap" aria-label="站点导航">
+<a class="brand" href="../../index.html"><img src="../../assets/freecycle-logo.png" alt="自由循环"></a>
+<a href="../../index.html">首页</a>
+<details class="career-menu"><summary>职业攻略</summary><div class="career-links">
+<a class="tag-1" href="../../categories/d24e2768f227febf/index.html">魂武者</a>
+<a class="tag-2" href="../../categories/cda6e4547c5e87f2/index.html">守护者</a>
+<a class="tag-3" href="../../categories/4736daeffadb3732/index.html">战士</a>
+<a class="tag-4" href="../../categories/00d3d3cefc50ea30/index.html">游侠</a>
+<a class="tag-5" href="../../categories/bc2f82f27d245369/index.html">工程师</a>
+<a class="tag-6" href="../../categories/1f41388aa7959a35/index.html">唤灵师</a>
+<a class="tag-7" href="../../categories/863d15a6b8e74bc9/index.html">幻术师</a>
+<a class="tag-8" href="../../categories/d88d6d9a710a0ec6/index.html" aria-current="location">元素使</a>
+<a class="tag-9" href="../../categories/3eae6ef4ec9fd742/index.html">潜行者</a>
+</div></details>
+<a href="../../categories/2536d8680f694555/index.html">问题解答</a>
+</nav></header><main><header class="listing-header" style="background:linear-gradient(110deg,#122747dd,#0d1929dd),url('../../assets/freecycle-banner.jpg') center/cover"><div class="wrap"><h2>元素使</h2><p>浏览该分类下的归档帖子</p>
+<form class="post-search" role="search" autocomplete="off" action="../../search.html" onsubmit="location.href=this.action+'?'+new URLSearchParams(new FormData(this));return false">
+<span class="search-icon" aria-hidden="true"></span><input type="search" name="q" aria-label="搜索帖子" placeholder="搜帖子标题、职业或作者…"><button type="submit">搜索</button>
+</form></div></header>
+<div class="wrap post-content">
+<nav class="breadcrumbs" aria-label="当前位置">当前位置 <a href="../../index.html">首页</a> › <a href="../../categories/d88d6d9a710a0ec6/index.html">元素使</a></nav>
+<section class="post-card"><h1>PVP大锤元晶</h1><p class="byline"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" width="26" height="26" loading="lazy"><strong>abcaqo</strong><span>11-04</span><a href="../../categories/d88d6d9a710a0ec6/index.html">元素使</a><a href="https://www.freecycle.top/?id=471">原帖</a></p>
+<article>
+												<p>|精英4黑=精英3黑=治疗，火4，火5，4黑=5黑=火边框=精英5，火2，土5，土2，土4，电4，电5，电2，水4，水5，水2，2黑=4黑=5黑=火边框=火切电，2黑=4黑=5黑=电边框=电切水，2黑=4黑=5黑=水边框=水切土，2黑=5黑=土边框=土切火|火F5，水F5，电F5，土F5，火3，水3，土3，电3|<br>精英4黑|精英3黑|治疗,1,878,,,,,,,,,,b,0,,,,,,触发,0,,1|火4,f,878|火5,t,1121|4黑|5黑|火边框|精英5,5,343,,,,,,,,,,b,0,,,,,,触发,0,,1|火2,e,878|土5,t,1121,,,,,,,,,,b,0,,,,,,触发,0,,1|土2,e,1321,,,,,,,,,,b,0,,,,,,触发,0,,1|土4,f,878,,,,,,,,,,b,0,,,,,,触发,0,,1|电4,f,565|电5,t,343,,,,,,,,,,b,0,,,,,,触发,0,,1|电2,e,1121,,,,,,,,,,b,0,,,,,,触发,0,,1|水4,f,878|水5,t,565|水2,e,1121,,,,,,,,,,b,0,,,,,,触发,0,,1|2黑|火切电,f3,120|电边框|电切水,f2,120|水边框|水切土,f4,120|土边框|土切火,f1,120|火F5,f5,150,,,,,,,,,,,0,,,,,,触发,0,,0,,30|水F5,f5,150,,,,,,,,,,,0,,,,,,触发,0,,0,,30|电F5,f5,150,,,,,,,,,,,0,,,,,,触发,0,,0,,30|土F5,f5,150,,,,,,,,,,,0,,,,,,触发,0,,0,,30|火3,r,120|水3,r,120,,,,,,,,,,,,,,,,,触发,1,6000|土3,r,120|电3,r,120<br>[&amp;DQYfKyUqQx8nD3UAHAFPAfYAkABPAesA9xqWAAAAAAAAAAAAAAAAAAAAAAABMwAA]<br><br><br>大锤,勇气+能量</p>
+<p>烟花古物或者河流古物</p>
+<p>劫掠者或者狂战士(手法自信)</p>
+<p>符文选牦牛&nbsp; 或者战士</p>
+<p>&nbsp;</p>
+<p>国服全局可以快点</p>
+<p>欧服就0.96-0.98自己尝试</p>
+<p>&nbsp;</p>
+<p>可以尝试优化</p>				</article></section>
+<section class="comments-card" aria-labelledby="comments"><h2 id="comments">评论列表（44）</h2>
+<div class="comment-thread"><div class="comment" id="AjaxComment3752"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>abcaqo</strong><div class="comment-body"><p>不会取色的看下M佬的元素就知道了   基本都是按照M佬的模板改的  所以取色方式差不多</p></div><time class="comment-date">2026-11-10 22:33:51</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3751"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>abcaqo</strong><div class="comment-body"><p>PVP风羽长矛   这个不算没完善   只是技能添加完能用又删了    要手操比较多  所以没填坑<br>PVP剑聚编织   这个循环逻辑没理明白  所以半成品<br>这两个别用  还没完善<br>其他的看着来吧<br>比较完善的3个是<br>PVP大锤编织   手动精英234<br>PVP大锤元晶   手动精英234<br>PVP守点猎龙   手动245  F2 F3<br>其他的开宏就行<br>技能的延迟跟连点自己看下改延迟<br>其他大部分都算半成品  有兴趣可以自行优化</p></div><time class="comment-date">2026-11-10 22:30:38</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3754"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>1122</strong><div class="comment-body"><p><span>@abcaqo</span> 大佬,现在有个问题,就是直接复制配置丢失很多东西 ,例如风语只有7个技能,<br>有什么办法按照这个分享网站搞一下</p></div><time class="comment-date">2026-11-11 00:12:44</time></div></div>
+<div class="comment reply" id="AjaxComment3763"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@1122</span> 风羽的技能我特意删的  因为长矛的连招最好自己按   宏最好帮你进风羽 退风羽而已</p></div><time class="comment-date">2026-11-12 11:46:57</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3744"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>zz</strong><div class="comment-body"><p>993153511@qq.com 大佬麻烦安排一份</p></div><time class="comment-date">2026-11-10 17:47:58</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3746"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@zz</span> 已发</p></div><time class="comment-date">2026-11-10 22:29:42</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3740"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1</strong><div class="comment-body"><p>896017751@qq.com 谢谢大佬</p></div><time class="comment-date">2026-11-10 11:34:54</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3747"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@1</span> 已发</p></div><time class="comment-date">2026-11-10 22:29:45</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3734"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>11</strong><div class="comment-body"><p>1480636595@qq.com求一份</p></div><time class="comment-date">2026-11-08 22:40:43</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3748"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@11</span> 已发</p></div><time class="comment-date">2026-11-10 22:29:49</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3730"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1122</strong><div class="comment-body"><p>大佬 球一下夺魂灾厄狂兽三个职业,前面发的几个我队职业理解有问题,合他们55开还有你推荐的那个守点</p></div><time class="comment-date">2026-11-08 19:03:01</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3731"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>1122</strong><div class="comment-body"><p><span>@1122</span> 3100850520</p></div><time class="comment-date">2026-11-08 19:03:57</time></div></div>
+<div class="comment reply" id="AjaxComment3749"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@1122</span> 已发</p></div><time class="comment-date">2026-11-10 22:29:53</time></div></div>
+<div class="comment reply" id="AjaxComment3745"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@1122</span> 夺魂倒没有  长矛丢准就能玩      灾厄纯脸滚键盘  只是精英5的问题 选树妖还是放阵     狂兽就麻烦,基本上狂兽的武器都选过   后面发现能玩的是大锤 但是大锤没写   可以参考抄M佬的大锤狂兽<br>循环看攻略就行<br>守点猎龙那纯轮椅  不用理解  死了怪不到你头上  赢不赢看队友了  国服别玩这个<br>国服玩能打能跑的才能赢<br>一会发你</p></div><time class="comment-date">2026-11-10 22:20:27</time></div></div>
+<div class="comment reply" id="AjaxComment3830"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@1122</span> 狂兽的<br>|半血=森林壁垒，无情回旋，灵敏打击，觉醒的野蛮冲击，觉醒的猛烈横击，觉醒的专横碾压，觉醒的碎地重击，野蛮冲击，猛烈横击，专横碾压，治疗，碎地重击，猛扑，毒蛇奇袭，猎手召唤，荒野召唤，退出f5，进入f5，2黑=3黑=4黑=5黑=切武器，普攻|剧毒爆发，剥裂藤蔓，孢络尘雾，切宠物|<br>半血,,,,,,,,,,,,,0,,,,,,触发,0,,0,,15|森林壁垒,5,1121,,,,,,,,,,b,0,,,,,,触发,0,,1|无情回旋,q,2000,,,,,,,,,,,0,,,,,,触发,0,,0,1|灵敏打击,q,878,,,,,,,,,,b|觉醒的野蛮冲击,f,979,,,,,,,,,,b|觉醒的猛烈横击,e,565,,,,,,,,,,b|觉醒的专横碾压,r,343,,,,,,,,,,b|觉醒的碎地重击,t,878,,,,,,,,,,b|野蛮冲击,f,979,,,,,,,,,,b|猛烈横击,e,565,,,,,,,,,,b|专横碾压,r,343,,,,,,,,,,b|治疗,1,878|碎地重击,t,878,,,,,,,,,,b|猛扑,e,878,,,,,,,,,,b|毒蛇奇袭,r,878,,,,,,,,,,b|猎手召唤,f,1212,,,,,,,,,,b,0,,,,,,触发,0,,0,,10|荒野召唤,t,343,,,,,,,,,,b|退出f5,f5,150|进入f5,f5,150,,,,,,,,,,,0,,,,,,触发,1,5600|2黑|3黑|4黑|5黑|切武器,`,150|普攻,q,150|剧毒爆发,f1,120,f2,120,f3,120|剥裂藤蔓,f2,120,f1,120,f3,120|孢络尘雾,f3,120,f1,120,f2,120|切宠物,f4,120,,,,,,,,,,,0,,,,,,触发,1,19000<br>[&amp;DQQhKR4aSBt4AHkAlgEAAKsBAAC7AAAADxsAAC5CAAAAAAAAAAAAAAAAAAADMwBaAGcAAA==]<br>这是剑号的<br>|精英3黑=森林壁垒，无情回旋，灵敏打击，觉醒的野蛮冲击，觉醒的猛烈横击，觉醒的专横碾压，觉醒的碎地重击，野蛮冲击，猛烈横击，专横碾压，治疗，碎地重击，钉锤3，钉锤2，钉锤4，钉锤5，退出f5，进入f5，2黑=3黑=4黑=5黑=切武器，普攻|剧毒爆发，剥裂藤蔓，</p></div><time class="comment-date">2026-11-17 20:41:25</time></div></div>
+<div class="comment reply" id="AjaxComment3831"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@1122</span> 双钉锤的  <br>|精英3黑=森林壁垒，无情回旋，灵敏打击，觉醒的野蛮冲击，觉醒的猛烈横击，觉醒的专横碾压，觉醒的碎地重击，野蛮冲击，猛烈横击，专横碾压，治疗，碎地重击，钉锤3，钉锤2，钉锤4，钉锤5，退出f5，进入f5，2黑=3黑=4黑=5黑=切武器，普攻|剧毒爆发，剥裂藤蔓，孢络尘雾，切宠物|<br>精英3黑|森林壁垒,5,1121,,,,,,,,,,b,0,,,,,,触发,0,,1|无情回旋,q,2000,,,,,,,,,,,0,,,,,,触发,0,,0,1|灵敏打击,q,878,,,,,,,,,,b|觉醒的野蛮冲击,f,979,,,,,,,,,,b|觉醒的猛烈横击,e,565,,,,,,,,,,b|觉醒的专横碾压,r,343,,,,,,,,,,b|觉醒的碎地重击,t,878,,,,,,,,,,b|野蛮冲击,f,979,,,,,,,,,,b|猛烈横击,e,565,,,,,,,,,,b|专横碾压,r,343,,,,,,,,,,b|治疗,1,878|碎地重击,t,878,,,,,,,,,,b|钉锤3,r,878|钉锤2,e,878|钉锤4,f,545|钉锤5,t,979,,,,,,,,,,b,0,,,,,,触发,0,,1|退出f5,f5,150|进入f5,f5,150,,,,,,,,,,,0,,,,,,触发,1,5600|2黑|3黑|4黑|5黑|切武器,`,150|普攻,q,150|剧毒爆发,f1,120,f2,120,f3,120|剥裂藤蔓,f2,120,f1,120,f3,120|孢络尘雾,f3,120,f1,120,f2,120|切宠物,f4,120,,,,,,,,,,,0,,,,,,触发,1,19000<br>[&amp;DQQhKR4aSBt4AHkAlgEAAKsBAAC7AAAADxsAAC5CAAAAAAAAAAAAAAAAAAADMwBaAGcAAA==]</p></div><time class="comment-date">2026-11-17 20:41:55</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3729"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>偷吃</strong><div class="comment-body"><p>大佬求一份397389926@qq.com</p></div><time class="comment-date">2026-11-08 13:47:37</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3750"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@偷吃</span> 已发</p></div><time class="comment-date">2026-11-10 22:29:56</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3721"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1122</strong><div class="comment-body"><p>310085052大佬,我求一份您的配置</p></div><time class="comment-date">2026-11-06 19:37:24</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3723"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@1122</span> 已发</p></div><time class="comment-date">2026-11-06 22:43:27</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3720"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>老八</strong><div class="comment-body"><p>求求求！大佬2499701676@qq.com</p></div><time class="comment-date">2026-11-06 18:53:46</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3724"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@老八</span> 已发</p></div><time class="comment-date">2026-11-06 22:43:30</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3719"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>szb222</strong><div class="comment-body"><p><span>@abcaqo</span> 1982846572@qq.com 同求一份谢谢大佬</p></div><time class="comment-date">2026-11-06 17:07:40</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3725"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@szb222</span> 已发</p></div><time class="comment-date">2026-11-06 22:43:33</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3718"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>布拉拉拉</strong><div class="comment-body"><p><span>@abcaqo</span>  349993484@qq.com   同求一份谢谢大佬</p></div><time class="comment-date">2026-11-06 16:43:56</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3726"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@布拉拉拉</span> 已发</p></div><time class="comment-date">2026-11-06 22:43:36</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3712"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>lnyy</strong><div class="comment-body"><p>1204660462@qq.com 大佬，谢谢发一份</p></div><time class="comment-date">2026-11-05 14:30:46</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3722"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@lnyy</span> 已发</p></div><time class="comment-date">2026-11-06 22:43:23</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3706"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>abcaqo</strong><div class="comment-body"><p>右边精英技能尽量手动   基本都是解昏迷或者位移    实在不想操作   就手动添加到循环里头 <br>除了守点猎龙   其他都是打一套就跑</p></div><time class="comment-date">2026-11-04 10:26:05</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3694"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>a147369</strong><div class="comment-body"><p>2958039441@qq.com   同求一份谢谢大佬了，</p></div><time class="comment-date">2026-11-03 09:53:29</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3705"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@a147369</span> 已发</p></div><time class="comment-date">2026-11-04 10:25:57</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3684"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>时间无言如此这般</strong><div class="comment-body"><p>1664666725@qq.com  大佬 同求一份之前的</p></div><time class="comment-date">2026-11-02 17:33:16</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3690"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@时间无言如此这般</span> 已发</p></div><time class="comment-date">2026-11-03 02:57:57</time></div></div>
+<div class="comment reply" id="AjaxComment3693"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>时间无言如此这般</strong><div class="comment-body"><p><span>@abcaqo</span> 感谢大佬</p></div><time class="comment-date">2026-11-03 08:52:38</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3668"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>感恩</strong><div class="comment-body"><p>给我来一份，397380465@qq.com，谢谢</p></div><time class="comment-date">2026-10-31 22:57:09</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3670"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@感恩</span> 已发   现在用的多的是守点猎龙     除了混一点    没啥缺点  操作量不大<br>点上1蹲    2个人一般打不死你     混战的话  除非3个人逮着你灌伤害   否则基本不会噶</p></div><time class="comment-date">2026-11-01 10:03:02</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3560"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>abcaqo</strong><div class="comment-body"><p>左边设置的是qwert   右边是12345</p></div><time class="comment-date">2026-10-20 22:09:20</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3595"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>zzh25282526</strong><div class="comment-body"><p><span>@abcaqo</span> 大佬的其他pvp怎么没了  还有吗  有需求</p></div><time class="comment-date">2026-10-23 05:54:44</time></div></div>
+<div class="comment reply" id="AjaxComment3598"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@zzh25282526</span> 删了  你要什么职业的<br><img src="../../assets/91cbc46de51c664ab2ee506c6c4c0c9e.png" alt="评论图片" loading="lazy"></p></div><time class="comment-date">2026-10-23 22:35:26</time></div></div>
+<div class="comment reply" id="AjaxComment3599"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>zzh25282526</strong><div class="comment-body"><p><span>@abcaqo</span> 我其实也不知道    大佬觉得自动最顺手的是哪一套给我就行  感谢大佬  我想做项链</p></div><time class="comment-date">2026-10-24 02:10:33</time></div></div>
+<div class="comment reply" id="AjaxComment3607"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@zzh25282526</span> 就这个大锤元晶  长矛混伤鎏金<br>其他的要么玻璃大炮 要么打不死人</p></div><time class="comment-date">2026-10-24 22:30:06</time></div></div>
+<div class="comment reply" id="AjaxComment3638"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>da</strong><div class="comment-body"><p><span>@abcaqo</span> 大佬，有裁决pvp吗</p></div><time class="comment-date">2026-10-27 20:41:31</time></div></div>
+<div class="comment reply" id="AjaxComment3649"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>abcaqo</strong><div class="comment-body"><p><span>@da</span> 裁决太麻烦了  不会弄噢   尝试弄过  不是很行  等大佬开发吧</p></div><time class="comment-date">2026-10-28 17:47:05</time></div></div>
+<div class="comment reply" id="AjaxComment3658"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>da</strong><div class="comment-body"><p><span>@abcaqo</span> 👌</p></div><time class="comment-date">2026-10-29 10:21:51</time></div></div></div></div></section></div></main></body></html>

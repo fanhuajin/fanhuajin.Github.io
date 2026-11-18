@@ -18,6 +18,18 @@
   "items": [
     {
       "type": "bookmark",
+      "id": "site-freecycle",
+      "name": "自由循环 · 配置归档",
+      "url": "https://fanhuajin.github.io/freecycle/",
+      "description": "浏览和搜索自由循环社区归档的配置帖子与评论。",
+      "tags": ["游戏", "配置归档"],
+      "image": "assets/sites/freecycle-logo.png",
+      "cover": "assets/covers/freecycle-banner.jpg",
+      "lists": ["bookmarks"],
+      "highlights": []
+    },
+    {
+      "type": "bookmark",
       "id": "site-westdata",
       "name": "西部数据 VPN 节点",
       "url": "https://wd-gold.net/clientarea.php",

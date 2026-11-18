@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>从0教你写灾厄，症状可直接导入，碎层通用</title><style>
+:root{--blue:#2469dc;--border:#dfe5ee;--muted:#58677e;color:#182230;background:#f0f3f7;font:15px/1.65 "Microsoft YaHei UI","PingFang SC",sans-serif}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{width:min(100% - 2rem,1292px);margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:2;background:white;border-bottom:1px solid var(--border)}
+.site-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem 1rem;min-height:62px;padding-block:.45rem}
+.site-header a{color:inherit;text-decoration:none}
+.site-header a:hover{color:var(--blue)}
+.site-header .brand{display:flex;align-items:center;margin-right:.7rem}
+.brand img{width:108px;height:34px;object-fit:contain}
+.site-header [aria-current]{padding:.35rem .65rem;border-radius:8px;background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu{position:relative}
+.career-menu summary{display:flex;align-items:center;gap:.35rem;cursor:pointer;padding:.35rem .6rem;border-radius:8px;list-style:none;white-space:nowrap}
+.career-menu summary::after{content:"";width:.4rem;height:.4rem;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-.12rem) rotate(45deg)}
+.career-menu summary::-webkit-details-marker{display:none}
+.career-menu[open] summary,.career-menu summary:hover,body:has(.listing-content) .career-menu:has([aria-current]) summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.career-links{position:absolute;top:calc(100% + 8px);left:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(318px,calc(100vw - 2rem));padding:8px;gap:2px;background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px #18223026}
+.career-links::before{content:"";position:absolute;inset:-9px 0 auto;height:9px}
+.career-links a,.site-header .career-links [aria-current]{padding:.35rem .7rem;border-radius:8px;font-size:14px}
+.career-links a:hover{background:#f1f5fb}
+.career-links a::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--tag-color,#586477);vertical-align:middle}
+@media(max-width:520px){.career-links{position:fixed;top:62px;inset-inline:1rem;width:auto}.site-header nav{column-gap:.35rem}}
+@media(hover:hover) and (pointer:fine) and (min-width:521px){
+  .career-menu:hover summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+  .career-menu:hover::details-content{content-visibility:visible}
+}
+main{overflow-wrap:anywhere}
+.post-content{padding-block:1.15rem 3rem}
+.breadcrumbs,.post-card,.comments-card{background:white;border:1px solid var(--border);border-radius:14px}
+.breadcrumbs{margin-bottom:1rem;padding:.55rem .9rem;color:var(--muted);font-size:13px}
+.breadcrumbs a{margin-inline:.3rem;text-decoration:none}
+.post-card{margin-bottom:1rem;padding:clamp(1rem,4vw,3.3rem)}
+.post-card h1{font-size:clamp(1.4rem,3vw,1.75rem)}
+.post-card .byline{padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.post-card .avatar{width:32px;height:32px}
+.comments-card{padding:clamp(.8rem,2vw,1.5rem)}
+.comments-card h2{margin:0;padding:.65rem clamp(.25rem,2vw,1.25rem) 1.2rem;font-size:15px}
+.comments-empty{display:grid;justify-items:center;gap:.65rem;margin:0;padding:1.5rem 1rem 2rem;color:var(--muted);font-size:14px}
+.comments-empty-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#f0f3f7}
+.comments-empty-icon::before{width:18px;height:16px;border:1.5px solid currentColor;border-radius:6px 6px 6px 2px;content:''}
+h1,h2{line-height:1.3;text-wrap:balance}
+h1{margin:.35em 0;font-size:clamp(1.65rem,4vw,2.25rem)}
+h2{margin-top:2rem}
+a{color:var(--blue);text-underline-offset:.2em}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.meta,small{color:var(--muted)}
+.categories,.pager{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.categories a,.pager a{border:1px solid var(--border);border-radius:999px;padding:.3rem .7rem;background:white;text-decoration:none;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0 0 1.5rem}
+.post-list a{font-size:16.5px;font-weight:700;color:#182230;text-decoration:none}
+.post-list a:hover,.categories a:hover,.pager a:hover{text-decoration:underline}
+article{margin-top:1.5rem}
+img{max-width:100%;height:auto}
+pre{overflow:auto;padding:1rem;border-radius:8px;background:#f3f6fa}
+table{display:block;overflow:auto}
+.comment-thread{--comment-avatar:40px;--comment-gap:clamp(.65rem,2vw,1.65rem);border-top:1px solid var(--border);padding:1rem clamp(.25rem,2vw,1.25rem)}
+.comment{display:grid;grid-template-columns:var(--comment-avatar) minmax(0,1fr);align-items:start;gap:var(--comment-gap)}
+.comment .avatar{display:block;width:var(--comment-avatar);height:var(--comment-avatar);margin:0}
+.comment strong{display:block;margin-bottom:.65rem;color:#182230}
+.comment-date{display:block;margin-top:.55rem;color:var(--muted);font-size:.87rem;font-variant-numeric:tabular-nums}
+.comment-body>:first-child{margin-top:0}
+.comment-body>:last-child{margin-bottom:0}
+.replies{margin:.75rem 0 0 calc(var(--comment-avatar) + var(--comment-gap))}
+.reply{--comment-avatar:32px;--comment-gap:10px;padding:.7rem 0 0;border-top:1px solid var(--border)}
+.reply strong{margin-bottom:.25rem}
+.reply+.reply{margin-top:.6rem}
+.comment:target{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
+.listing-header{background:#0d1929 linear-gradient(110deg,#122747,#0d1929);color:white}
+.listing-header .wrap{display:flex;min-height:clamp(180px,25vw,284px);flex-direction:column;justify-content:center;padding:clamp(1.75rem,5vw,3.5rem) clamp(0rem,1.5vw,2rem)}
+.listing-header h1,.listing-header h2{margin:0 0 .35rem;font-size:clamp(1.65rem,4vw,2.25rem)}
+.listing-header em{font-style:normal;background:linear-gradient(90deg,#7db6ff,#6ee7a8);background-clip:text;color:transparent}
+.listing-header p{margin:0;color:#c9d4e3}
+.post-search{display:flex;gap:.4rem;width:min(100%,400px);margin-top:1.65rem;padding:6px;border-radius:12px;background:#f7f8fa}
+.post-search input{flex:1;min-width:0;padding:.35rem 0;border:0;background:transparent;color:#182230;font:inherit}
+.post-search input:focus{outline:none}
+.post-search button{padding:.45rem 1rem;border:0;border-radius:8px;background:var(--blue);color:white;font:inherit;font-weight:600;cursor:pointer}
+.search-icon{position:relative;align-self:center;flex:none;width:.72em;height:.72em;margin:0 .2rem 2px .6rem;border:1.5px solid currentColor;border-radius:50%;color:#66758c}
+.search-icon::after{position:absolute;top:calc(100% - 1px);left:calc(100% - 1px);width:.34em;height:1.5px;background:currentColor;transform:rotate(45deg);transform-origin:left center;content:''}
+.search-status:not(:empty){display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.25rem 0 .25rem;color:var(--muted);font-size:13px}
+.search-status:not(:empty)::before,.search-status:not(:empty)::after{width:2rem;height:1px;background:var(--border);content:''}
+.post-list[hidden],.post-list [hidden]{display:none}
+.listing-content{padding-block:1.25rem 2rem}
+.categories{margin-bottom:.75rem;padding:.7rem;border:1px solid var(--border);border-radius:12px;background:white;box-shadow:0 2px 5px #18223008;font-size:13px}
+.categories [aria-current]{border-color:#2f7cf6;background:#eff5ff;color:var(--blue);font-weight:700}
+.post-list{display:grid;gap:.65rem}
+.post-list li{padding:1rem clamp(.8rem,2vw,1.25rem);background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 2px #18223006}
+.post-list li:hover{border-color:#b4cdf5}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .65rem;margin:.55rem 0 0;color:var(--muted);font-size:13px}
+.avatar{width:26px;height:26px;flex:none;border-radius:50%;object-fit:cover;background:#eef1f5}
+.post-list .tag{display:inline-block;margin-right:.5rem;padding:0 .45rem;border:1px solid var(--tag-border,#e4e8ee);border-radius:5px;background:var(--tag-bg,#f2f4f7);color:var(--tag-color,#586477);font-size:12px;font-weight:600}
+.tag-1{--tag-color:#a03b36;--tag-bg:#fdf2f1;--tag-border:#f3d9d6}
+.tag-2{--tag-color:#2e639e;--tag-bg:#eff5fd;--tag-border:#d6e5f8}
+.tag-3{--tag-color:#865b12;--tag-bg:#fdf7e9;--tag-border:#f2e3bf}
+.tag-4{--tag-color:#486f29;--tag-bg:#f2f9ec;--tag-border:#dceccb}
+.tag-5{--tag-color:#93501f;--tag-bg:#fdf3ec;--tag-border:#f2dcc9}
+.tag-6{--tag-color:#356747;--tag-bg:#eef8f2;--tag-border:#d3ead9}
+.tag-7,.tag-11{--tag-color:#774285;--tag-bg:#f9f1fb;--tag-border:#e9d6ef}
+.tag-8{--tag-color:#a73138;--tag-bg:#fdf1f1;--tag-border:#f4d7d7}
+.tag-10{--tag-color:#2469dc;--tag-bg:#eef4ff;--tag-border:#d6e4fd}
+</style>
+<body><header class="site-header"><nav class="wrap" aria-label="站点导航">
+<a class="brand" href="../../index.html"><img src="../../assets/freecycle-logo.png" alt="自由循环"></a>
+<a href="../../index.html">首页</a>
+<details class="career-menu"><summary>职业攻略</summary><div class="career-links">
+<a class="tag-1" href="../../categories/d24e2768f227febf/index.html">魂武者</a>
+<a class="tag-2" href="../../categories/cda6e4547c5e87f2/index.html">守护者</a>
+<a class="tag-3" href="../../categories/4736daeffadb3732/index.html">战士</a>
+<a class="tag-4" href="../../categories/00d3d3cefc50ea30/index.html">游侠</a>
+<a class="tag-5" href="../../categories/bc2f82f27d245369/index.html">工程师</a>
+<a class="tag-6" href="../../categories/1f41388aa7959a35/index.html" aria-current="location">唤灵师</a>
+<a class="tag-7" href="../../categories/863d15a6b8e74bc9/index.html">幻术师</a>
+<a class="tag-8" href="../../categories/d88d6d9a710a0ec6/index.html">元素使</a>
+<a class="tag-9" href="../../categories/3eae6ef4ec9fd742/index.html">潜行者</a>
+</div></details>
+<a href="../../categories/2536d8680f694555/index.html">问题解答</a>
+</nav></header><main><header class="listing-header" style="background:linear-gradient(110deg,#122747dd,#0d1929dd),url('../../assets/freecycle-banner.jpg') center/cover"><div class="wrap"><h2>唤灵师</h2><p>浏览该分类下的归档帖子</p>
+<form class="post-search" role="search" autocomplete="off" action="../../search.html" onsubmit="location.href=this.action+'?'+new URLSearchParams(new FormData(this));return false">
+<span class="search-icon" aria-hidden="true"></span><input type="search" name="q" aria-label="搜索帖子" placeholder="搜帖子标题、职业或作者…"><button type="submit">搜索</button>
+</form></div></header>
+<div class="wrap post-content">
+<nav class="breadcrumbs" aria-label="当前位置">当前位置 <a href="../../index.html">首页</a> › <a href="../../categories/1f41388aa7959a35/index.html">唤灵师</a></nav>
+<section class="post-card"><h1>从0教你写灾厄，症状可直接导入，碎层通用</h1><p class="byline"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" width="26" height="26" loading="lazy"><strong>melis</strong><span>07-14</span><a href="../../categories/1f41388aa7959a35/index.html">唤灵师</a><a href="https://www.freecycle.top/?id=340">原帖</a></p>
+<article>
+												<p>1，打开主页右边sc翻译连接，通过星钾岛，搜索到灾厄循环</p><p><img alt="image.png" src="../../assets/a66725a390d8e269e225ae3e00bec56f.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784015199172156.png" loading="lazy"></p><hr><p>2，通过翻译工具获得基础循环</p><p><img alt="image.png" src="../../assets/76b1176e940e1e117777f16d9c4c8154.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784015238433294.jpg" loading="lazy"></p><hr><p>3，将循环信息导入到本地</p><p><img alt="image.png" src="../../assets/ea64deb28120ce82fa4877699a2eb559.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784015263428255.png" loading="lazy"></p><hr><p>4，修改循环部分参数，使用新版的切武器方案</p><p><img alt="image.png" src="../../assets/bbbb2e847ded95224f68bd8c06110f26.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784015310791596.png" loading="lazy"></p><p>鲜血力量，瘟疫化身，鬼影降临，邪恶恩惠，恶毒爆冲，哀嚎射击，吞噬黑暗，死亡束缚，痛苦浪潮，重压崩溃，怨恨纹章，显形沙影，沙漠之幕，哀嚎射击&gt;&gt;1500=枪切节，死亡束缚&gt;&gt;1500=节切枪</p><hr><p>5，查看完整循环，进一步优化</p><p><br></p><p>这里只需要关注切武器之前，技能的次数。</p><p><img alt="image.png" src="../../assets/e84ff8709dfe91d7fa9e3ed6035aedd6.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784015436821917.jpg" loading="lazy"></p><p>例如，在切武器之前，节杖2使用了2次，枪2使用了3次。</p><p>那么切武器条件为</p><p>哀嚎射击&gt;3=枪切节</p><p>死亡束缚&gt;2=节切枪</p><p>如果切武器采用了跟随按键，按下2，那么这2个次数都-1，因为跟随按键无法作为计数。</p><p>或者使用技能剩余cd来作为切武器条件</p><p>哀嚎射击&gt;&gt;1500=枪切节</p><p>死亡束缚&gt;&gt;1500=节切枪</p><p>表示，武器2剩余时间大于1.5秒，切武器，小于1.5秒等待释放。</p><p><strong>这里注意，f9cd参数，需要计算敏捷后的cd，例如原cd10秒，敏捷为7500，原cd6秒，敏捷为4500</strong></p><hr><p>6，部分技能优化</p><p><img alt="image.png" src="../../assets/939a2e6007591663dda1cf7400f02e9d.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784015652252948.jpg" loading="lazy"></p><p><img alt="image.png" src="../../assets/26ef75ae13c4730b86d49759b428f218.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784016584999890.png" loading="lazy"></p><p>例如，灾厄F1，症状的持续时间为3秒，那么可在技能基础添加一个内置3到4秒的cd，避免f1好了就用。</p><p>另外f1，使用时，如果切武器会打断，所以加一个强制等待。</p><p><img alt="image.png" src="../../assets/c6f020e943f5b9ea38e6b8a750fba70f.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784016214605167.png" loading="lazy"></p><p>这里把f2移动到独立循环，同时也把影魔二段移动到独立循环，这2个技能是瞬发。</p><p>机场可以把影魔换成不死文章，否则绿条不够。</p><p><img alt="image.png" src="../../assets/bfb62e84299d99f25a5e16a5cc5a13f2.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784016127115262.jpg" loading="lazy"></p><p>F5基本跟献血力量是绑定的，所以采用多重判断写循环，由于鲜血力量需要施法，不能放到独立，保持在主循环。</p><p>沙漠之幕=鲜血力量</p><p>鲜血力量的按键为 F5+鲜血力量的跟随按键。</p><hr><p>7，最终循环如下</p><pre>|沙漠之幕=鲜血力量，瘟疫化身，恶毒爆冲，哀嚎射击，吞噬黑暗，死亡束缚，痛苦浪潮，重压崩溃，怨恨纹章，显形沙影，哀嚎射击&gt;&gt;1500=枪切节，死亡束缚&gt;&gt;1500=节切枪|邪恶恩惠，鬼影降临|
+沙漠之幕,触发|鲜血力量,f5,0,8,880|瘟疫化身,0,920|恶毒爆冲,3,604|哀嚎射击,2,836,,,,,,,,,,,,,,,,,触发,0,,0,,,4500|吞噬黑暗,3,600|死亡束缚,2,880,,,,,,,,,,,,,,,,,触发,0,,0,,,7500|痛苦浪潮,4,440|重压崩溃,5,598|怨恨纹章,9,884|显形沙影,f1,580,,,,,,,,,,,,,,,,,触发,1,3500,0,1|枪切节,`,150,2,550|节切枪,`,150,2,550|邪恶恩惠,f2|鬼影降临,7
+[&amp;DQgnNjI1PCp+FgAAbwEAAIAAAAB1AQAAkgAAAAAAAAAAAAAAAAAAAAAAAAADVgBmADYAAA==]
+毒蛇套，陷阱符文，节，渴求，火炬，折磨，枪，折磨，碎层古物。</pre><p>可直接导入</p><p><img alt="image.png" src="../../assets/5a61d42463d14e7ed14a1825fb40b08c.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784017635704520.png" loading="lazy"></p><p><img alt="image.png" src="../../assets/dd815618854e899b75cd5cefe7c92f11.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/202607141784017090199978.jpg" loading="lazy"></p><p>0灌注，1蛋糕，很久没玩灾厄，不确定新版输出多少，可自行修改。</p>				</article></section>
+<section class="comments-card" aria-labelledby="comments"><h2 id="comments">评论列表（6）</h2>
+<div class="comment-thread"><div class="comment" id="AjaxComment3357"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1111</strong><div class="comment-body"><p>为什莫总是会自动切武器大佬</p></div><time class="comment-date">2026-10-03 23:03:28</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3360"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@1111</span> &gt;&gt;这个判断，是根据技能剩余cd进行切武器的，如果你没有敏捷，那么需要填写技能本身的游戏cd，如果有敏捷，是需要x0.75，如果不想这个判断，可以删除&gt;&gt;的判断，改成技能2=1=切武器</p></div><time class="comment-date">2026-10-04 19:46:43</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3330"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>青枫</strong><div class="comment-body"><p>这个切武器后第一个按键是不是3啊</p></div><time class="comment-date">2026-09-29 19:42:33</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment3331"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@青枫</span> 跟随武器一般选2，因为cd快，选3可能切过去cd还没好</p></div><time class="comment-date">2026-09-29 19:51:15</time></div></div>
+<div class="comment reply" id="AjaxComment3333"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>青枫</strong><div class="comment-body"><p><span>@melis</span> 好的感谢</p></div><time class="comment-date">2026-09-29 20:58:34</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2166"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>流沙</strong><div class="comment-body"><p>测试成果，无食物，无扳手，+5灌注，34.4K。很强</p></div><time class="comment-date">2026-07-15 11:14:27</time></div></div></div></section></div></main></body></html>

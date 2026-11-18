@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大佬门帮忙写一些野外职业啊</title><style>
+:root{--blue:#2469dc;--border:#dfe5ee;--muted:#58677e;color:#182230;background:#f0f3f7;font:15px/1.65 "Microsoft YaHei UI","PingFang SC",sans-serif}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{width:min(100% - 2rem,1292px);margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:2;background:white;border-bottom:1px solid var(--border)}
+.site-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem 1rem;min-height:62px;padding-block:.45rem}
+.site-header a{color:inherit;text-decoration:none}
+.site-header a:hover{color:var(--blue)}
+.site-header .brand{display:flex;align-items:center;margin-right:.7rem}
+.brand img{width:108px;height:34px;object-fit:contain}
+.site-header [aria-current]{padding:.35rem .65rem;border-radius:8px;background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu{position:relative}
+.career-menu summary{display:flex;align-items:center;gap:.35rem;cursor:pointer;padding:.35rem .6rem;border-radius:8px;list-style:none;white-space:nowrap}
+.career-menu summary::after{content:"";width:.4rem;height:.4rem;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-.12rem) rotate(45deg)}
+.career-menu summary::-webkit-details-marker{display:none}
+.career-menu[open] summary,.career-menu summary:hover,body:has(.listing-content) .career-menu:has([aria-current]) summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.career-links{position:absolute;top:calc(100% + 8px);left:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(318px,calc(100vw - 2rem));padding:8px;gap:2px;background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px #18223026}
+.career-links::before{content:"";position:absolute;inset:-9px 0 auto;height:9px}
+.career-links a,.site-header .career-links [aria-current]{padding:.35rem .7rem;border-radius:8px;font-size:14px}
+.career-links a:hover{background:#f1f5fb}
+.career-links a::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--tag-color,#586477);vertical-align:middle}
+@media(max-width:520px){.career-links{position:fixed;top:62px;inset-inline:1rem;width:auto}.site-header nav{column-gap:.35rem}}
+@media(hover:hover) and (pointer:fine) and (min-width:521px){
+  .career-menu:hover summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+  .career-menu:hover::details-content{content-visibility:visible}
+}
+main{overflow-wrap:anywhere}
+.post-content{padding-block:1.15rem 3rem}
+.breadcrumbs,.post-card,.comments-card{background:white;border:1px solid var(--border);border-radius:14px}
+.breadcrumbs{margin-bottom:1rem;padding:.55rem .9rem;color:var(--muted);font-size:13px}
+.breadcrumbs a{margin-inline:.3rem;text-decoration:none}
+.post-card{margin-bottom:1rem;padding:clamp(1rem,4vw,3.3rem)}
+.post-card h1{font-size:clamp(1.4rem,3vw,1.75rem)}
+.post-card .byline{padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.post-card .avatar{width:32px;height:32px}
+.comments-card{padding:clamp(.8rem,2vw,1.5rem)}
+.comments-card h2{margin:0;padding:.65rem clamp(.25rem,2vw,1.25rem) 1.2rem;font-size:15px}
+.comments-empty{display:grid;justify-items:center;gap:.65rem;margin:0;padding:1.5rem 1rem 2rem;color:var(--muted);font-size:14px}
+.comments-empty-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#f0f3f7}
+.comments-empty-icon::before{width:18px;height:16px;border:1.5px solid currentColor;border-radius:6px 6px 6px 2px;content:''}
+h1,h2{line-height:1.3;text-wrap:balance}
+h1{margin:.35em 0;font-size:clamp(1.65rem,4vw,2.25rem)}
+h2{margin-top:2rem}
+a{color:var(--blue);text-underline-offset:.2em}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.meta,small{color:var(--muted)}
+.categories,.pager{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.categories a,.pager a{border:1px solid var(--border);border-radius:999px;padding:.3rem .7rem;background:white;text-decoration:none;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0 0 1.5rem}
+.post-list a{font-size:16.5px;font-weight:700;color:#182230;text-decoration:none}
+.post-list a:hover,.categories a:hover,.pager a:hover{text-decoration:underline}
+article{margin-top:1.5rem}
+img{max-width:100%;height:auto}
+pre{overflow:auto;padding:1rem;border-radius:8px;background:#f3f6fa}
+table{display:block;overflow:auto}
+.comment-thread{--comment-avatar:40px;--comment-gap:clamp(.65rem,2vw,1.65rem);border-top:1px solid var(--border);padding:1rem clamp(.25rem,2vw,1.25rem)}
+.comment{display:grid;grid-template-columns:var(--comment-avatar) minmax(0,1fr);align-items:start;gap:var(--comment-gap)}
+.comment .avatar{display:block;width:var(--comment-avatar);height:var(--comment-avatar);margin:0}
+.comment strong{display:block;margin-bottom:.65rem;color:#182230}
+.comment-date{display:block;margin-top:.55rem;color:var(--muted);font-size:.87rem;font-variant-numeric:tabular-nums}
+.comment-body>:first-child{margin-top:0}
+.comment-body>:last-child{margin-bottom:0}
+.replies{margin:.75rem 0 0 calc(var(--comment-avatar) + var(--comment-gap))}
+.reply{--comment-avatar:32px;--comment-gap:10px;padding:.7rem 0 0;border-top:1px solid var(--border)}
+.reply strong{margin-bottom:.25rem}
+.reply+.reply{margin-top:.6rem}
+.comment:target{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
+.listing-header{background:#0d1929 linear-gradient(110deg,#122747,#0d1929);color:white}
+.listing-header .wrap{display:flex;min-height:clamp(180px,25vw,284px);flex-direction:column;justify-content:center;padding:clamp(1.75rem,5vw,3.5rem) clamp(0rem,1.5vw,2rem)}
+.listing-header h1,.listing-header h2{margin:0 0 .35rem;font-size:clamp(1.65rem,4vw,2.25rem)}
+.listing-header em{font-style:normal;background:linear-gradient(90deg,#7db6ff,#6ee7a8);background-clip:text;color:transparent}
+.listing-header p{margin:0;color:#c9d4e3}
+.post-search{display:flex;gap:.4rem;width:min(100%,400px);margin-top:1.65rem;padding:6px;border-radius:12px;background:#f7f8fa}
+.post-search input{flex:1;min-width:0;padding:.35rem 0;border:0;background:transparent;color:#182230;font:inherit}
+.post-search input:focus{outline:none}
+.post-search button{padding:.45rem 1rem;border:0;border-radius:8px;background:var(--blue);color:white;font:inherit;font-weight:600;cursor:pointer}
+.search-icon{position:relative;align-self:center;flex:none;width:.72em;height:.72em;margin:0 .2rem 2px .6rem;border:1.5px solid currentColor;border-radius:50%;color:#66758c}
+.search-icon::after{position:absolute;top:calc(100% - 1px);left:calc(100% - 1px);width:.34em;height:1.5px;background:currentColor;transform:rotate(45deg);transform-origin:left center;content:''}
+.search-status:not(:empty){display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.25rem 0 .25rem;color:var(--muted);font-size:13px}
+.search-status:not(:empty)::before,.search-status:not(:empty)::after{width:2rem;height:1px;background:var(--border);content:''}
+.post-list[hidden],.post-list [hidden]{display:none}
+.listing-content{padding-block:1.25rem 2rem}
+.categories{margin-bottom:.75rem;padding:.7rem;border:1px solid var(--border);border-radius:12px;background:white;box-shadow:0 2px 5px #18223008;font-size:13px}
+.categories [aria-current]{border-color:#2f7cf6;background:#eff5ff;color:var(--blue);font-weight:700}
+.post-list{display:grid;gap:.65rem}
+.post-list li{padding:1rem clamp(.8rem,2vw,1.25rem);background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 2px #18223006}
+.post-list li:hover{border-color:#b4cdf5}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .65rem;margin:.55rem 0 0;color:var(--muted);font-size:13px}
+.avatar{width:26px;height:26px;flex:none;border-radius:50%;object-fit:cover;background:#eef1f5}
+.post-list .tag{display:inline-block;margin-right:.5rem;padding:0 .45rem;border:1px solid var(--tag-border,#e4e8ee);border-radius:5px;background:var(--tag-bg,#f2f4f7);color:var(--tag-color,#586477);font-size:12px;font-weight:600}
+.tag-1{--tag-color:#a03b36;--tag-bg:#fdf2f1;--tag-border:#f3d9d6}
+.tag-2{--tag-color:#2e639e;--tag-bg:#eff5fd;--tag-border:#d6e5f8}
+.tag-3{--tag-color:#865b12;--tag-bg:#fdf7e9;--tag-border:#f2e3bf}
+.tag-4{--tag-color:#486f29;--tag-bg:#f2f9ec;--tag-border:#dceccb}
+.tag-5{--tag-color:#93501f;--tag-bg:#fdf3ec;--tag-border:#f2dcc9}
+.tag-6{--tag-color:#356747;--tag-bg:#eef8f2;--tag-border:#d3ead9}
+.tag-7,.tag-11{--tag-color:#774285;--tag-bg:#f9f1fb;--tag-border:#e9d6ef}
+.tag-8{--tag-color:#a73138;--tag-bg:#fdf1f1;--tag-border:#f4d7d7}
+.tag-10{--tag-color:#2469dc;--tag-bg:#eef4ff;--tag-border:#d6e4fd}
+</style>
+<body><header class="site-header"><nav class="wrap" aria-label="站点导航">
+<a class="brand" href="../../index.html"><img src="../../assets/freecycle-logo.png" alt="自由循环"></a>
+<a href="../../index.html">首页</a>
+<details class="career-menu"><summary>职业攻略</summary><div class="career-links">
+<a class="tag-1" href="../../categories/d24e2768f227febf/index.html">魂武者</a>
+<a class="tag-2" href="../../categories/cda6e4547c5e87f2/index.html">守护者</a>
+<a class="tag-3" href="../../categories/4736daeffadb3732/index.html">战士</a>
+<a class="tag-4" href="../../categories/00d3d3cefc50ea30/index.html">游侠</a>
+<a class="tag-5" href="../../categories/bc2f82f27d245369/index.html">工程师</a>
+<a class="tag-6" href="../../categories/1f41388aa7959a35/index.html">唤灵师</a>
+<a class="tag-7" href="../../categories/863d15a6b8e74bc9/index.html">幻术师</a>
+<a class="tag-8" href="../../categories/d88d6d9a710a0ec6/index.html">元素使</a>
+<a class="tag-9" href="../../categories/3eae6ef4ec9fd742/index.html">潜行者</a>
+</div></details>
+<a href="../../categories/2536d8680f694555/index.html">问题解答</a>
+</nav></header><main><header class="listing-header" style="background:linear-gradient(110deg,#122747dd,#0d1929dd),url('../../assets/freecycle-banner.jpg') center/cover"><div class="wrap"><h2>未分类</h2><p>浏览该分类下的归档帖子</p>
+<form class="post-search" role="search" autocomplete="off" action="../../search.html" onsubmit="location.href=this.action+'?'+new URLSearchParams(new FormData(this));return false">
+<span class="search-icon" aria-hidden="true"></span><input type="search" name="q" aria-label="搜索帖子" placeholder="搜帖子标题、职业或作者…"><button type="submit">搜索</button>
+</form></div></header>
+<div class="wrap post-content">
+<nav class="breadcrumbs" aria-label="当前位置">当前位置 <a href="../../index.html">首页</a> › <a href="../../categories/54b89f901274588b/index.html">未分类</a></nav>
+<section class="post-card"><h1>大佬门帮忙写一些野外职业啊</h1><p class="byline"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" width="26" height="26" loading="lazy"><strong>访客</strong><span>02-12</span><a href="../../categories/54b89f901274588b/index.html">未分类</a><a href="https://www.freecycle.top/?id=92">原帖</a></p>
+<article>
+												<p>大佬门帮忙写一些各职业的野外bd啊</p>				</article></section>
+<section class="comments-card" aria-labelledby="comments"><h2 id="comments">评论列表（0）</h2>
+<p class="comments-empty"><span class="comments-empty-icon" aria-hidden="true"></span>暂无评论</p></section></div></main></body></html>

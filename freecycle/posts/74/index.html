@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>匕剑大剑直伤时空60k-45k</title><style>
+:root{--blue:#2469dc;--border:#dfe5ee;--muted:#58677e;color:#182230;background:#f0f3f7;font:15px/1.65 "Microsoft YaHei UI","PingFang SC",sans-serif}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{width:min(100% - 2rem,1292px);margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:2;background:white;border-bottom:1px solid var(--border)}
+.site-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem 1rem;min-height:62px;padding-block:.45rem}
+.site-header a{color:inherit;text-decoration:none}
+.site-header a:hover{color:var(--blue)}
+.site-header .brand{display:flex;align-items:center;margin-right:.7rem}
+.brand img{width:108px;height:34px;object-fit:contain}
+.site-header [aria-current]{padding:.35rem .65rem;border-radius:8px;background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu{position:relative}
+.career-menu summary{display:flex;align-items:center;gap:.35rem;cursor:pointer;padding:.35rem .6rem;border-radius:8px;list-style:none;white-space:nowrap}
+.career-menu summary::after{content:"";width:.4rem;height:.4rem;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-.12rem) rotate(45deg)}
+.career-menu summary::-webkit-details-marker{display:none}
+.career-menu[open] summary,.career-menu summary:hover,body:has(.listing-content) .career-menu:has([aria-current]) summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.career-links{position:absolute;top:calc(100% + 8px);left:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(318px,calc(100vw - 2rem));padding:8px;gap:2px;background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px #18223026}
+.career-links::before{content:"";position:absolute;inset:-9px 0 auto;height:9px}
+.career-links a,.site-header .career-links [aria-current]{padding:.35rem .7rem;border-radius:8px;font-size:14px}
+.career-links a:hover{background:#f1f5fb}
+.career-links a::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--tag-color,#586477);vertical-align:middle}
+@media(max-width:520px){.career-links{position:fixed;top:62px;inset-inline:1rem;width:auto}.site-header nav{column-gap:.35rem}}
+@media(hover:hover) and (pointer:fine) and (min-width:521px){
+  .career-menu:hover summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+  .career-menu:hover::details-content{content-visibility:visible}
+}
+main{overflow-wrap:anywhere}
+.post-content{padding-block:1.15rem 3rem}
+.breadcrumbs,.post-card,.comments-card{background:white;border:1px solid var(--border);border-radius:14px}
+.breadcrumbs{margin-bottom:1rem;padding:.55rem .9rem;color:var(--muted);font-size:13px}
+.breadcrumbs a{margin-inline:.3rem;text-decoration:none}
+.post-card{margin-bottom:1rem;padding:clamp(1rem,4vw,3.3rem)}
+.post-card h1{font-size:clamp(1.4rem,3vw,1.75rem)}
+.post-card .byline{padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.post-card .avatar{width:32px;height:32px}
+.comments-card{padding:clamp(.8rem,2vw,1.5rem)}
+.comments-card h2{margin:0;padding:.65rem clamp(.25rem,2vw,1.25rem) 1.2rem;font-size:15px}
+.comments-empty{display:grid;justify-items:center;gap:.65rem;margin:0;padding:1.5rem 1rem 2rem;color:var(--muted);font-size:14px}
+.comments-empty-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#f0f3f7}
+.comments-empty-icon::before{width:18px;height:16px;border:1.5px solid currentColor;border-radius:6px 6px 6px 2px;content:''}
+h1,h2{line-height:1.3;text-wrap:balance}
+h1{margin:.35em 0;font-size:clamp(1.65rem,4vw,2.25rem)}
+h2{margin-top:2rem}
+a{color:var(--blue);text-underline-offset:.2em}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.meta,small{color:var(--muted)}
+.categories,.pager{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.categories a,.pager a{border:1px solid var(--border);border-radius:999px;padding:.3rem .7rem;background:white;text-decoration:none;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0 0 1.5rem}
+.post-list a{font-size:16.5px;font-weight:700;color:#182230;text-decoration:none}
+.post-list a:hover,.categories a:hover,.pager a:hover{text-decoration:underline}
+article{margin-top:1.5rem}
+img{max-width:100%;height:auto}
+pre{overflow:auto;padding:1rem;border-radius:8px;background:#f3f6fa}
+table{display:block;overflow:auto}
+.comment-thread{--comment-avatar:40px;--comment-gap:clamp(.65rem,2vw,1.65rem);border-top:1px solid var(--border);padding:1rem clamp(.25rem,2vw,1.25rem)}
+.comment{display:grid;grid-template-columns:var(--comment-avatar) minmax(0,1fr);align-items:start;gap:var(--comment-gap)}
+.comment .avatar{display:block;width:var(--comment-avatar);height:var(--comment-avatar);margin:0}
+.comment strong{display:block;margin-bottom:.65rem;color:#182230}
+.comment-date{display:block;margin-top:.55rem;color:var(--muted);font-size:.87rem;font-variant-numeric:tabular-nums}
+.comment-body>:first-child{margin-top:0}
+.comment-body>:last-child{margin-bottom:0}
+.replies{margin:.75rem 0 0 calc(var(--comment-avatar) + var(--comment-gap))}
+.reply{--comment-avatar:32px;--comment-gap:10px;padding:.7rem 0 0;border-top:1px solid var(--border)}
+.reply strong{margin-bottom:.25rem}
+.reply+.reply{margin-top:.6rem}
+.comment:target{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
+.listing-header{background:#0d1929 linear-gradient(110deg,#122747,#0d1929);color:white}
+.listing-header .wrap{display:flex;min-height:clamp(180px,25vw,284px);flex-direction:column;justify-content:center;padding:clamp(1.75rem,5vw,3.5rem) clamp(0rem,1.5vw,2rem)}
+.listing-header h1,.listing-header h2{margin:0 0 .35rem;font-size:clamp(1.65rem,4vw,2.25rem)}
+.listing-header em{font-style:normal;background:linear-gradient(90deg,#7db6ff,#6ee7a8);background-clip:text;color:transparent}
+.listing-header p{margin:0;color:#c9d4e3}
+.post-search{display:flex;gap:.4rem;width:min(100%,400px);margin-top:1.65rem;padding:6px;border-radius:12px;background:#f7f8fa}
+.post-search input{flex:1;min-width:0;padding:.35rem 0;border:0;background:transparent;color:#182230;font:inherit}
+.post-search input:focus{outline:none}
+.post-search button{padding:.45rem 1rem;border:0;border-radius:8px;background:var(--blue);color:white;font:inherit;font-weight:600;cursor:pointer}
+.search-icon{position:relative;align-self:center;flex:none;width:.72em;height:.72em;margin:0 .2rem 2px .6rem;border:1.5px solid currentColor;border-radius:50%;color:#66758c}
+.search-icon::after{position:absolute;top:calc(100% - 1px);left:calc(100% - 1px);width:.34em;height:1.5px;background:currentColor;transform:rotate(45deg);transform-origin:left center;content:''}
+.search-status:not(:empty){display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.25rem 0 .25rem;color:var(--muted);font-size:13px}
+.search-status:not(:empty)::before,.search-status:not(:empty)::after{width:2rem;height:1px;background:var(--border);content:''}
+.post-list[hidden],.post-list [hidden]{display:none}
+.listing-content{padding-block:1.25rem 2rem}
+.categories{margin-bottom:.75rem;padding:.7rem;border:1px solid var(--border);border-radius:12px;background:white;box-shadow:0 2px 5px #18223008;font-size:13px}
+.categories [aria-current]{border-color:#2f7cf6;background:#eff5ff;color:var(--blue);font-weight:700}
+.post-list{display:grid;gap:.65rem}
+.post-list li{padding:1rem clamp(.8rem,2vw,1.25rem);background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 2px #18223006}
+.post-list li:hover{border-color:#b4cdf5}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .65rem;margin:.55rem 0 0;color:var(--muted);font-size:13px}
+.avatar{width:26px;height:26px;flex:none;border-radius:50%;object-fit:cover;background:#eef1f5}
+.post-list .tag{display:inline-block;margin-right:.5rem;padding:0 .45rem;border:1px solid var(--tag-border,#e4e8ee);border-radius:5px;background:var(--tag-bg,#f2f4f7);color:var(--tag-color,#586477);font-size:12px;font-weight:600}
+.tag-1{--tag-color:#a03b36;--tag-bg:#fdf2f1;--tag-border:#f3d9d6}
+.tag-2{--tag-color:#2e639e;--tag-bg:#eff5fd;--tag-border:#d6e5f8}
+.tag-3{--tag-color:#865b12;--tag-bg:#fdf7e9;--tag-border:#f2e3bf}
+.tag-4{--tag-color:#486f29;--tag-bg:#f2f9ec;--tag-border:#dceccb}
+.tag-5{--tag-color:#93501f;--tag-bg:#fdf3ec;--tag-border:#f2dcc9}
+.tag-6{--tag-color:#356747;--tag-bg:#eef8f2;--tag-border:#d3ead9}
+.tag-7,.tag-11{--tag-color:#774285;--tag-bg:#f9f1fb;--tag-border:#e9d6ef}
+.tag-8{--tag-color:#a73138;--tag-bg:#fdf1f1;--tag-border:#f4d7d7}
+.tag-10{--tag-color:#2469dc;--tag-bg:#eef4ff;--tag-border:#d6e4fd}
+</style>
+<body><header class="site-header"><nav class="wrap" aria-label="站点导航">
+<a class="brand" href="../../index.html"><img src="../../assets/freecycle-logo.png" alt="自由循环"></a>
+<a href="../../index.html">首页</a>
+<details class="career-menu"><summary>职业攻略</summary><div class="career-links">
+<a class="tag-1" href="../../categories/d24e2768f227febf/index.html">魂武者</a>
+<a class="tag-2" href="../../categories/cda6e4547c5e87f2/index.html">守护者</a>
+<a class="tag-3" href="../../categories/4736daeffadb3732/index.html">战士</a>
+<a class="tag-4" href="../../categories/00d3d3cefc50ea30/index.html">游侠</a>
+<a class="tag-5" href="../../categories/bc2f82f27d245369/index.html">工程师</a>
+<a class="tag-6" href="../../categories/1f41388aa7959a35/index.html">唤灵师</a>
+<a class="tag-7" href="../../categories/863d15a6b8e74bc9/index.html" aria-current="location">幻术师</a>
+<a class="tag-8" href="../../categories/d88d6d9a710a0ec6/index.html">元素使</a>
+<a class="tag-9" href="../../categories/3eae6ef4ec9fd742/index.html">潜行者</a>
+</div></details>
+<a href="../../categories/2536d8680f694555/index.html">问题解答</a>
+</nav></header><main><header class="listing-header" style="background:linear-gradient(110deg,#122747dd,#0d1929dd),url('../../assets/freecycle-banner.jpg') center/cover"><div class="wrap"><h2>幻术师</h2><p>浏览该分类下的归档帖子</p>
+<form class="post-search" role="search" autocomplete="off" action="../../search.html" onsubmit="location.href=this.action+'?'+new URLSearchParams(new FormData(this));return false">
+<span class="search-icon" aria-hidden="true"></span><input type="search" name="q" aria-label="搜索帖子" placeholder="搜帖子标题、职业或作者…"><button type="submit">搜索</button>
+</form></div></header>
+<div class="wrap post-content">
+<nav class="breadcrumbs" aria-label="当前位置">当前位置 <a href="../../index.html">首页</a> › <a href="../../categories/863d15a6b8e74bc9/index.html">幻术师</a></nav>
+<section class="post-card"><h1>匕剑大剑直伤时空60k-45k</h1><p class="byline"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" width="26" height="26" loading="lazy"><strong>孝烯</strong><span>01-29</span><a href="../../categories/863d15a6b8e74bc9/index.html">幻术师</a><a href="https://www.freecycle.top/?id=74">原帖</a></p>
+<article>
+												<p>除魔，剑3，剑5，剑2，剑2=1=切武器|大剑4，大剑4=1=武器4黑=幻光纹章，大剑2，大剑3，剑5，剑5=1豆反色=职业f3，剑3，剑2，切武器反色=除魔，灾难法池，行动法池，衰老法池，衰老法池&gt;10000=1豆反色=职业F3，衰老法池&gt;7000=剑4，衰老法池&gt;7650=大剑5，重力陷阱，剑2=1=剑2黑=剑切大剑，大剑2=1=大剑2黑=大剑切剑|3豆=职业F1，3豆=职业F2|</p><p>除魔,7,880|剑3,3,440|剑5,5,880,F3,50|剑2,2,440|切武器,`,150,3,310,F5,1,4,780|大剑4,4,780|武器4黑|幻光纹章,6,968,4,780|大剑2,2,710|大剑3,3,310|1豆反色,,,,,,,,,ifnot,,,b|职业f3,F3,10|切武器反色|灾难法池,8,800|行动法池,9,800|衰老法池,9,800|剑4,4,200,4,300,,,,,,,,,,,,,,,,0,,1|大剑5,5,480|重力陷阱,0,1100|剑2黑|剑切大剑,`,150,3,310,F5,1,4,560|大剑2黑|大剑切剑,`,150,5,780|3豆|职业F1,F1,10|职业F2,F2,10</p><p><img alt="QQ20260129-180746.png" src="../../assets/3919c56f1851c34a7e93974d2d04e965.png" data-original="https://www.freecycle.top/zb_users/upload/2026/01/202601291769681545646052.png" loading="lazy"></p><p>配装项链刺客，其余全狂战士，全威能灌注</p><p>法印 武勇，精确&nbsp; 。&nbsp;</p><p>食物：100威力，70暴击效果，扳手：超级磨刀石， 本人灌注91点威能灌注（95挑半辅敏大概能28k附近，其他自测）</p><p><span><span>根据m佬的旧循环和新循环修改。</span>不知道为什么突然起手不会释放f3来获取buff，也多了个大剑5获取buff，抛弃了之前错误的buff监控。buff依旧会断，但不多。增加了1豆反色来使用f3，避免浪费豆子。（起手循环依旧大剑4，f5的时候等2豆手动点f1和f2，全程无需关宏，之后无其他操作） 伤害肯定是浮动的，自行考虑是否使用</span></p>				</article></section>
+<section class="comments-card" aria-labelledby="comments"><h2 id="comments">评论列表（29）</h2>
+<div class="comment-thread"><div class="comment" id="AjaxComment426"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>489305940@qq.com</strong><div class="comment-body"><p>我0灌注，食物扳手都吃了，但是只能最多打40K， 取了几次色了，不知道啥原因</p></div><time class="comment-date">2026-01-31 18:49:58</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment428"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>孝烯</strong><div class="comment-body"><p>可能是延迟，全局或者技能的延迟只能自己调一下</p></div><time class="comment-date">2026-01-31 19:05:31</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment417"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>AAA</strong><div class="comment-body"><p>剑切大剑这种怎么取色，</p></div><time class="comment-date">2026-01-31 17:54:39</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment421"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p>这个条件就是切武器，自然是切武器图标了</p></div><time class="comment-date">2026-01-31 18:10:04</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment413"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>小红帽偷吃大灰狼</strong><div class="comment-body"><p>为什么通用技能这里包含了除魔，灾难法池，行动法池，衰老法池，重力陷阱 五个通用技能啊，我只有四个啊</p></div><time class="comment-date">2026-01-31 17:05:56</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment418"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>孝烯</strong><div class="comment-body"><p>你可以选择行动或者衰老2选1</p></div><time class="comment-date">2026-01-31 18:02:02</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment412"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>秋刀鱼</strong><div class="comment-body"><p>我一身13灌注 62-45 感谢大佬分享 然后问下右边通用带的什么</p></div><time class="comment-date">2026-01-31 17:05:22</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment415"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>孝烯</strong><div class="comment-body"><p>幻光纹章，除魔，灾难，衰老，重力</p></div><time class="comment-date">2026-01-31 17:51:22</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment391"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>牧渔</strong><div class="comment-body"><p>剑4，大剑5从头到尾都不执行，<br>除魔，剑3，剑5，剑2，剑2=1=切武器|大剑4，大剑4=1=武器4黑=幻光纹章，大剑2，大剑3，剑5，剑5=1豆反色=职业f3，剑3，剑2，切武器反色=除魔，灾难法池，行动法池，衰老法池，衰老法池&gt;10000=1豆反色=职业F3，衰老法池&gt;7000=剑4，衰老法池&gt;7650=大剑5，重力陷阱，剑2=1=剑2黑=剑切大剑，大剑2=1=大剑2黑=大剑切剑|3豆=职业F1，3豆=职业F2|<br>除魔,7,880|剑3,3,440|剑5,5,880,F3,50|剑2,2,440|切武器,`,150,3,310,F5,1,4,780|大剑4,4,780|武器4黑|幻光纹章,q,968,4,780|大剑2,2,710|大剑3,3,310|1豆反色,,,,,,,,,,,,b|职业f3,F3,10|切武器反色|灾难法池,e,800|行动法池,6,800|衰老法池,6,800|衰老法池&gt;10000|衰老法池&gt;7000|剑4,4,280,,,,,,,,,,,,,,,,,,0,,1|衰老法池&gt;7650|大剑5,5,480|重力陷阱,b,1100|剑2黑|剑切大剑,`,150,3,310,F5,1,4,560|大剑2黑|大剑切剑,`,150,5,780|3豆|职业F1,F1,10|职业F2,F2,10</p></div><time class="comment-date">2026-01-30 15:54:19</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment392"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>牧渔</strong><div class="comment-body"><p>伤害91灌注34k上下</p></div><time class="comment-date">2026-01-30 15:55:34</time></div></div>
+<div class="comment reply" id="AjaxComment394"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>孝烯</strong><div class="comment-body"><p>不好意思，之前误会了，你可能有些取色不对，剑4你要勾选连续点击</p></div><time class="comment-date">2026-01-30 16:41:53</time></div></div>
+<div class="comment reply" id="AjaxComment398"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>牧渔</strong><div class="comment-body"><p>你们怎么打上那高的伤害，我怎么打都34k左右</p></div><time class="comment-date">2026-01-30 22:32:09</time></div></div>
+<div class="comment reply" id="AjaxComment399"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>孝烯</strong><div class="comment-body"><p>你全局设置0.9试试，要么就是有些技能你取色可能不对，还有别用m佬的全黑跳转新功能</p></div><time class="comment-date">2026-01-30 23:42:32</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment386"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>幻光</strong><div class="comment-body"><p>他的意思是这几个导入进去都变成循环技能了，取色的技能列表能看得到，不知道是不是bug</p></div><time class="comment-date">2026-01-30 13:21:47</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment389"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>牧渔</strong><div class="comment-body"><p>确实是这样，这些判断出现在f9取色列表里面</p></div><time class="comment-date">2026-01-30 14:14:25</time></div></div>
+<div class="comment reply" id="AjaxComment390"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p>检查下你的&gt;符号是不是英文，f9内应该不会存在技能x&gt;200这个技能名称，如果还存在，下最新版</p></div><time class="comment-date">2026-01-30 15:51:22</time></div></div>
+<div class="comment reply" id="AjaxComment395"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>幻光</strong><div class="comment-body"><p>就是&gt;符号的原因，从网页复制过来就会出现这个问题，另外55k那篇文章没问题，用的是最新版的</p></div><time class="comment-date">2026-01-30 18:15:31</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment376"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>牧渔</strong><div class="comment-body"><p>衰老法池&gt;10000=1豆反色=职业F3，衰老法池&gt;7000=剑4，衰老法池&gt;7650这个怎么取色的？</p></div><time class="comment-date">2026-01-29 22:36:20</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment377"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>孝烯</strong><div class="comment-body"><p>这些是多重判断，你只要按f9，把里面的全取色了就行</p></div><time class="comment-date">2026-01-29 22:50:55</time></div></div>
+<div class="comment reply" id="AjaxComment379"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>牧渔</strong><div class="comment-body"><p>衰老法池&gt;10000，像这个10000是取色那个位置，7000是那个位置</p></div><time class="comment-date">2026-01-29 23:12:59</time></div></div>
+<div class="comment reply" id="AjaxComment380"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>孝烯</strong><div class="comment-body"><p>哥们都跟你说了这是多重判断，你不需要管，你只需要把f9里面的全取色了就行</p></div><time class="comment-date">2026-01-29 23:21:00</time></div></div>
+<div class="comment reply" id="AjaxComment383"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>Guristas</strong><div class="comment-body"><p>他问的是 10000 7000 是要取色取哪个位置，不是问为什么取这些。 取色取在哪都不知道，那要怎么取</p></div><time class="comment-date">2026-01-30 10:07:10</time></div></div>
+<div class="comment reply" id="AjaxComment385"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>福果果</strong><div class="comment-body"><p>我觉得他说的就是，其他按键正常怎么取色，这个就怎么取色。其他位置都不知道怎么取色就看教程。</p></div><time class="comment-date">2026-01-30 12:21:09</time></div></div>
+<div class="comment reply" id="AjaxComment387"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p>我觉得你使用的可能是旧版，最新版是b6检查下，新版加入了&gt;号的判断，如果你是旧版f9会出现技能1&gt;5000这个技能名称</p></div><time class="comment-date">2026-01-30 13:56:03</time></div></div>
+<div class="comment reply" id="AjaxComment408"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>秋刀鱼</strong><div class="comment-body"><p>因为复制原因这个大于号没识别成符号 识别成一个字符串了 手动改一下 我也遇见了</p></div><time class="comment-date">2026-01-31 16:54:17</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment373"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>孝烯</strong><div class="comment-body"><p>除魔，剑3，剑5，剑2，剑2=1=切武器|大剑4，大剑4=1=武器4黑=幻光纹章，大剑2，大剑3，剑5，剑5=1豆反色=职业f3，剑3，剑2，切武器反色=除魔，灾难法池，行动法池，衰老法池，衰老法池&gt;10000=1豆反色=职业F3，衰老法池&gt;7000=剑4，衰老法池&gt;7650=大剑5，重力陷阱，剑2=1=剑2黑=剑切大剑，大剑2=1=大剑2黑=大剑切剑|3豆=职业F1，3豆=职业F2|<br>除魔,7,880|剑3,3,440|剑5,5,880,F3,50|剑2,2,440|切武器,`,150,3,310,F5,1,4,780|大剑4,4,780|武器4黑|幻光纹章,6,968,4,780|大剑2,2,710|大剑3,3,310|1豆反色,,,,,,,,,ifnot,,,b|职业f3,F3,10|切武器反色|灾难法池,8,800|行动法池,9,800|衰老法池,9,800|剑4,4,200,4,300,,,,,,,,,,,,,,,,0,,1|大剑5,5,480|重力陷阱,0,1100|剑2黑|剑切大剑,`,150,3,310,F5,1,4,560|大剑2黑|大剑切剑,`,150,5,780|3豆|职业F1,F1,10|职业F2,F2,10<br>发这里吧，不知道为什么不会自己换行，上次是发了之后隔天才能看到..</p></div><time class="comment-date">2026-01-29 19:28:52</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment374"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p>点一下那个格式刷，或者直接导出的时候粘贴进来，不要复制到别的文本里在复制一遍，可能格式错了</p></div><time class="comment-date">2026-01-29 20:01:49</time></div></div>
+<div class="comment reply" id="AjaxComment378"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>孝烯</strong><div class="comment-body"><p>了解</p></div><time class="comment-date">2026-01-29 23:03:30</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment372"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>秋刀鱼</strong><div class="comment-body"><p>为啥你的这个不会换行 看不全。。。</p></div><time class="comment-date">2026-01-29 18:53:26</time></div></div></div></section></div></main></body></html>

@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>新版奶燃火，取色简单，自动书页判断 7.30优化版</title><style>
+:root{--blue:#2469dc;--border:#dfe5ee;--muted:#58677e;color:#182230;background:#f0f3f7;font:15px/1.65 "Microsoft YaHei UI","PingFang SC",sans-serif}
+*{box-sizing:border-box}
+body{margin:0}
+.wrap{width:min(100% - 2rem,1292px);margin-inline:auto}
+.site-header{position:sticky;top:0;z-index:2;background:white;border-bottom:1px solid var(--border)}
+.site-header nav{display:flex;align-items:center;flex-wrap:wrap;gap:.4rem 1rem;min-height:62px;padding-block:.45rem}
+.site-header a{color:inherit;text-decoration:none}
+.site-header a:hover{color:var(--blue)}
+.site-header .brand{display:flex;align-items:center;margin-right:.7rem}
+.brand img{width:108px;height:34px;object-fit:contain}
+.site-header [aria-current]{padding:.35rem .65rem;border-radius:8px;background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu{position:relative}
+.career-menu summary{display:flex;align-items:center;gap:.35rem;cursor:pointer;padding:.35rem .6rem;border-radius:8px;list-style:none;white-space:nowrap}
+.career-menu summary::after{content:"";width:.4rem;height:.4rem;border:solid currentColor;border-width:0 1px 1px 0;transform:translateY(-.12rem) rotate(45deg)}
+.career-menu summary::-webkit-details-marker{display:none}
+.career-menu[open] summary,.career-menu summary:hover,body:has(.listing-content) .career-menu:has([aria-current]) summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+.career-menu summary:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.career-links{position:absolute;top:calc(100% + 8px);left:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));width:min(318px,calc(100vw - 2rem));padding:8px;gap:2px;background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px #18223026}
+.career-links::before{content:"";position:absolute;inset:-9px 0 auto;height:9px}
+.career-links a,.site-header .career-links [aria-current]{padding:.35rem .7rem;border-radius:8px;font-size:14px}
+.career-links a:hover{background:#f1f5fb}
+.career-links a::before{content:"";display:inline-block;width:7px;height:7px;margin-right:8px;border-radius:50%;background:var(--tag-color,#586477);vertical-align:middle}
+@media(max-width:520px){.career-links{position:fixed;top:62px;inset-inline:1rem;width:auto}.site-header nav{column-gap:.35rem}}
+@media(hover:hover) and (pointer:fine) and (min-width:521px){
+  .career-menu:hover summary{background:#ecf3ff;color:var(--blue);font-weight:600}
+  .career-menu:hover::details-content{content-visibility:visible}
+}
+main{overflow-wrap:anywhere}
+.post-content{padding-block:1.15rem 3rem}
+.breadcrumbs,.post-card,.comments-card{background:white;border:1px solid var(--border);border-radius:14px}
+.breadcrumbs{margin-bottom:1rem;padding:.55rem .9rem;color:var(--muted);font-size:13px}
+.breadcrumbs a{margin-inline:.3rem;text-decoration:none}
+.post-card{margin-bottom:1rem;padding:clamp(1rem,4vw,3.3rem)}
+.post-card h1{font-size:clamp(1.4rem,3vw,1.75rem)}
+.post-card .byline{padding-bottom:1rem;border-bottom:1px solid var(--border)}
+.post-card .avatar{width:32px;height:32px}
+.comments-card{padding:clamp(.8rem,2vw,1.5rem)}
+.comments-card h2{margin:0;padding:.65rem clamp(.25rem,2vw,1.25rem) 1.2rem;font-size:15px}
+.comments-empty{display:grid;justify-items:center;gap:.65rem;margin:0;padding:1.5rem 1rem 2rem;color:var(--muted);font-size:14px}
+.comments-empty-icon{display:grid;place-items:center;width:42px;height:42px;border-radius:10px;background:#f0f3f7}
+.comments-empty-icon::before{width:18px;height:16px;border:1.5px solid currentColor;border-radius:6px 6px 6px 2px;content:''}
+h1,h2{line-height:1.3;text-wrap:balance}
+h1{margin:.35em 0;font-size:clamp(1.65rem,4vw,2.25rem)}
+h2{margin-top:2rem}
+a{color:var(--blue);text-underline-offset:.2em}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.meta,small{color:var(--muted)}
+.categories,.pager{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.categories a,.pager a{border:1px solid var(--border);border-radius:999px;padding:.3rem .7rem;background:white;text-decoration:none;color:var(--muted)}
+.post-list{list-style:none;padding:0;margin:0 0 1.5rem}
+.post-list a{font-size:16.5px;font-weight:700;color:#182230;text-decoration:none}
+.post-list a:hover,.categories a:hover,.pager a:hover{text-decoration:underline}
+article{margin-top:1.5rem}
+img{max-width:100%;height:auto}
+pre{overflow:auto;padding:1rem;border-radius:8px;background:#f3f6fa}
+table{display:block;overflow:auto}
+.comment-thread{--comment-avatar:40px;--comment-gap:clamp(.65rem,2vw,1.65rem);border-top:1px solid var(--border);padding:1rem clamp(.25rem,2vw,1.25rem)}
+.comment{display:grid;grid-template-columns:var(--comment-avatar) minmax(0,1fr);align-items:start;gap:var(--comment-gap)}
+.comment .avatar{display:block;width:var(--comment-avatar);height:var(--comment-avatar);margin:0}
+.comment strong{display:block;margin-bottom:.65rem;color:#182230}
+.comment-date{display:block;margin-top:.55rem;color:var(--muted);font-size:.87rem;font-variant-numeric:tabular-nums}
+.comment-body>:first-child{margin-top:0}
+.comment-body>:last-child{margin-bottom:0}
+.replies{margin:.75rem 0 0 calc(var(--comment-avatar) + var(--comment-gap))}
+.reply{--comment-avatar:32px;--comment-gap:10px;padding:.7rem 0 0;border-top:1px solid var(--border)}
+.reply strong{margin-bottom:.25rem}
+.reply+.reply{margin-top:.6rem}
+.comment:target{outline:2px solid var(--blue);outline-offset:3px;border-radius:3px}
+.listing-header{background:#0d1929 linear-gradient(110deg,#122747,#0d1929);color:white}
+.listing-header .wrap{display:flex;min-height:clamp(180px,25vw,284px);flex-direction:column;justify-content:center;padding:clamp(1.75rem,5vw,3.5rem) clamp(0rem,1.5vw,2rem)}
+.listing-header h1,.listing-header h2{margin:0 0 .35rem;font-size:clamp(1.65rem,4vw,2.25rem)}
+.listing-header em{font-style:normal;background:linear-gradient(90deg,#7db6ff,#6ee7a8);background-clip:text;color:transparent}
+.listing-header p{margin:0;color:#c9d4e3}
+.post-search{display:flex;gap:.4rem;width:min(100%,400px);margin-top:1.65rem;padding:6px;border-radius:12px;background:#f7f8fa}
+.post-search input{flex:1;min-width:0;padding:.35rem 0;border:0;background:transparent;color:#182230;font:inherit}
+.post-search input:focus{outline:none}
+.post-search button{padding:.45rem 1rem;border:0;border-radius:8px;background:var(--blue);color:white;font:inherit;font-weight:600;cursor:pointer}
+.search-icon{position:relative;align-self:center;flex:none;width:.72em;height:.72em;margin:0 .2rem 2px .6rem;border:1.5px solid currentColor;border-radius:50%;color:#66758c}
+.search-icon::after{position:absolute;top:calc(100% - 1px);left:calc(100% - 1px);width:.34em;height:1.5px;background:currentColor;transform:rotate(45deg);transform-origin:left center;content:''}
+.search-status:not(:empty){display:flex;align-items:center;justify-content:center;gap:.75rem;margin:1.25rem 0 .25rem;color:var(--muted);font-size:13px}
+.search-status:not(:empty)::before,.search-status:not(:empty)::after{width:2rem;height:1px;background:var(--border);content:''}
+.post-list[hidden],.post-list [hidden]{display:none}
+.listing-content{padding-block:1.25rem 2rem}
+.categories{margin-bottom:.75rem;padding:.7rem;border:1px solid var(--border);border-radius:12px;background:white;box-shadow:0 2px 5px #18223008;font-size:13px}
+.categories [aria-current]{border-color:#2f7cf6;background:#eff5ff;color:var(--blue);font-weight:700}
+.post-list{display:grid;gap:.65rem}
+.post-list li{padding:1rem clamp(.8rem,2vw,1.25rem);background:white;border:1px solid var(--border);border-radius:12px;box-shadow:0 1px 2px #18223006}
+.post-list li:hover{border-color:#b4cdf5}
+.byline{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .65rem;margin:.55rem 0 0;color:var(--muted);font-size:13px}
+.avatar{width:26px;height:26px;flex:none;border-radius:50%;object-fit:cover;background:#eef1f5}
+.post-list .tag{display:inline-block;margin-right:.5rem;padding:0 .45rem;border:1px solid var(--tag-border,#e4e8ee);border-radius:5px;background:var(--tag-bg,#f2f4f7);color:var(--tag-color,#586477);font-size:12px;font-weight:600}
+.tag-1{--tag-color:#a03b36;--tag-bg:#fdf2f1;--tag-border:#f3d9d6}
+.tag-2{--tag-color:#2e639e;--tag-bg:#eff5fd;--tag-border:#d6e5f8}
+.tag-3{--tag-color:#865b12;--tag-bg:#fdf7e9;--tag-border:#f2e3bf}
+.tag-4{--tag-color:#486f29;--tag-bg:#f2f9ec;--tag-border:#dceccb}
+.tag-5{--tag-color:#93501f;--tag-bg:#fdf3ec;--tag-border:#f2dcc9}
+.tag-6{--tag-color:#356747;--tag-bg:#eef8f2;--tag-border:#d3ead9}
+.tag-7,.tag-11{--tag-color:#774285;--tag-bg:#f9f1fb;--tag-border:#e9d6ef}
+.tag-8{--tag-color:#a73138;--tag-bg:#fdf1f1;--tag-border:#f4d7d7}
+.tag-10{--tag-color:#2469dc;--tag-bg:#eef4ff;--tag-border:#d6e4fd}
+</style>
+<body><header class="site-header"><nav class="wrap" aria-label="站点导航">
+<a class="brand" href="../../index.html"><img src="../../assets/freecycle-logo.png" alt="自由循环"></a>
+<a href="../../index.html">首页</a>
+<details class="career-menu"><summary>职业攻略</summary><div class="career-links">
+<a class="tag-1" href="../../categories/d24e2768f227febf/index.html">魂武者</a>
+<a class="tag-2" href="../../categories/cda6e4547c5e87f2/index.html" aria-current="location">守护者</a>
+<a class="tag-3" href="../../categories/4736daeffadb3732/index.html">战士</a>
+<a class="tag-4" href="../../categories/00d3d3cefc50ea30/index.html">游侠</a>
+<a class="tag-5" href="../../categories/bc2f82f27d245369/index.html">工程师</a>
+<a class="tag-6" href="../../categories/1f41388aa7959a35/index.html">唤灵师</a>
+<a class="tag-7" href="../../categories/863d15a6b8e74bc9/index.html">幻术师</a>
+<a class="tag-8" href="../../categories/d88d6d9a710a0ec6/index.html">元素使</a>
+<a class="tag-9" href="../../categories/3eae6ef4ec9fd742/index.html">潜行者</a>
+</div></details>
+<a href="../../categories/2536d8680f694555/index.html">问题解答</a>
+</nav></header><main><header class="listing-header" style="background:linear-gradient(110deg,#122747dd,#0d1929dd),url('../../assets/freecycle-banner.jpg') center/cover"><div class="wrap"><h2>守护者</h2><p>浏览该分类下的归档帖子</p>
+<form class="post-search" role="search" autocomplete="off" action="../../search.html" onsubmit="location.href=this.action+'?'+new URLSearchParams(new FormData(this));return false">
+<span class="search-icon" aria-hidden="true"></span><input type="search" name="q" aria-label="搜索帖子" placeholder="搜帖子标题、职业或作者…"><button type="submit">搜索</button>
+</form></div></header>
+<div class="wrap post-content">
+<nav class="breadcrumbs" aria-label="当前位置">当前位置 <a href="../../index.html">首页</a> › <a href="../../categories/cda6e4547c5e87f2/index.html">守护者</a></nav>
+<section class="post-card"><h1>新版奶燃火，取色简单，自动书页判断 7.30优化版</h1><p class="byline"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" width="26" height="26" loading="lazy"><strong>melis</strong><span>07-30</span><a href="../../categories/cda6e4547c5e87f2/index.html">守护者</a><a href="https://www.freecycle.top/?id=377">原帖</a></p>
+<article>
+												<pre><code>慰籍咒语，潜能咒语，学识咒语|决心圣书，正义圣书，勇气圣书，退出F1，退出F2，退出F3，不在书页=F2治疗，不在书页=F3保护，不在书页=F1威能，法杖3，法杖2，法杖4|慰籍咒语，潜能咒语，学识咒语|
+慰籍咒语,e|潜能咒语,x|学识咒语,c|决心圣书,f2,150|正义圣书,f1,150|勇气圣书,f3,150|退出F1,f1,350|退出F2,f2,350|退出F3,f3,350|不在书页,,,,,,,,,ifnot|F2治疗,f2,150,3,780,2,680,,,,,,,,,,,,,触发,1,9000|F3保护,f3,150,1,300,,,,,,,,,,,,,,,触发,1,11000|F1威能,f1,150,5,550,,,,,,,,,,,,,,,触发,1,21000|法杖3,3,483|法杖2,2,601|法杖4,4,2638
+[&amp;DQExKi4qPj5LF0sXehZ6FlMXUxctAS0BGBYYFgAAAAAAAAAAAAAAAAAAAAADWQAFAFcAAA==]
+诗人+猎兔，单法杖，转移 专注 午夜国王\僧侣</code></pre>
+<p>这套奶燃火是基于最新版的部分条件编写，下面讲解一下原理。</p>
+<p>&nbsp;</p>
+<p><span><strong>最新优化版方案循环已优化，可直接导入，优化细节可看文章底部。</strong></span></p>
+<hr>
+<p>决心圣书，正义圣书，勇气圣书，退出F1，退出F2，退出F3，F1威能，F2治疗，F3保护，法杖3，法杖2，法杖4</p>
+<p>循环中包含上面的几个部分，拆开来看。</p>
+<p><img src="../../assets/4e0359397064ee1585528f6320d45e52.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181245178531996591035.png" loading="lazy"></p>
+<p>1，决心圣书，正义圣书，勇气圣书，这几个的意思是获取f1 2 3 本身的颜色，当可用直接触发，不使用任何跟随按键，只作为buff触发的条件，</p>
+<p>然后通过退出F1 F2 F3来实现快速退出。</p>
+<p><img src="../../assets/e9e88fd19da18b82dd6b645ab9b5451a.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181303178531998362955.png" loading="lazy">&nbsp;</p>
+<p><img src="../../assets/66af1c0cc4e012eee09912bd56318282.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181309178531998922872.png" loading="lazy"></p>
+<p><img src="../../assets/194253889681795068fc7e4a9859210b.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181315178531999579412.png" loading="lazy"></p>
+<p>退出F1、2、3分别获取箭头的白色。</p>
+<hr>
+<p>2，F1威能，F2治疗，F3保护</p>
+<p>这里采用的是，跟随按键+内置cd的条件来实现判断。</p>
+<p><img src="../../assets/02a842f2380988665bcdcbd899d990ad.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181404178532004460549.png" loading="lazy"></p>
+<p>&nbsp;</p>
+<p><img src="../../assets/464922da1a93dd4d172017e529204962.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729182317178532059754521.jpg" loading="lazy"></p>
+<p>比如，F1威能，实现的是每隔20秒，按一次F1-5的技能。</p>
+<p>&nbsp;</p>
+<p><img src="../../assets/b9d1beac3aa3cfa9aac44d1a2780c191.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181431178532007194500.png" loading="lazy"></p>
+<p>那么添加内置21秒的cd</p>
+<p>&nbsp;</p>
+<p><img src="../../assets/e4f87a31ceb8e54b6a087e39f91a691d.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181519178532011981277.png" loading="lazy"></p>
+<p>取色第一个书页的位置，表示满足5技能的释放，至少需要1个书页。</p>
+<hr>
+<p><img src="../../assets/5d2087e25bdea54753c74538ec94ac9b.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181534178532013433093.jpg" loading="lazy"></p>
+<p>F2治疗，采用的是每隔9秒，使用一次3技能+2技能。</p>
+<p><img src="../../assets/afa3e867419144fb3ad9e950e287916c.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181622178532018233272.png" loading="lazy"></p>
+<p><img src="../../assets/de781ae9870905e60552801449587181.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181709178532022910991.png" loading="lazy"></p>
+<p>F2，跟随的是2个按键，所以需要获取2书页的位置。</p>
+<hr>
+<p><img src="../../assets/509d5a14b01424a28f9cfd51732c37ea.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181736178532025625811.jpg" loading="lazy"></p>
+<p>F3保护，就简单了，同样也是只需要1个书页，那么优先级放到F2治疗后面，</p>
+<p>&nbsp;</p>
+<p><img src="../../assets/7293ee225becc7177554b7695132e51e.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181817178532029782591.png" loading="lazy"></p>
+<p>你会发现保护7+3能维持10秒，所以内置cd改为11。</p>
+<hr>
+<p><img src="../../assets/5b4aa727573b5e26dc48eae27e77c05e.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729181847178532032730031.png" loading="lazy"></p>
+<p>最后就是法杖3的光圈优先，然后是法杖2，法杖4这样排序。</p>
+<p>&nbsp;</p>
+<p><img src="../../assets/a251ee8fc99a05a3576360a38642c2da.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729182003178532040349621.jpg" loading="lazy"></p>
+<p>这样一套下来就能实现自动判断buff，有书页就会自动放F1 2 3，直接通过内置cd实现判断。</p>
+<p>&nbsp;</p>
+<p><img src="../../assets/3c0f7436dccd4900f495b016f21e347f.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729182107178532046757652.jpg" loading="lazy"> <img src="../../assets/1e4b987f88bd38cf0e5a021f870eb325.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729182124178532048464464.jpg" loading="lazy"> <img src="../../assets/34ba7566c9fece2b24835a7605cac8e3.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729182135178532049544155.jpg" loading="lazy"></p>
+<p>F1、2、3图标本身，只是用来触发F1、2、3被动效果的。</p>
+<p>实际使用书页内的技能，是书页1豆-2豆这些条件。</p>
+<p>&nbsp;</p>
+<hr>
+<p><img src="../../assets/bd13cb0a0f060dcb234dad19337486e2.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729182159178532051990582.jpg" loading="lazy"></p>
+<p>以上是基于最新版本制作的奶然，有问题楼下留言。</p>
+<p>&nbsp;</p>
+<hr>
+<p><span><strong>最新优化版方案</strong></span></p>
+<p>循环方面调整了下优先级</p>
+<p>决心圣书，正义圣书，勇气圣书，退出F1，退出F2，退出F3，不在书页=F2治疗，不在书页=F3保护，不在书页=F1威能，法杖3，法杖2，法杖4</p>
+<p>这里，把治疗&gt;保护&gt;威能，同时加入了不在书页的判断，防止在书页中，误触按键。</p>
+<p><img src="../../assets/1adbb7ab3a4252c687fc1c9db922612f.jpg" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729233741178533946176636.jpg" loading="lazy"></p>
+<p>不在书页取切武器这里的，进入书页后的白色箭头，表示不在F1、2、3才使用F1\2\3这种跟随按键。</p>
+<p>~</p>
+<p>另外，F2消耗2个书页，F3消耗1个，F1消耗1个</p>
+<p>那么在文章之前的基础改一下</p>
+<p><img src="../../assets/08365b32786e5f3b1ca874ea1864673e.png" data-original="https://www.freecycle.top/zb_users/upload/2026/07/20260729233848178533952855628.png" loading="lazy"></p>
+<p>F2取第三个豆子</p>
+<p>F1、F3取第二个豆子，留一个书页作为备用。</p>				</article></section>
+<section class="comments-card" aria-labelledby="comments"><h2 id="comments">评论列表（11）</h2>
+<div class="comment-thread"><div class="comment" id="AjaxComment3597"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>18130689992</strong><div class="comment-body"><p>大佬、有点没看懂 能出个视屏么 o(╥﹏╥)o</p></div><time class="comment-date">2026-10-23 20:57:08</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment3540"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>青椒</strong><div class="comment-body"><p>你们激怒用的啥，我把斧2加了进去</p></div><time class="comment-date">2026-10-18 15:01:52</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2674"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1</strong><div class="comment-body"><p>大佬来个新版的急速诗人吧，那个简单点</p></div><time class="comment-date">2026-08-01 20:41:45</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2595"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1</strong><div class="comment-body"><p>以前用了一段时间燃火，那个法杖4会自动罚站，走位有时候会被坑，后来就全用幻术了</p></div><time class="comment-date">2026-07-30 09:57:59</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2585"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>1</strong><div class="comment-body"><p>F1 威能F2治疗F3保护，这些是取色哪个</p></div><time class="comment-date">2026-07-29 22:18:02</time></div></div><div class="replies"><div class="comment reply" id="AjaxComment2587"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@1</span> 1豆2豆 书页内是消耗多少 就取多少个豆 左边开始算</p></div><time class="comment-date">2026-07-29 22:46:50</time></div></div>
+<div class="comment reply" id="AjaxComment2608"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="32" height="32"><div><strong>有言在先</strong><div class="comment-body"><p><span>@melis</span> 呃，不在书页这个循环，连带的技能不放</p></div><time class="comment-date">2026-07-30 23:47:32</time></div></div>
+<div class="comment reply" id="AjaxComment2609"><img class="avatar" src="../../assets/47a1dd1bd9a47c6a2261a4b3a5248ecc.jpg" alt="" loading="lazy" width="32" height="32"><div><strong>melis</strong><div class="comment-body"><p><span>@有言在先</span> 这已经很简单的判断了，自己测试</p></div><time class="comment-date">2026-07-31 00:27:07</time></div></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2580"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>流沙</strong><div class="comment-body"><p>一周没上来了，M佬如此高产，你是我坚持玩激战2的动力了，哈哈哈哈</p></div><time class="comment-date">2026-07-29 20:23:08</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2577"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>独木成林</strong><div class="comment-body"><p>想啥来啥  爱死你了 m大 哈哈哈哈</p></div><time class="comment-date">2026-07-29 20:06:17</time></div></div></div>
+<div class="comment-thread"><div class="comment" id="AjaxComment2576"><img class="avatar" src="../../assets/b995def40e0b14f991ce3b25fdf6eed0.png" alt="" loading="lazy" width="40" height="40"><div><strong>圣光</strong><div class="comment-body"><p>666什么时候出急速症状燃火,其他分支台蹦跶了</p></div><time class="comment-date">2026-07-29 20:01:12</time></div></div></div></section></div></main></body></html>
