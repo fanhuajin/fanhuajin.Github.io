@@ -129,11 +129,8 @@ function renderTags() {
   $('#content').innerHTML = `<section class="tag-section rounded-lg border bg-card p-6"><h2 class="text-2xl font-semibold">资源标签 <span class="${badge}">${tags.length}</span></h2><p class="text-sm text-muted-foreground">查看资源使用的标签。</p><div class="tag-directory">${tags.map(tag=>`<a class="tag-count rounded border bg-card" href="${route('home',tag.name)}"><span>${esc(tag.name)}</span><span class="text-muted-foreground">${tag.count}</span></a>`).join('') || '<p class="text-muted-foreground">未找到匹配的标签。</p>'}</div></section>`;
 }
 function renderLists() {
-  const row = (url, name, mark, description, label, target = '') => `<a class="collection-row" href="${esc(url)}"${target}><span class="collection-icon rounded-lg border bg-muted">${icon(mark,24)}</span><span class="collection-copy"><span class="text-lg">${esc(name)}</span><span class="text-sm text-muted-foreground">${esc(description)}</span></span><span class="text-sm text-muted-foreground">${label}</span></a>`;
-  const collections = catalog.collections.map(list => row(route('list/' + list.id), list.name, list.icon, list.description, `${catalog.items.filter(item => item.lists.includes(list.id)).length} 项`));
-  const archive = catalog.items.find(item => item.id === 'site-freecycle');
-  if (archive) collections.push(row(archive.url, archive.name, 'globe', archive.description, '打开归档', ' target="_self"'));
-  $('#content').innerHTML = `<h2 class="section-label text-sm text-muted-foreground">全部</h2><div class="collection-directory rounded-lg border bg-card">${collections.join('')}</div>`;
+  const row = (page, name, mark, description, count) => `<a class="collection-row" href="${route(page)}"><span class="collection-icon rounded-lg border bg-muted">${icon(mark,24)}</span><span class="collection-copy"><span class="text-lg">${esc(name)}</span><span class="text-sm text-muted-foreground">${esc(description)}</span></span><span class="text-sm text-muted-foreground">${count} 项</span></a>`;
+  $('#content').innerHTML = `<h2 class="section-label text-sm text-muted-foreground">全部</h2><div class="collection-directory rounded-lg border bg-card">${catalog.collections.map(list=>row('list/'+list.id,list.name,list.icon,list.description,catalog.items.filter(item=>item.lists.includes(list.id)).length)).join('')}</div>`;
 }
 function readLocation() {
   closeMenu(false);
