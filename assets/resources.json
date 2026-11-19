@@ -85,6 +85,36 @@
       "highlights": []
     },
     {
+      "id": "fiddler-classic",
+      "name": "Fiddler Classic",
+      "subtitle": "查看 HTTP(S) 请求、响应与耗时",
+      "category": "开发",
+      "description": "Windows 网络调试代理，可捕获 HTTP(S) 请求并查看接口响应和耗时。",
+      "tags": [
+        "网络抓包",
+        "接口调试"
+      ],
+      "platform": "Windows",
+      "localSize": "4.53 MB",
+      "usage": "解密后安装",
+      "fileName": "Fiddler-Classic-6.0.20262.10021.rar",
+      "website": "https://www.telerik.com/fiddler/fiddler-classic",
+      "note": "加密 RAR 内含官方安装程序、第三方汉化包、总耗时列脚本片段和中文指南。Classic 仅供符合授权条款的非商业用途。",
+      "tips": "完整解压后打开「安装与配置指南.md」，按步骤安装。",
+      "logo": "./assets/fiddler-classic.png",
+      "url": "https://github.com/fanhuajin/fieldnotes/releases/download/fiddler-classic-6.0.20262.10021/Fiddler-Classic-6.0.20262.10021.rar",
+      "target": "_self",
+      "tag": "网络抓包",
+      "keywords": "开发 网络抓包 接口调试 HTTP HTTPS FiddlerScript 耗时 汉化",
+      "type": "software",
+      "lists": [
+        "software"
+      ],
+      "image": "./assets/fiddler-classic.png",
+      "highlights": [],
+      "cover": "assets/covers/fiddler-classic-official.png"
+    },
+    {
       "id": "jmeter",
       "name": "Apache JMeter",
       "subtitle": "把性能，交给数据说话。",
